@@ -1,60 +1,1046 @@
 full_name|description|stars|forks|default_branch|has_readme|language|size|updated_at|created_at|license|archived|topics
-cocotb/cocotb|cocotb: Python-based chip (RTL) verification|2211|596|master|false|Python|10.37MB|2026-01-09|2013-06-12|N/A|false|N/A
-openhwgroup/core-v-verif|Functional verification project for the CORE-V family of RISC-V cores.|636|260|master|false|Assembly|114.77MB|2026-01-09|2019-11-29|N/A|false|N/A
-raysalemi/uvmprimer|Contains the code examples from The UVM Primer Book sorted by chapters.|592|228|master|false|SystemVerilog|5.90MB|2026-01-08|2013-11-27|N/A|false|N/A
-ringtailsoftware/uvm32|Minimalist|589|25|main|false|C|5.46MB|2026-01-09|2025-12-06|N/A|false|N/A
-maximecb/uvm|Fun|578|21|main|false|Rust|1.89MB|2025-12-25|2022-06-11|N/A|false|N/A
-pyuvm/pyuvm|The UVM written in Python|491|95|master|false|Python|3.85MB|2026-01-04|2021-01-30|N/A|false|N/A
-rggen/rggen|Code generation tool for control and status registers|439|55|master|false|Ruby|633KB|2026-01-07|2019-04-10|N/A|false|N/A
-taichi-ishitani/tvip-axi|AMBA AXI VIP|438|122|master|false|SystemVerilog|157KB|2026-01-07|2018-09-22|N/A|false|N/A
-chipsalliance/Surelog|SystemVerilog 2017 Pre-processor|434|78|master|false|C++|875.68MB|2026-01-09|2019-10-30|N/A|false|N/A
-troyguo/awesome-dv|Awesome ASIC design verification|340|78|master|false|N/A|19KB|2026-01-05|2020-03-02|N/A|false|N/A
-whosmatt/uvmod|Web-based firmware patcher for various Quansheng radios|332|65|main|false|CSS|40.23MB|2026-01-07|2023-07-29|N/A|true|N/A
-VerificationExcellence/UVMReference|Reference examples and short projects using UVM Methodology|287|157|master|false|SystemVerilog|24KB|2026-01-08|2014-07-18|N/A|false|N/A
-tymonx/logic|CMake|284|61|master|false|SystemVerilog|840KB|2026-01-06|2017-10-29|N/A|false|N/A
-funningboy/uvm_axi|uvm AXI BFM(bus functional model)|264|116|master|false|Verilog|141KB|2025-12-11|2013-06-21|N/A|false|N/A
-tpoikela/uvm-python|UVM 1.2 port to Python|257|47|main|false|Python|4.54MB|2025-12-24|2020-01-09|N/A|false|N/A
-Nic30/hwt|VHDL/Verilog/SystemC code generator|221|29|master|false|Python|19.69MB|2025-12-30|2015-05-19|N/A|false|N/A
-Practical-UVM-Step-By-Step/Practical-UVM-Step-By-Step|This is the main repository for all the examples for the book Practical UVM|213|118|master|false|Verilog|17.53MB|2026-01-07|2016-10-26|N/A|false|N/A
-Juniper/open-register-design-tool|Tool to generate register RTL|207|73|master|false|Verilog|7.24MB|2025-12-22|2016-06-14|N/A|false|N/A
-cluelogic/uvm-tutorial-for-candy-lovers|Source code repo for UVM Tutorial for Candy Lovers|204|103|master|false|SystemVerilog|57KB|2025-12-16|2014-04-03|N/A|false|N/A
-taichi-ishitani/tnoc|Network on Chip Implementation written in SytemVerilog|196|52|master|false|SystemVerilog|416KB|2025-12-19|2017-12-12|N/A|false|N/A
-courageheart/AMBA_APB_SRAM|AMBA v.3 APB v.1 Specification Complaint Slave SRAM Core design and testbench. The testbench is developed using System Verilog and UVM and can be used as standalone Verification IP (VIP). |190|70|master|false|SystemVerilog|503KB|2026-01-04|2019-05-21|N/A|false|N/A
-SystemRDL/PeakRDL|Control and status register code generator toolchain|165|35|main|false|Python|188KB|2026-01-08|2020-04-05|N/A|false|N/A
-zzr-idam/UVM-Net|U-shaped Vision Mamba for Single Image Dehazing|163|6|main|false|Python|5.13MB|2026-01-01|2024-02-07|N/A|false|N/A
-kumarrishav14/AXI|VIP for AXI Protocol|163|41|main|false|SystemVerilog|82KB|2026-01-06|2020-12-29|N/A|false|N/A
-GodelMachine/AHB2|AMBA AHB 2.0 VIP in SystemVerilog UVM|160|67|master|false|SystemVerilog|24KB|2026-01-06|2016-06-26|N/A|false|N/A
-andres-mancera/ethernet_10ge_mac_SV_UVM_tb|SystemVerilog-based UVM testbench for an Ethernet 10GE MAC core|154|65|master|false|Verilog|107KB|2025-12-31|2016-04-19|N/A|false|N/A
-mayurkubavat/UVM-Examples|UVM examples and projects|153|70|master|false|SystemVerilog|141KB|2026-01-02|2016-07-18|N/A|false|N/A
-hellovimo/uvm_testbench_gen|Novel GUI Based UVM Testbench Template Builder|149|54|main|false|Python|9.50MB|2026-01-07|2021-01-04|N/A|false|N/A
-marcoz001/axi-uvm|yet another AXI testbench repo. ;)  This is for my UVM practice.  https://marcoz001.github.io/axi-uvm/|135|59|master|false|SystemVerilog|14.89MB|2025-12-26|2017-09-01|N/A|false|N/A
-nelsoncsc/ISP_UVM|A Framework for Design and Verification of Image Processing Applications using UVM|116|38|master|false|SystemVerilog|511KB|2025-12-26|2017-11-26|N/A|false|N/A
-gupta409/Processor-UVM-Verification|System Verilog based Verification of MIPS 5 staged pipelined processor using UVM environment|116|35|master|false|Verilog|364KB|2026-01-09|2018-01-17|N/A|false|N/A
-naragece/uvm-testbench-tutorial-simple-adder|A basic testbench made for educational purposes using SystemVerilog and the Universal Verification Methodology|114|94|master|false|N/A|124KB|2025-12-20|2014-09-17|N/A|false|N/A
-erihsu/INT_FP_MAC|INT8 & FP16 multiplier accumulator (MAC) design with UVM verification completed.|114|16|master|false|Verilog|20.51MB|2025-12-29|2020-05-15|N/A|false|N/A
-chipsalliance/uvm-verilator|N/A|113|24|master|false|SystemVerilog|5.53MB|2026-01-08|2020-06-09|N/A|false|N/A
-accellera-official/uvm-core|N/A|106|30|main|false|SystemVerilog|1.07MB|2026-01-06|2023-06-06|N/A|false|N/A
-Daniel-GGB/My-Digital-IC-Library|我的数字IC厂库：Verilog HDL; System Vreilog; UVM; ModelSim; Quartus II;|106|25|main|false|Verilog|45.64MB|2025-12-24|2021-01-15|N/A|false|N/A
-Siddhi-95/AHB-to-APB-Bridge-Verification|Maven Silicon project - AHB-to-APB Bridge Verification using UVM Methodology.|103|23|main|false|SystemVerilog|89KB|2025-12-26|2022-03-01|N/A|false|N/A
-seabeam/yuu_ahb|UVM AHB VIP|90|22|master|false|SystemVerilog|527KB|2025-12-26|2019-10-15|N/A|false|N/A
-dovstamler/uvm_agents|UVM agents|85|38|master|false|SystemVerilog|350KB|2025-12-26|2014-05-22|N/A|false|N/A
-DebashisGanguly/gpgpu-sim_UVMSmart|N/A|80|46|master|false|C++|353.40MB|2025-11-24|2018-10-01|N/A|false|N/A
-zhajio1988/YASA|:snail:Yet Another Simulation Architecture|78|41|master|false|Python|232KB|2025-12-23|2019-03-04|N/A|false|N/A
-Practical-UVM-Step-By-Step/Practical-UVM-IEEE-Edition|This is the repository for the IEEE version of the book|77|45|master|false|Verilog|21.48MB|2025-12-16|2018-06-16|N/A|false|N/A
-amiq-consulting/svaunit|SVAUnit is an UVM compliant package that simplify the creation of stimuli/checkers for validating SystemVerilog Assertions (SVA)|75|22|master|false|SystemVerilog|7.29MB|2026-01-06|2015-04-29|N/A|false|N/A
-zhajio1988/Open_RegModel|:hatched_chick:Use ORDT and systemRDL tools to generate C/Verilog header files|73|28|master|false|Verilog|8.95MB|2025-12-30|2019-08-14|N/A|false|N/A
-Shehab-Naga/ddr5_phy|DDR5 PHY Graduation project (Verification Team) under supervision of Si-Vision|73|30|main|false|SystemVerilog|13.27MB|2025-12-29|2022-06-30|N/A|false|N/A
-dadongshangu/async_FIFO|This asynchrounous FIFO deisgn and UVM verificaiton is one case study of me.  The design is based on Cliff Cumming's paper and the UVM is coded by me(Xianghzi Meng)|65|18|master|false|SystemVerilog|182KB|2026-01-06|2020-09-05|N/A|false|N/A
-Scout24/restapi-php-sdk|SDK für PHP-Entwickler um die Arbeit mit der API von ImmobilienScout24 zu vereinfachen. Über die API erhält man Ergebnislisten|64|45|master|false|PHP|712KB|2025-09-01|2011-11-14|N/A|false|N/A
-InvisibleUp/uvmac|µvMac - cleaned up fork of the Macintosh emulator Mini vMac|64|4|master|false|C|1.32MB|2025-12-29|2020-02-19|N/A|true|N/A
-accellera/uvm|N/A|60|30|master|false|SystemVerilog|21.86MB|2026-01-09|2016-05-11|N/A|false|N/A
-SystemRDL/PeakRDL-uvm|Generate UVM register model from compiled SystemRDL input|60|34|main|false|Python|74KB|2025-11-25|2019-08-23|N/A|false|N/A
-akzare/Async_FIFO_Verification|Presents a verification use case for a typical Asynchronous FIFO based on Systemverilog and UVM.|59|14|master|false|SystemVerilog|22KB|2026-01-06|2017-11-13|N/A|false|N/A
+cocotb/cocotb|cocotb: Python-based chip (RTL) verification|2211|596|master|true|Python|10.37MB|2026-01-09|2013-06-12|N/A|false|N/A
+openhwgroup/core-v-verif|Functional verification project for the CORE-V family of RISC-V cores.|636|260|master|true|Assembly|114.77MB|2026-01-09|2019-11-29|N/A|false|N/A
+raysalemi/uvmprimer|Contains the code examples from The UVM Primer Book sorted by chapters.|592|228|master|true|SystemVerilog|5.90MB|2026-01-08|2013-11-27|N/A|false|N/A
+ringtailsoftware/uvm32|Minimalist|589|25|main|true|C|5.46MB|2026-01-09|2025-12-06|N/A|false|N/A
+maximecb/uvm|Fun|578|21|main|true|Rust|1.89MB|2025-12-25|2022-06-11|N/A|false|N/A
+pyuvm/pyuvm|The UVM written in Python|491|95|master|true|Python|3.85MB|2026-01-04|2021-01-30|N/A|false|N/A
+rggen/rggen|Code generation tool for control and status registers|439|55|master|true|Ruby|633KB|2026-01-07|2019-04-10|N/A|false|N/A
+taichi-ishitani/tvip-axi|AMBA AXI VIP|438|122|master|true|SystemVerilog|157KB|2026-01-07|2018-09-22|N/A|false|N/A
+chipsalliance/Surelog|SystemVerilog 2017 Pre-processor|434|78|master|true|C++|875.68MB|2026-01-09|2019-10-30|N/A|false|N/A
+troyguo/awesome-dv|Awesome ASIC design verification|340|78|master|true|N/A|19KB|2026-01-05|2020-03-02|N/A|false|N/A
+whosmatt/uvmod|Web-based firmware patcher for various Quansheng radios|332|65|main|true|CSS|40.23MB|2026-01-07|2023-07-29|N/A|true|N/A
+VerificationExcellence/UVMReference|Reference examples and short projects using UVM Methodology|287|157|master|true|SystemVerilog|24KB|2026-01-08|2014-07-18|N/A|false|N/A
+tymonx/logic|CMake|284|61|master|true|SystemVerilog|840KB|2026-01-06|2017-10-29|N/A|false|N/A
+funningboy/uvm_axi|uvm AXI BFM(bus functional model)|264|116|master|true|Verilog|141KB|2025-12-11|2013-06-21|N/A|false|N/A
+tpoikela/uvm-python|UVM 1.2 port to Python|257|47|main|true|Python|4.54MB|2025-12-24|2020-01-09|N/A|false|N/A
+Nic30/hwt|VHDL/Verilog/SystemC code generator|221|29|master|true|Python|19.69MB|2025-12-30|2015-05-19|N/A|false|N/A
+Practical-UVM-Step-By-Step/Practical-UVM-Step-By-Step|This is the main repository for all the examples for the book Practical UVM|213|118|master|true|Verilog|17.53MB|2026-01-07|2016-10-26|N/A|false|N/A
+Juniper/open-register-design-tool|Tool to generate register RTL|207|73|master|true|Verilog|7.24MB|2025-12-22|2016-06-14|N/A|false|N/A
+cluelogic/uvm-tutorial-for-candy-lovers|Source code repo for UVM Tutorial for Candy Lovers|204|103|master|true|SystemVerilog|57KB|2025-12-16|2014-04-03|N/A|false|N/A
+taichi-ishitani/tnoc|Network on Chip Implementation written in SytemVerilog|196|52|master|true|SystemVerilog|416KB|2025-12-19|2017-12-12|N/A|false|N/A
+courageheart/AMBA_APB_SRAM|AMBA v.3 APB v.1 Specification Complaint Slave SRAM Core design and testbench. The testbench is developed using System Verilog and UVM and can be used as standalone Verification IP (VIP). |190|70|master|true|SystemVerilog|503KB|2026-01-04|2019-05-21|N/A|false|N/A
+SystemRDL/PeakRDL|Control and status register code generator toolchain|165|35|main|true|Python|188KB|2026-01-08|2020-04-05|N/A|false|N/A
+zzr-idam/UVM-Net|U-shaped Vision Mamba for Single Image Dehazing|163|6|main|true|Python|5.13MB|2026-01-01|2024-02-07|N/A|false|N/A
+kumarrishav14/AXI|VIP for AXI Protocol|163|41|main|true|SystemVerilog|82KB|2026-01-06|2020-12-29|N/A|false|N/A
+GodelMachine/AHB2|AMBA AHB 2.0 VIP in SystemVerilog UVM|160|67|master|true|SystemVerilog|24KB|2026-01-06|2016-06-26|N/A|false|N/A
+andres-mancera/ethernet_10ge_mac_SV_UVM_tb|SystemVerilog-based UVM testbench for an Ethernet 10GE MAC core|154|65|master|true|Verilog|107KB|2025-12-31|2016-04-19|N/A|false|N/A
+mayurkubavat/UVM-Examples|UVM examples and projects|153|70|master|true|SystemVerilog|141KB|2026-01-02|2016-07-18|N/A|false|N/A
+hellovimo/uvm_testbench_gen|Novel GUI Based UVM Testbench Template Builder|149|54|main|true|Python|9.50MB|2026-01-07|2021-01-04|N/A|false|N/A
+marcoz001/axi-uvm|yet another AXI testbench repo. ;)  This is for my UVM practice.  https://marcoz001.github.io/axi-uvm/|135|59|master|true|SystemVerilog|14.89MB|2025-12-26|2017-09-01|N/A|false|N/A
+nelsoncsc/ISP_UVM|A Framework for Design and Verification of Image Processing Applications using UVM|116|38|master|true|SystemVerilog|511KB|2025-12-26|2017-11-26|N/A|false|N/A
+gupta409/Processor-UVM-Verification|System Verilog based Verification of MIPS 5 staged pipelined processor using UVM environment|116|35|master|true|Verilog|364KB|2026-01-09|2018-01-17|N/A|false|N/A
+naragece/uvm-testbench-tutorial-simple-adder|A basic testbench made for educational purposes using SystemVerilog and the Universal Verification Methodology|114|94|master|true|N/A|124KB|2025-12-20|2014-09-17|N/A|false|N/A
+erihsu/INT_FP_MAC|INT8 & FP16 multiplier accumulator (MAC) design with UVM verification completed.|114|16|master|true|Verilog|20.51MB|2025-12-29|2020-05-15|N/A|false|N/A
+chipsalliance/uvm-verilator|N/A|113|24|master|true|SystemVerilog|5.53MB|2026-01-08|2020-06-09|N/A|false|N/A
+accellera-official/uvm-core|N/A|106|30|main|true|SystemVerilog|1.07MB|2026-01-06|2023-06-06|N/A|false|N/A
+Daniel-GGB/My-Digital-IC-Library|我的数字IC厂库：Verilog HDL; System Vreilog; UVM; ModelSim; Quartus II;|106|25|main|true|Verilog|45.64MB|2025-12-24|2021-01-15|N/A|false|N/A
+Siddhi-95/AHB-to-APB-Bridge-Verification|Maven Silicon project - AHB-to-APB Bridge Verification using UVM Methodology.|103|23|main|true|SystemVerilog|89KB|2025-12-26|2022-03-01|N/A|false|N/A
+seabeam/yuu_ahb|UVM AHB VIP|90|22|master|true|SystemVerilog|527KB|2025-12-26|2019-10-15|N/A|false|N/A
+dovstamler/uvm_agents|UVM agents|85|38|master|true|SystemVerilog|350KB|2025-12-26|2014-05-22|N/A|false|N/A
+DebashisGanguly/gpgpu-sim_UVMSmart|N/A|80|46|master|true|C++|353.40MB|2025-11-24|2018-10-01|N/A|false|N/A
+zhajio1988/YASA|:snail:Yet Another Simulation Architecture|78|41|master|true|Python|232KB|2025-12-23|2019-03-04|N/A|false|N/A
+Practical-UVM-Step-By-Step/Practical-UVM-IEEE-Edition|This is the repository for the IEEE version of the book|77|45|master|true|Verilog|21.48MB|2025-12-16|2018-06-16|N/A|false|N/A
+amiq-consulting/svaunit|SVAUnit is an UVM compliant package that simplify the creation of stimuli/checkers for validating SystemVerilog Assertions (SVA)|75|22|master|true|SystemVerilog|7.29MB|2026-01-06|2015-04-29|N/A|false|N/A
+zhajio1988/Open_RegModel|:hatched_chick:Use ORDT and systemRDL tools to generate C/Verilog header files|73|28|master|true|Verilog|8.95MB|2025-12-30|2019-08-14|N/A|false|N/A
+Shehab-Naga/ddr5_phy|DDR5 PHY Graduation project (Verification Team) under supervision of Si-Vision|73|30|main|true|SystemVerilog|13.27MB|2025-12-29|2022-06-30|N/A|false|N/A
+dadongshangu/async_FIFO|This asynchrounous FIFO deisgn and UVM verificaiton is one case study of me.  The design is based on Cliff Cumming's paper and the UVM is coded by me(Xianghzi Meng)|65|18|master|true|SystemVerilog|182KB|2026-01-06|2020-09-05|N/A|false|N/A
+Scout24/restapi-php-sdk|SDK für PHP-Entwickler um die Arbeit mit der API von ImmobilienScout24 zu vereinfachen. Über die API erhält man Ergebnislisten|64|45|master|true|PHP|712KB|2025-09-01|2011-11-14|N/A|false|N/A
+InvisibleUp/uvmac|µvMac - cleaned up fork of the Macintosh emulator Mini vMac|64|4|master|true|C|1.32MB|2025-12-29|2020-02-19|N/A|true|N/A
+accellera/uvm|N/A|60|30|master|true|SystemVerilog|21.86MB|2026-01-09|2016-05-11|N/A|false|N/A
+SystemRDL/PeakRDL-uvm|Generate UVM register model from compiled SystemRDL input|60|34|main|true|Python|74KB|2025-11-25|2019-08-23|N/A|false|N/A
+akzare/Async_FIFO_Verification|Presents a verification use case for a typical Asynchronous FIFO based on Systemverilog and UVM.|59|14|master|true|SystemVerilog|22KB|2026-01-06|2017-11-13|N/A|false|N/A
 Travissss/ahb2apb-bridge|An  uvm verification env for ahb2apb bridge|58|15|master|false|SystemVerilog|8.95MB|2026-01-04|2020-12-27|N/A|false|N/A
-mbits-mirafra/UVMCourse|Structured UVM Course|57|19|production|false|SystemVerilog|23.21MB|2026-01-07|2022-10-25|N/A|false|N/A
-doswellf/combinator-uvm|UVM Testbench For SystemVerilog Combinator Implementation|57|40|master|false|SystemVerilog|18.28MB|2026-01-02|2014-04-12|N/A|false|N/A
-prasadp4009/tbengy|Python Tool for UVM Testbench Generation|55|18|master|false|Python|179KB|2025-11-26|2020-07-21|N/A|false|N/A
+mbits-mirafra/UVMCourse|Structured UVM Course|57|19|production|true|SystemVerilog|23.21MB|2026-01-07|2022-10-25|N/A|false|N/A
+emwzq/example_uvm|UVM实战随书源码|57|24|master|false|SystemVerilog|2.07MB|2025-12-16|2019-01-22|N/A|false|N/A
+doswellf/combinator-uvm|UVM Testbench For SystemVerilog Combinator Implementation|57|40|master|true|SystemVerilog|18.28MB|2026-01-02|2014-04-12|N/A|false|N/A
+prasadp4009/tbengy|Python Tool for UVM Testbench Generation|55|18|master|true|Python|179KB|2025-11-26|2020-07-21|N/A|false|N/A
 Anjali-287/SPI-Interface|UVM Testbench to verify serial transmission of data between SPI master and slave|54|17|master|false|SystemVerilog|20KB|2025-12-26|2020-07-04|N/A|false|N/A
 darthsider/UART|UART design in SV and verification using UVM and SV|52|18|master|false|SystemVerilog|50KB|2025-12-28|2018-12-21|N/A|false|N/A
 brentwang-lab/uvm_tb_gen|This is for uvm_tb_gen|51|15|main|false|SystemVerilog|68.74MB|2025-12-21|2024-09-29|N/A|false|N/A
-hjking/uvm_gen|UVM Generator|50|23|master|false|SystemVerilog|47KB|2026-01-09|2013-10-31|N/A|false|N/A
+hjking/uvm_gen|UVM Generator|50|23|master|true|SystemVerilog|47KB|2026-01-09|2013-10-31|N/A|false|N/A
+postmanlabs/uvm|Universal Virtual Machine for Node and Browser|49|25|develop|true|JavaScript|2.41MB|2026-01-08|2016-11-27|N/A|false|N/A
+howard789/uvm_example|This is a uvm example. The video is available at https://www.bilibili.com/video/BV1yq4y177f6/|49|13|main|true|SystemVerilog|2.86MB|2025-11-07|2021-09-22|N/A|false|N/A
+Lampro-Mellon/apb-uart-uvm-env|N/A|48|18|main|true|SystemVerilog|11.53MB|2026-01-06|2020-11-11|N/A|false|N/A
+JoseIuri/UVM-APB_RAL|This repository contains an example of the use of UVM Register Abstraction Layer in a verification of a simple APB DUT.|48|23|master|true|SystemVerilog|97KB|2025-12-16|2019-10-22|N/A|false|N/A
+mitshine/UVM-and-System-Verilog-Manual|UVM and System Verilog Manuals|47|15|master|true|N/A|11.07MB|2026-01-04|2019-02-11|N/A|false|N/A
+nelsoncsc/easyUVM|A simple UVM example with DPI |45|17|master|true|SystemVerilog|8KB|2025-10-28|2016-09-09|N/A|false|N/A
+Pittini/iobroker-Fensterauswertung|Zählt geöffnete Fenster pro Raum und gesamt. Kann einmalig oder zyklisch an offene Fenster erinnern. Erzeugt Lüftungswarnung uvm.|44|15|master|true|JavaScript|3.22MB|2025-10-11|2020-02-02|N/A|false|N/A
+Ghonimo/Pre_Silicon-AHB-to_APB-Verification|Comprehensive verification suite for the AHB2APB Bridge design|44|7|main|true|SystemVerilog|13.77MB|2026-01-06|2023-08-03|N/A|false|N/A
+kaushalmodi/custom_uvm_report_server|Customized UVM Report Server|42|10|master|false|SystemVerilog|434KB|2025-12-16|2015-07-06|N/A|false|N/A
+systemc/uvmc|Connecting SystemC with SystemVerilog|41|18|master|true|C++|918KB|2025-05-19|2012-03-25|N/A|false|N/A
+siyueyinghua/UVMInPracticesByZhangQiang|《UVM实战》书本源代码和UVM 1.1d源码及Doc|41|13|master|true|HTML|2.89MB|2025-07-23|2021-03-07|N/A|false|N/A
+Noman-10xe/AXI-DMA-Verification|Tranining Completion Project : : Verification of AXI Direct Memory Access (DMA) using UVM|41|2|main|true|VHDL|92.10MB|2026-01-08|2024-12-19|N/A|false|N/A
+seabeam/yuu_register_productor|UVM register utility generation by inputting xls table|39|22|master|true|JavaScript|307KB|2025-09-25|2019-02-15|N/A|false|N/A
+tallendev/uvm-eval|This serves as a repository for reproducibility of the SC21 paper \"In-Depth Analyses of Unified Virtual Memory System for GPU Accelerated Computing|38|7|master|true|C|163.91MB|2026-01-07|2021-04-09|N/A|false|N/A
+nahidrn/axi_vip_master|Sample UVM code for axi ram dut|38|9|main|true|SystemVerilog|19KB|2026-01-06|2021-11-24|N/A|false|N/A
+darwinbeing/EasierUVM|DOULOS Easier UVM Code Generator|38|17|master|false|Perl|60KB|2026-01-06|2017-05-06|N/A|false|N/A
+avashist003/UVM_Verification|Advance UVM testbench with DPI integration|38|14|master|true|SystemVerilog|25KB|2025-12-26|2019-05-19|N/A|false|N/A
+amamory-verification/uvm-basics|my UVM training projects|38|11|master|true|Verilog|1.12MB|2025-12-27|2018-11-21|N/A|false|N/A
+yuravg/uvm_tb_cross_bar|SystemVerilog UVM testbench example|37|12|master|false|SystemVerilog|228KB|2025-12-04|2019-10-18|N/A|false|N/A
+wenxuan-hu/SSRL_work|work in SSRL|37|7|main|true|SystemVerilog|11.30MB|2025-12-26|2022-08-26|N/A|false|N/A
+uvmdebug/uvm_debug|UVM interactive debug library|35|15|master|true|SystemVerilog|467KB|2025-08-29|2016-11-06|N/A|false|N/A
+jiacaiyuan/uvm-generator|UVM Auto Generate ; Verify Project Build; Verilog Instance|35|7|master|true|Python|11.28MB|2025-07-10|2020-04-15|N/A|false|N/A
+chiggs/UVM|Mirror of the Universal Verification Methodology from sourceforge|35|14|master|true|SystemVerilog|30.36MB|2025-07-20|2014-07-11|N/A|false|N/A
+PacoReinaCampo/MPSoC-DV|Multi-Processor System on Chip verified with UVM/OSVVM/FV|35|16|main|true|SystemVerilog|38.57MB|2026-01-04|2020-02-11|N/A|false|N/A
+Aperture-Electronic/SystemVerilog-Bitmap-Library-AXI-Image-VIP|Bitmap Processing Library & AXI-Stream Video Image VIP|35|7|main|true|SystemVerilog|26KB|2026-01-06|2022-04-11|N/A|false|N/A
+designsolver/ahb3_uvm_tb|AMBA 3 AHB UVM TB|34|12|master|true|SystemVerilog|32KB|2025-12-11|2019-03-11|N/A|false|N/A
+coverify/euvm|Embedded UVM (D Language port of IEEE UVM 1.0)|34|14|master|true|D|3.43MB|2025-12-13|2014-01-14|N/A|false|N/A
+taichi-ishitani/tvip-apb|Verification IP for AMBA APB Protocol|33|8|master|false|SystemVerilog|25KB|2025-12-09|2017-05-11|N/A|false|N/A
+seabeam/yuu_apb|UVM APB VIP|33|11|master|true|SystemVerilog|67KB|2025-12-16|2019-06-26|N/A|false|N/A
+kernkonzept/uvmm|Virtual machine monitor for L4Re|33|8|master|true|C++|3.32MB|2026-01-08|2018-12-12|N/A|false|N/A
+zhajio1988/ExtremeDV_UVM|UVM resource from github|32|17|master|true|SystemVerilog|197KB|2025-12-16|2020-04-23|N/A|false|N/A
+merldsu/PY_UVM_Framework|This repo contain the PY-UVM Framework for different RISC-V Cores|32|1|PY_UVM_Framework_Single_Cycle|true|Python|5.26MB|2025-07-04|2023-03-13|N/A|false|N/A
+amiq-consulting/yamm|YAMM package repository|32|20|master|true|SystemVerilog|2.10MB|2025-11-11|2016-07-05|N/A|false|N/A
+Youssefmdany/Design-and-UVM-TB-of-RISC-V-Microprocessor|Design and UVM-TB of RISC -V Microprocessor|32|12|main|true|SystemVerilog|66KB|2025-12-16|2023-08-24|N/A|false|N/A
+PacoReinaCampo/SoC-DV|System on Chip verified with UVM/OSVVM/FV|32|7|main|true|SystemVerilog|27.10MB|2026-01-04|2020-02-11|N/A|false|N/A
+OSU-STARLAB/UVM_benchmark|N/A|32|9|master|true|Roff|180.95MB|2025-11-11|2019-12-18|N/A|false|N/A
+smartfoxdata/uvm_axi4lite|uvm_axi4lite is a uvm package for modeling and verifying AXI4 Lite protocol|31|7|master|true|SystemVerilog|9KB|2025-12-16|2017-05-10|N/A|false|N/A
+pulp-platform/uvm-components|Contains commonly used UVM components (agents|31|16|master|false|SystemVerilog|463KB|2025-11-28|2018-02-05|N/A|true|N/A
+antmicro/verilator-uvm-example|Example of how to use UVM with Verilator|31|4|main|true|SystemVerilog|37KB|2026-01-07|2021-04-28|N/A|false|N/A
+advanced-uvm/second_edition|Code for the second edition of Advanced UVM.|31|17|master|false|SystemVerilog|699KB|2025-08-29|2016-08-15|N/A|false|N/A
+4get/uvm_book_examples|UVM Book Examples - A Practical Guide to Adopting the Universal Verification Methodology (UVM) Second Edition|31|23|master|false|Shell|304KB|2025-06-23|2014-01-15|N/A|false|N/A
+kowsyap/Physical-Design-and-Verification-of-DPRAM-using-SV-UVM-and-Semi-Custom-Design|Memory Level Verification of Dual Port RAM using SystemVerilog and Universal Verification Methodology Environments with assertions|30|12|main|true|JavaScript|6.60MB|2025-12-16|2020-10-12|N/A|false|N/A
+jmcneal/verilog-support|Edit SystemVerilog files (and UVM files) in Vim/gVim|30|5|master|true|Vim Script|145KB|2025-08-25|2016-08-04|N/A|false|N/A
+panweitao/riscvv|an open source uvm verification platform for e200 (riscv)|29|17|master|true|Verilog|12.90MB|2025-09-13|2018-05-05|N/A|false|N/A
+antoinemadec/uvm_code_gen|Simple template-based UVM code generator|29|5|main|true|SystemVerilog|127KB|2026-01-08|2022-10-17|N/A|false|N/A
+kkenshin1/AXI-Ethernet-UVM|A Verification Platform for UDP Protocol Ethernet Module wrapped with AXI and APB bus based on UVM|28|5|main|true|SystemVerilog|304KB|2026-01-06|2022-05-10|N/A|false|N/A
+dpc525/uvm_tb_gen|generate UVM testbench using python|28|8|master|true|Python|12KB|2025-08-22|2018-03-24|N/A|false|N/A
+MikeCovrado/GettingVerilatorStartedWithUVM|Simple UVM environment for experimenting with Verilator.|28|6|main|true|SystemVerilog|54KB|2025-11-20|2023-11-02|N/A|false|N/A
+KafCoppelia/uvm-mcdf|Mirror of william_william/uvm-mcdf on Gitee|28|5|master|true|SystemVerilog|947KB|2026-01-09|2022-11-30|N/A|false|N/A
+isuckatdrifting/Gaia|Generate UVM testbench framework template files with Python 3|27|7|master|true|SystemVerilog|996KB|2026-01-06|2019-02-17|N/A|false|N/A
+A-T-Kristensen/simple-alu-uvm|This is full tutorial of UVM (Universal Verification Methodology) for a simple ALU unit|27|11|master|true|SystemVerilog|3.50MB|2025-11-19|2019-07-23|N/A|false|N/A
+taichi-ishitani/tue|Useful UVM extensions|26|6|master|true|SystemVerilog|103KB|2026-01-07|2017-03-02|N/A|false|N/A
+programer-guan/digital_ic_verification|数字IC验证案例（SV and UVM）|26|4|main|true|SystemVerilog|26KB|2024-12-06|2021-04-27|N/A|false|N/A
+praveenkhemalapure/DDR3-controller-verification|DDR3 function verification environment in UVM|26|8|master|true|Verilog|48KB|2025-12-29|2018-03-30|N/A|false|N/A
+harpreetbhatia/sv_practice|Practice exercises for SystemVerilog|26|7|master|true|SystemVerilog|232KB|2025-10-13|2016-02-16|N/A|false|N/A
+MushroomZQ/RISC_VERIF_DEMO_0|a very simple risc_cpu verification demo with uvm|26|5|master|true|SystemVerilog|91KB|2025-08-27|2017-09-20|N/A|false|N/A
+nguyenquanicd/UvmEnvUartApb|This is the UVM environment for UART-APB IP core. This environment contains full UVM components. It is only used for studing and invetigating the UVM env.|25|5|master|true|SystemVerilog|8.86MB|2026-01-06|2019-08-03|N/A|false|N/A
+gchinna/uvm-1.2|uvm-1.2 library files from: http://www.accellera.org/images/downloads/standards/uvm/uvm-1.2.tar.gz|25|13|master|true|SystemVerilog|2.03MB|2026-01-09|2018-12-05|N/A|false|N/A
+Suntrakanesh/System-Verilog-bootcamp|System Verilog BootCamp|25|7|main|true|SystemVerilog|196KB|2025-07-07|2021-09-20|N/A|false|N/A
+Ghonimo/Formal-Verification-of-an-AHB2APB-Bridge|Assertion-Based Formal Verification of an AHB2APB bridge|25|5|main|true|SystemVerilog|14.53MB|2025-12-30|2024-03-03|N/A|false|N/A
+mingzhang952/uvm_auto|uvm auto generator|24|15|master|true|SystemVerilog|8KB|2025-09-10|2018-11-02|N/A|false|N/A
+Mohamed-Younis/SPI-UVM-Testbench|N/A|24|1|master|true|SystemVerilog|11.04MB|2025-11-24|2021-05-16|N/A|false|N/A
+Dongtata2020/UVM_Verification_for_P2S_Data_Converter|为了学习UVM验证相关知识，需要动手尝试实际的项目。作为一个初学者，难以接触到实际的项目，于是我从夏宇闻老师的《Verilog数字系统设计教程》一书中，挑选出一个简单的小设计，作为我的验证对象，并围绕它编写了UVM验证环境。|24|5|main|false|SystemVerilog|263KB|2025-05-10|2020-10-06|N/A|false|N/A
+AsFigo/ivl_uvm|Adding UVM support to Icarus Verilog (and Verilator in near future) by taking a step-by-step|24|41|main|true|SystemVerilog|1.78MB|2025-10-03|2020-11-26|N/A|false|N/A
+hanysalah/uart2bustestbench|UVM Verification IP to uart2bus IP. |23|8|master|true|SystemVerilog|12.26MB|2025-08-27|2017-06-27|N/A|true|N/A
+Artityagi123456789/15DaysofUVM|N/A|23|3|main|true|SystemVerilog|25.85MB|2025-12-02|2024-01-19|N/A|false|N/A
+troyguo/dvcon_download|Download proccedings from DVCon|22|7|master|true|Shell|9KB|2025-01-16|2019-08-20|N/A|false|N/A
+MarwanMohamed12/PCIe_GEN5_Verification| Functional Verification of Physical Layer of PCI Express Gen5.0 Graduation Project Using UVM|22|6|main|true|SystemVerilog|21.36MB|2025-12-15|2025-07-11|N/A|false|N/A
+vlotnik/uvm_sin_cos_table|Contains source code for sin/cos table verification using UVM|21|4|master|false|SystemVerilog|264KB|2025-12-05|2020-04-17|N/A|false|N/A
+taichi-ishitani/rice|N/A|21|3|master|false|SystemVerilog|194KB|2025-12-11|2023-07-03|N/A|false|N/A
+smartfoxdata/uvm_apb|uvm_apb is a uvm package for modeling and verifying APB (Advanced Periperal Bus) protocol|21|5|master|true|SystemVerilog|7KB|2025-12-16|2017-05-04|N/A|false|N/A
+paradigm-works/uvmtb_template|Simple UVM testbench development using the uvmtb_template files|21|4|main|true|SystemVerilog|15KB|2025-11-17|2025-01-16|N/A|false|N/A
+muneeb-mbytes/uvm_tb_arch_doc_py|A python project to automatically generate the UVM testbench document. |21|29|main|true|Python|2.86MB|2025-10-02|2021-02-03|N/A|false|N/A
+go2uvm/go2uvm|Main repo for Go2UVM source code|21|23|master|true|SystemVerilog|16.74MB|2025-06-04|2016-09-02|N/A|false|N/A
+Risto97/VeriSC|SystemC UVM verification environment with Constraint Randomized stimulus|21|2|master|true|CMake|208KB|2025-08-05|2022-07-25|N/A|true|N/A
+Juniper/simple_reg_model|System verilog register model for uvm testbenches.|21|17|master|true|Perl|14.75MB|2025-10-14|2017-08-03|N/A|false|N/A
+zhajio1988/my_vimrc|:dragon_face:Jude's vimrc for DV work(fine tuning for SV/UVM)|20|11|master|true|Vim script|8.71MB|2025-11-08|2019-04-12|N/A|false|N/A
+twowwj/UVMap-ID|[ACMMM24] UVMap-ID: A Controllable and Personalized UV Map Generative Model|20|2|main|true|Python|24.79MB|2025-10-09|2024-03-21|N/A|false|N/A
+smartfoxdata/uvm_axi|uvm_axi is a uvm package for modeling and verifying AXI protocol|20|6|master|true|SystemVerilog|9KB|2025-12-16|2017-05-22|N/A|false|N/A
+seabeam/yuu_vip_gen|UVM VIP architecture generator|20|6|master|true|SystemVerilog|43KB|2025-06-04|2019-11-28|N/A|false|N/A
+rpjayaraman/VERILATOR_UVM|This repository provides an automated shell script to set up a Verilator + UVM-based workflow using the [RTL2UVM](https://github.com/rpjayaraman/RTL2UVM) framework.|20|3|main|true|Shell|6KB|2025-12-08|2025-10-21|N/A|false|N/A
+edxmorgan/uvms-simulator|This repository features a ros2_control simulator for the BlueROV Heavy with an attached Reach Alpha 5 manipulator|20|5|main|true|C++|22.13MB|2026-01-08|2024-08-09|N/A|false|N/A
+zli87/Wishbone-to-I2C-bus-controller-IP-Verification|ASIC Verification at 2022 Spring. This course only use SystemVerilog|19|7|main|true|VHDL|1.87MB|2025-10-28|2022-05-08|N/A|false|N/A
+rooinasuit/AXI_to_SPI|Designing means to communicate as an SPI master|19|6|master|false|Verilog|12.98MB|2025-12-28|2023-02-22|N/A|false|N/A
+pendkeomkar/SPI|Title : Communication Bridge between I2C and SPI Platform : RTL Coding (Verilog/System Verilog/VHDL) Duration : 1 Month Description : Both SPI and I2C are robust|19|4|master|true|N/A|9.17MB|2025-07-17|2018-08-21|N/A|false|N/A
+fighter212/ahb2apb|this is an AHB to APB bridge with Synopsys VIP based test enviroment. RTL can be found from UVM website.|19|6|master|true|Verilog|132KB|2025-12-30|2014-07-29|N/A|false|N/A
+andrewguertin/ogr2osm|UVM's Rewrite of ogr2osm|19|74|master|false|Python|1.27MB|2025-12-11|2012-02-16|N/A|false|N/A
+WeiChungWu/UVM_UART_Example|An UVM example of UART|19|9|master|true|SystemVerilog|39KB|2025-11-16|2020-08-17|N/A|false|N/A
+Anjali-287/Synchronous-FIFO-UVM-TB|UVM Testbench for synchronus fifo|19|6|master|true|SystemVerilog|33KB|2025-12-17|2020-07-07|N/A|false|N/A
+yvesdubief/UVM-ME249-CFD|Introduction to Computational Fluid Dynamics at the University of Vermont|18|12|master|true|Jupyter Notebook|6.36MB|2025-11-18|2015-08-31|N/A|false|N/A
+wbbbbbb123/UVM-based-AHB-bus-SRAM-controller-design-verification-platform-design|N/A|18|2|main|true|Verilog|1.32MB|2025-12-20|2022-08-11|N/A|false|N/A
+techvinodreddy/UART-IP-CORE16550A-Verification-UVM|The UART (Universal Asynchronous Receiver/Transmitter) core provides serial communication capabilities|18|2|UART-IP-CORE-1655A-FINAL|true|Verilog|11.55MB|2025-11-25|2021-06-05|N/A|false|N/A
+shady831213/jarvisuk|Just A Really Very Impressive Systemverilog UVM Kit|18|2|master|true|SystemVerilog|68KB|2025-09-12|2019-03-20|N/A|false|N/A
+nosnhojn/uvm-utest|N/A|18|1|master|true|SystemVerilog|676KB|2023-04-04|2013-04-29|N/A|false|N/A
+kumarrishav14/AMBA_APB|To design test bench of the APB protocol|18|5|main|true|SystemVerilog|490KB|2025-10-10|2020-11-01|N/A|false|N/A
+imokanj/gpio_agent|General Purpose I/O agent written in UVM|18|13|master|true|SystemVerilog|1.07MB|2025-09-24|2017-05-07|N/A|false|N/A
+asveske/apb_vip|APB VIP (UVM)|18|8|master|true|SystemVerilog|24KB|2026-01-04|2018-09-05|N/A|false|N/A
+zhajio1988/uvm_candy_lover|:candy:UVM candy lover testbench  which uses YASA as simulation script|17|8|master|true|SystemVerilog|59KB|2025-06-25|2019-03-15|N/A|false|N/A
+zhajio1988/YasaUvk|:bug:UVM verification kits which uses YASA as simulation script|17|5|master|true|SystemVerilog|60KB|2025-11-10|2019-03-29|N/A|false|N/A
+taichi-ishitani/rggen|This repository is no longer maintained. New repository is here(https://github.com/rggen/rggen).|17|3|master|true|Ruby|1.56MB|2025-02-22|2015-01-07|N/A|true|N/A
+kooyunmo/cuda-uvm-gpt2|PyTorch-UVM on super-large language models.|17|6|main|true|Python|37KB|2025-07-07|2020-12-15|N/A|false|N/A
+ekaj2/uvmap_tools|N/A|17|6|master|false|Python|3KB|2024-11-25|2016-11-16|N/A|false|N/A
+Vivek-Dave/UVM_TestBench_For_Single_Port_RAM|A complete UVM TB for verification of single port 64KB RAM|17|8|main|true|SystemVerilog|480KB|2025-12-20|2021-04-16|N/A|false|N/A
+JoseIuri/UVM_Python_UVMC|This repository contains an example of the connection between an UVM Testbench and a Python reference model using UVM Connect from Mentor®.|17|4|master|true|SystemVerilog|18KB|2025-08-25|2020-02-14|N/A|false|N/A
+IC-Design-Verify/wujian100_uvm|N/A|17|4|main|true|SystemVerilog|411KB|2025-12-19|2025-06-23|N/A|false|N/A
+rggen/rggen-systemverilog|SystemVerilog RTL and UVM RAL model generators for RgGen|16|2|master|true|Ruby|774KB|2026-01-07|2019-02-25|N/A|false|N/A
+muneeb-mbytes/UVMF|N/A|16|8|main|true|SystemVerilog|191.62MB|2025-08-11|2022-06-02|N/A|false|N/A
+funningboy/vim|UVM/systemverilog/verilog/python VIM IDE|16|6|master|true|N/A|1.19MB|2025-04-04|2013-08-21|N/A|false|N/A
+amiq-consulting/uvm_reg_to_ipxact|N/A|16|8|master|true|SystemVerilog|927KB|2025-11-01|2017-01-20|N/A|false|N/A
+XinlueLiu/UVM|Learn UVM by small projects|16|6|master|true|SystemVerilog|4.53MB|2025-12-16|2021-06-07|N/A|false|N/A
+yvesdubief/UVM-ME144-Heat-Transfer|University of Vermont Mechanical Engineering Heat Transfer Course|15|12|master|false|Jupyter Notebook|96.15MB|2025-11-29|2015-10-03|N/A|false|N/A
+rggen/rggen-sample-testbench|N/A|15|5|master|true|VHDL|711KB|2026-01-07|2019-07-20|N/A|false|N/A
+muguang123/AXI_Verification|Verification AXI-4 bus standard using UVM and System Verilog|15|2|master|true|N/A|45KB|2025-07-24|2020-03-22|N/A|false|N/A
+jg-fossh/uvm-python-verification-lib|UVM Python Verification Agents Library|15|3|main|true|Python|162KB|2025-08-03|2020-11-06|N/A|false|N/A
+gokulbalagopal/Verification-of-APB-Protocol-using-UVM|Built a test environment using UVM Methodology to verify APB Protocol.|15|8|master|true|SystemVerilog|39KB|2025-12-06|2019-02-06|N/A|false|N/A
+east1203/ExamplesCode|SystemVerilog、Verilog、UVM|15|5|master|true|Tcl|86.21MB|2025-08-08|2019-08-10|N/A|false|N/A
+alice820621/A-UVM-verification-for-DAC-and-ADC-model-with-APB-BFM|A UVM verification with a APB BFM (Bus functional model)|15|4|master|true|SystemVerilog|45KB|2025-03-12|2018-07-06|N/A|false|N/A
+Youssefmdany/10-Gigabit-Ethernet-MAC-Core-UVM-Verification-|10 Gigabit Ethernet MAC Core UVM Verification |15|3|main|true|Verilog|621KB|2025-12-16|2023-09-24|N/A|false|N/A
+VimfulDang/APB-SPI-Controller-Verification|UVM testbench environment consisting of an APB driver|15|5|main|false|SystemVerilog|16KB|2025-12-22|2020-12-22|N/A|false|N/A
+RE3CON/UVMOD-Enhanced|Online firmware patcher based on k5_v2.01.26 firmware version as target for the Quansheng UV-K5 radio and it's variants. Real newer fw versions above 2.01.26 needs a search and replace pattern patcher.|15|0|main|true|JavaScript|41.59MB|2025-11-17|2023-08-23|N/A|false|N/A
+vlotnik/uvm_modem|UVM components for DSP tasks (MODulation/DEModulation)|14|3|develop|false|SystemVerilog|202KB|2024-11-06|2021-04-07|N/A|true|N/A
+muneebullashariff/pulpino_soc_uvm_testbench|UVM testbench for verifying the Pulpino SoC  |14|7|master|true|SystemVerilog|33KB|2025-07-31|2020-03-23|N/A|false|N/A
+marshall-999/UVMReference|This is a open source project from UVM Community and it is based on an Ethernet Switch System-on-Chip (SoC). |14|0|master|true|N/A|82.41MB|2025-09-30|2021-05-16|N/A|false|N/A
+makararasi/UVM_AXI4-Stream|N/A|14|6|main|true|SystemVerilog|7.86MB|2025-09-01|2021-09-24|N/A|false|N/A
+kumarswamy12/ROUTER-1-3|verification of the basic router protocol with UVM testbech //INCLUDED WITH RTL|14|7|master|true|SystemVerilog|18KB|2025-10-02|2019-01-04|N/A|false|N/A
+imokanj/clk_rst_agent|UVM Clock and Reset Agent|14|8|master|true|SystemVerilog|54KB|2025-12-15|2017-06-08|N/A|false|N/A
+ezchi/uvm-systemc|My local copy of UVM-SystemC|14|1|master|true|C++|11.29MB|2025-11-19|2018-01-15|N/A|false|N/A
+rpjayaraman/RTL2UVM|Automated UVM testbench generator from Verilog RTL with optional LLM integration for advanced logic creation.|13|4|main|true|SystemVerilog|5.39MB|2025-10-23|2025-02-27|N/A|false|N/A
+rdou/UVM-Verification-Testbench-For-FIFO|A complete UVM verification testbench for FIFO|13|4|master|false|SystemVerilog|4KB|2025-08-07|2016-03-21|N/A|false|N/A
+kumarrishav14/SRAM_UVM|UVM Testbench for a SRAM|13|3|master|true|SystemVerilog|117KB|2025-09-25|2020-11-29|N/A|false|N/A
+jinz2014/UVM|UVM examples|13|8|master|true|Verilog|27.93MB|2025-12-16|2015-05-01|N/A|false|N/A
+chenyangbing/UVM-example|UVM |13|8|master|false|SystemVerilog|7KB|2025-12-21|2020-03-16|N/A|false|N/A
+asicnet/gen_uvm|EasierUVM from Doulos now written in Python for easier UVM with framework and template generator|13|6|main|true|Python|2.09MB|2026-01-06|2021-07-14|N/A|false|N/A
+amiq-consulting/cagt|Common Agent is a generic agent implemented in SystemVerilog|13|5|master|true|SystemVerilog|1.28MB|2025-11-01|2015-02-19|N/A|false|N/A
+SACHINUR17/VLSI-Design-Verification-Projects|This repo contains a collection of Verilog+System Verilog+RTL+UVM+Protocols Projects|13|1|main|true|SystemVerilog|8.98MB|2026-01-06|2025-04-18|N/A|false|N/A
+Risto97/systemc_uvm_verilator|N/A|13|0|master|true|C++|1.45MB|2025-09-15|2019-06-21|N/A|true|N/A
+MohamedEhab13/Pipelined-RISC-V-Verification-using-UVM|N/A|13|2|main|true|HTML|1002KB|2025-12-04|2025-01-04|N/A|false|N/A
+JoseIuri/Simple_UVM|Implements a simple UVM based testbench for a simple memory DUT.|13|20|master|true|SystemVerilog|58KB|2025-05-25|2018-11-22|N/A|false|N/A
+prasannaprajapati/AXI_UVM_Verification|N/A|12|0|main|true|SystemVerilog|3.49MB|2025-10-23|2025-07-14|N/A|false|N/A
+kumarrishav14/arm_watchdog|Verification IP for Watchdog|12|4|main|true|SystemVerilog|42KB|2025-11-25|2021-04-01|N/A|false|N/A
+jchengX/MAC_BFM|wifi|12|2|master|true|SystemVerilog|42KB|2025-08-27|2017-06-03|N/A|false|N/A
+emmanouil-komninos/jtag_vip_uvm|N/A|12|4|master|true|SystemVerilog|280KB|2025-01-07|2015-08-28|N/A|false|N/A
+briandong/regModel|This script builds the UVM register model|12|4|master|true|SystemVerilog|43KB|2025-01-18|2018-03-13|N/A|false|N/A
+TheRA1A/Router1x3|Router 1x3 design and uvm verification testbach and coverage report|12|1|main|true|JavaScript|2.07MB|2025-09-05|2024-10-17|N/A|false|N/A
+SchulIT/icc|Webbasiertes Schulinformationssystem mit Vertretungs-|12|3|master|true|PHP|11.70MB|2026-01-08|2019-03-15|N/A|false|N/A
+SJTU-YONGFU-RESEARCH-GRP/learn_uvm_pyuvm|A comprehensive|12|0|main|true|C++|3.18MB|2026-01-07|2026-01-04|N/A|false|N/A
+PacoReinaCampo/MPSoC-NTM|Neural Turing Machine for a Multi-Processor System on Chip verified with UVM/OSVVM/FV|12|2|main|true|SystemVerilog|79.30MB|2026-01-04|2020-05-03|N/A|false|N/A
+PRADEEPCHANGAL/APB-Protocol-Verification-using-UVM|APB verification using UVM |12|7|main|true|SystemVerilog|286KB|2025-12-12|2023-08-02|N/A|false|N/A
+JoseIuri/UVM_Python|This repository contains an example of the connection between an UVM Testbench and a Python reference model.|12|1|master|true|SystemVerilog|15KB|2025-12-09|2019-10-30|N/A|false|N/A
+Harshil1995/I2C_UVM_APB|Formulated testbench using System Verilog and UVM and verified I2C bus controller with APB interface|12|2|main|true|SystemVerilog|422KB|2025-04-25|2020-12-08|N/A|false|N/A
+syibin/UVM-related-topics|N/A|11|7|master|true|Verilog|161.06MB|2025-12-17|2017-06-04|N/A|false|N/A
+smartfoxdata/uvm_starter|uvm_starter is a simple template for starting uvm projects|11|2|master|true|SystemVerilog|37KB|2025-08-07|2017-04-20|N/A|false|N/A
+semify-eda/go.debug|Ease the Life of Verification Engineers by helping them to analyze and understand failing simulation faster|11|3|master|true|SystemVerilog|12.14MB|2025-06-20|2021-02-23|N/A|false|N/A
+sbussmann/uvmcmcfit|Python software that uses emcee to fit parametric models to interferometric observations of astronomical sources|11|6|master|true|Python|3.45MB|2025-01-12|2014-03-07|N/A|false|N/A
+rdou/UVM-Verification-Testbench-For-SimpleBus|N/A|11|3|beat1.0|true|SystemVerilog|24KB|2025-03-08|2016-04-26|N/A|false|N/A
+raiyyanfaisal09/Router1X3_RTL_Design|- A 1X3 Router (capable of routing the data packets to three different clients form a single source network) was designed|11|5|master|true|C|762KB|2025-10-19|2019-06-03|N/A|false|N/A
+mehaltalukder/UART_UVM_Project|Verification of UART design using UVM (Universal Verification Methodology) and SystemVerilog|11|1|master|true|SystemVerilog|16KB|2025-05-31|2020-11-15|N/A|false|N/A
+kei-seu/I2C|UVM verification platform for DW_apb_i2c IP core(Master Mode)|11|4|master|false|Verilog|560KB|2025-11-25|2022-10-08|N/A|false|N/A
+ishfaqahmed29/FIFO_UVM_Verification|Synchronous FIFO Testbench |11|6|main|true|SystemVerilog|33KB|2025-05-31|2021-04-18|N/A|false|N/A
+go2uvm/sva_traces|Traces for SVA - SystemVerilog Assertions; Will use Go2UVM package to write traces and use uvm_report_mock to predict errors|11|4|master|true|SystemVerilog|13.25MB|2025-06-09|2016-09-02|N/A|false|N/A
+bhendi-boi/uvm_tb_templates|Repository containing generic UVM test environments to give a head start for your next RTL verification project. Includes templates for common verification scenarios|11|3|main|true|SystemVerilog|87KB|2025-12-13|2024-12-29|N/A|false|N/A
+Nimausfi/UVM_RAL_DMA|N/A|11|2|main|true|SystemVerilog|135KB|2025-09-14|2022-05-07|N/A|false|N/A
+LitchiKnight/excel2ralf|Excel file to UVM register model ralf file conversion tool|11|3|main|true|Python|981KB|2025-12-30|2023-07-27|N/A|false|N/A
+Freecellera/freecellera-uvm|Freecellera fork of the Universal Verification Methodology (SystemVerilog verification library from Accellera.org)|11|2|master|true|SystemVerilog|29.34MB|2025-04-23|2015-01-23|N/A|false|N/A
+AbhishekTaur/YAPP-UVM-Verification|N/A|11|4|master|true|HTML|14.72MB|2026-01-03|2019-05-26|N/A|false|N/A
+AbdelrahmanYassien11/Verification-of-an-Asynchronous-FIFO-using-UVM-SVA|Verification of an Asynchronous FIFO using UVM & SVA|11|0|main|true|SystemVerilog|16.83MB|2026-01-06|2024-08-13|N/A|false|N/A
+tamannarupani/SimpleAdder-UVM|A simple adder implementation and verification using UVM 1.2|10|3|master|false|SystemVerilog|5KB|2025-11-19|2019-11-19|N/A|false|N/A
+seabeam/yuu_clock|UVM clock agent which frequency|10|2|master|true|SystemVerilog|32KB|2023-06-03|2019-05-13|N/A|false|N/A
+kdurant/uvm_study|study uvm step by step|10|5|master|true|SystemVerilog|38KB|2025-08-18|2019-02-28|N/A|false|N/A
+adibis/uvmBasics|Basics of UVM via an APB slave|10|4|master|true|SystemVerilog|28KB|2025-06-18|2019-07-02|N/A|false|N/A
+accellera-official/uvm-systemc|N/A|10|5|main|true|C++|33.78MB|2025-11-06|2013-12-11|N/A|false|N/A
+TooyamaYuuouji/UVM_example-amplifier|A simple UVM project. The DUT(RTL) is a simple amplifier.|10|1|main|true|SystemVerilog|30KB|2025-07-10|2022-09-27|N/A|false|N/A
+SeanOBoyle/uvm_example|Example SystemVerilog UVM Environment|10|8|master|true|HTML|2.97MB|2025-10-29|2015-06-13|N/A|false|N/A
+PacoReinaCampo/UVM|Standard Universal Verification Methodology|10|5|main|true|SystemVerilog|23.16MB|2026-01-05|2020-01-26|N/A|false|N/A
+MiskaMoska/Multi-NoC|RTL and UVM test code of a Multi-NoC system|10|5|main|true|Verilog|3.74MB|2025-07-18|2021-05-07|N/A|false|N/A
+MilanKubavat/TestbenchGenerator|Generate SystemVerilog/UVM block level testbench setup with python script|10|3|master|true|Python|7KB|2025-08-14|2017-10-02|N/A|false|N/A
+Kholoud-Ebrahim/SPI_Protocol|UVM based Verification of SPI_Protocol. A Serial intra System Communication Peripheral Protocol.|10|0|master|true|SystemVerilog|454KB|2025-08-09|2023-12-09|N/A|false|N/A
+Dragon-Git/icdk|uvm framework generator|10|1|master|true|SystemVerilog|159KB|2025-12-15|2018-09-03|N/A|false|N/A
+vchuravy/bpf_uvm|Exploration of NVidia UVM using eBPF/bcc|9|1|main|true|Julia|33KB|2025-10-31|2022-04-27|N/A|false|N/A
+tmwangcas/uvms-simulator| A simulation environment of an underwater vehicle-manipulator system implemented in Matlab|9|3|master|true|Matlab|11KB|2024-09-28|2018-05-03|N/A|false|N/A
+thinkerdotlabs/UVMCodeGen|Project: UVM Base code generator using Mako Template library and Python script.|9|2|master|true|Python|27KB|2025-04-02|2020-07-13|N/A|false|N/A
+ssayin/riscv32-cosim-model|RISC-V processor co-simulation using SystemVerilog HDL and UVM.|9|0|main|true|SystemVerilog|4.47MB|2025-10-31|2023-02-25|N/A|false|N/A
+nitronis/UVM|Mirrors of the Accellera UVM Reference Implementations at https://www.accellera.org/downloads/standards/uvm.|9|0|main|true|HTML|3.76MB|2025-07-31|2021-08-23|N/A|false|N/A
+nelsoncsc/basic_uvmc_oct|A simple UVM testbench using UVM Connect and Octave|9|1|master|true|SystemVerilog|8KB|2024-06-13|2016-11-24|N/A|false|N/A
+kassakeerthi/UVM_PROJECTS|N/A|9|1|master|true|JavaScript|2.04MB|2025-08-19|2024-10-28|N/A|false|N/A
+jiru1997/UVM-examples-and-source-code|uvm examples and source code|9|4|main|true|HTML|6.17MB|2025-05-20|2021-11-17|N/A|false|N/A
+feuler/gh200-pytorch|GH200 pytorch uvm (unified memory) patches|9|1|main|true|N/A|41KB|2025-11-03|2024-12-30|N/A|false|N/A
+chan-henry/apb_uvm|Advanced Peripheral Bus (APB) UVM testbench project|9|3|master|true|SystemVerilog|102.68MB|2025-11-25|2017-04-09|N/A|false|N/A
+adibis/alu_tb|Basic ALU testbench written in UVM for experiments|9|4|master|true|SystemVerilog|9KB|2025-07-16|2018-08-28|N/A|false|N/A
+Youssefmdany/Design-and-UVM-Verification-of-an-ALU|Design and UVM Verification of an ALU|9|3|main|true|SystemVerilog|2.90MB|2025-05-20|2023-07-06|N/A|false|N/A
+Vaten0x/FPGA-Bionic-Robot-Arm|DE1-SOC FPGA Bionic Robot Hand with Synopsys VCS + Verdi + UVM|9|2|main|true|SystemVerilog|68.23MB|2025-12-25|2025-01-02|N/A|false|N/A
+SleekPanther/gpa-calculator|A GPA calculator in JavaFX attempting to use the Model View Controller (MVC) pattern|9|0|master|true|Java|568KB|2025-05-29|2017-03-13|N/A|false|N/A
+ShravyaSamala/AXI_VIP|AXI Verification using UVM Testbench|9|3|main|true|SystemVerilog|4.06MB|2025-12-16|2024-10-20|N/A|false|N/A
+RedFlag2017/rocket-soc-tb|A systemverilog/UVM/Makefile  testbench  for Rocket RISC-V SoCs|9|5|master|true|Verilog|1.60MB|2025-01-06|2020-06-13|N/A|false|N/A
+Raghavi9860/UVM_based_Verification_of_APB_protocol|APB Protocol is designed and verified using System Verilog based UVM. The tool used in designing and simulation is EDA Playground.|9|2|main|true|SystemVerilog|20KB|2026-01-08|2022-05-15|N/A|false|N/A
+Choaib-ELMADI/getting-started-with-systemverilog|Getting started with SystemVerilog: Hardware Description Language for design and verification.|9|1|master|true|SystemVerilog|1.28MB|2025-12-02|2025-10-12|N/A|false|N/A
+seabeam/yuu_amba|UVM amba infrastructure|8|3|master|true|SystemVerilog|15KB|2025-12-16|2019-06-13|N/A|false|N/A
+samarth-py/AXI4-UVM-Verification-|N/A|8|1|main|true|SystemVerilog|52KB|2025-11-03|2023-02-11|N/A|false|N/A
+pzressinno/asyn_fifo_uvm_verify|N/A|8|6|main|true|SystemVerilog|22KB|2025-06-29|2022-08-12|N/A|false|N/A
+pagongamedev/uvm|UVM : Universal Version Manager|8|1|main|true|Go|129KB|2025-09-17|2021-03-13|N/A|false|N/A
+onsala-space-observatory/UVMultiFit|UVMULTIFIT is a versatile library for fitting models directly to visibility data|8|3|master|true|Python|7.57MB|2025-09-29|2019-11-19|N/A|false|N/A
+merledu/coco-rvtb|Generic testbench for RISC-V CPUs|8|8|main|true|Python|287KB|2025-12-13|2025-03-15|N/A|false|N/A
+lookwhoistalkinguvm/iic_uvm_tb|I2C testbench using the UVM|8|2|master|true|SystemVerilog|69KB|2025-08-05|2020-06-01|N/A|false|N/A
+ljepson74/svsc|SystemVerilog and UVM examples|8|2|master|true|E|52.20MB|2022-06-01|2013-07-03|N/A|false|N/A
+kumarrishav14/ALU_UVM|UVM Test bench for a 8-bit ALU|8|1|main|true|SystemVerilog|78KB|2025-04-03|2020-12-09|N/A|false|N/A
+jstonge/llms-at-uvm|N/A|8|0|main|true|N/A|76KB|2024-10-01|2023-04-17|N/A|false|N/A
+jeras/SystemC-UVM|UVM-SystemC Library|8|1|master|true|C++|8.75MB|2024-11-13|2019-03-17|N/A|false|N/A
+flashbangout/apb_watchdog-|apb_watchdog的uvm验证代码|8|1|main|true|SystemVerilog|43KB|2025-06-09|2022-06-13|N/A|false|N/A
+dcblack/uvm_vim_extras|These files are intended for VIM version 7.3 or later and need to be be installed.|8|4|master|true|VimL|30KB|2025-11-24|2013-08-01|N/A|false|N/A
+aunics/AHB5|AMBA AHB 5.0 VIP in SystemVerilog based on UVM|8|2|master|true|SystemVerilog|4KB|2025-05-20|2017-11-03|N/A|false|N/A
+Youssefmdany/Design-and-UVM-Verification-of-The-SPI-Master_Controller-|Design and UVM Verification of The SPI Master Controller |8|2|main|true|SystemVerilog|14.83MB|2025-12-16|2023-08-06|N/A|false|N/A
+Yashas2801/UART-Verification-using-UVM|UART verification using UVM with functional coverage|8|3|main|true|Verilog|3.10MB|2025-12-07|2025-01-17|N/A|false|N/A
+VyshnaviChilukamukku/AHB-to-APB-Bridge-Verification|Verification of bridge between high speed AMBA AHB(Advanced High Performance bus) and low-power AMBA APB (Advanced Peripheral Bus) in UVM.|8|1|main|false|SystemVerilog|126KB|2025-11-20|2024-04-12|N/A|false|N/A
+Vivek-Dave/FIFO_UVM_Testbench_Reactive_Stimulus|UVM TestBench For Verification Of Synchronous FIFO With Reactive Stimulus |8|1|main|true|SystemVerilog|75KB|2025-10-08|2021-05-07|N/A|false|N/A
+UnionVMS/UVMS-Docker|Docker images for UVMS|8|3|dev|true|Java|46.56MB|2024-04-23|2016-10-28|N/A|false|N/A
+Soham-coder/uvm_course_cadence|Labs for UVM in Cadence Xcelium|8|2|main|true|SystemVerilog|946KB|2025-12-16|2021-01-12|N/A|false|N/A
+Shivanagender123/AHB_APB-Bridge|This is normal basic UVM testbench for AMBA Bridge AHB_APB|8|1|master|true|SystemVerilog|37KB|2022-10-25|2019-01-05|N/A|false|N/A
+PedroHSCavalcante/uvm-phase-jumping|Simple UVM phase jumping|8|5|master|true|SystemVerilog|97KB|2025-02-27|2019-09-20|N/A|false|N/A
+PacoReinaCampo/SoC-FinTech|Financial Technology with SoC-NTM verified with UVM/OSVVM/FV|8|1|main|true|SystemVerilog|59.74MB|2026-01-04|2020-05-03|N/A|false|N/A
+PXVI/prune_uvmg|GUI based UVM Test Environment generation tool|8|2|main|true|Python|24KB|2025-07-27|2020-10-25|N/A|false|N/A
+MarleyLobao/UVM_calculator|This repository is meant for learning UVM using SystemVerilog. Through a verification environment|8|0|main|true|SystemVerilog|140KB|2025-12-02|2022-03-29|N/A|false|N/A
+Kholoud-Ebrahim/UART_Protocol|Functional Verification of UART Protocol using UVM methodology. A Serial Inter System Communication Peripheral Protocol.|8|0|master|true|SystemVerilog|513KB|2025-05-31|2023-09-03|N/A|false|N/A
+Kethasriramya2912/Verilog-RTL-Coding|\"Mastering RTL-Coding : From Fundamentals to Advanced Programming Techniques using Verilog|8|1|main|true|Verilog|88KB|2026-01-09|2025-01-02|N/A|false|N/A
+KafCoppelia/uvm-mcdf_v2|Mirror of william_william/uvm-mcdf_v2 on Gitee|8|0|master|true|SystemVerilog|125KB|2024-12-23|2022-11-30|N/A|false|N/A
+Elias-Rosales/MIPSVerification_UVM|Verification of a MIPS Multi-Cycle Microprocessor using UVM|8|2|main|false|SystemVerilog|15KB|2025-09-08|2021-12-21|N/A|false|N/A
+AbanobEvram/SPI-using-UVM|Design and implementation of the Serial Peripheral Interface (SPI) communication protocol using SystemVerilog|8|1|main|true|SystemVerilog|5.81MB|2025-10-06|2024-12-09|N/A|false|N/A
+stevens-armlab/uvms_bimanual_sim|N/A|7|0|main|true|Python|2.78MB|2025-07-12|2023-12-07|N/A|false|N/A
+skywalker1230/PCIe-Controller-with-UVM|N/A|7|3|main|true|N/A|49.52MB|2025-07-22|2024-08-04|N/A|false|N/A
+seabeam/yuu_uvm_tb_gen_lite|Lightweight common UVM TB generator|7|1|main|true|SystemVerilog|18KB|2025-12-16|2023-04-03|N/A|false|N/A
+rggen/rggen-sv-ral|UVM RAL class package for RgGen|7|2|master|false|SystemVerilog|62KB|2026-01-07|2019-07-19|N/A|false|N/A
+ramachandran-swati/ml_uvm_cache|N/A|7|1|master|false|N/A|122KB|2025-07-29|2017-09-27|N/A|false|N/A
+openhwgroup/cvfpu-uvm|UVM Verification Environment for the CVFPU|7|3|main|true|Perl|455KB|2025-12-21|2025-09-19|N/A|false|N/A
+mballance/sv_bfms|SystemVerilog BFMs with bindings for UVM|7|6|master|true|SystemVerilog|131KB|2025-07-30|2016-04-21|N/A|false|N/A
+magicYang1573/NoC-UVM-Testbench|This repo implements a UVM testbench for the NoC component of OpenPiton|7|3|main|true|Verilog|112KB|2025-12-02|2025-03-08|N/A|false|N/A
+euvm/avst_adder|Example setup for UVM driven Icarus Verilog Simulation|7|35|master|true|D|10KB|2024-02-22|2019-06-14|N/A|false|N/A
+avanig1834/Verilog-Implementation-of-1X3-Router|Implementation of 1X3 Router using icarus verilog and verification using UVM testbench.|7|0|main|true|SystemVerilog|28KB|2025-10-09|2025-03-01|N/A|false|N/A
+astha736/COROB-UVMS|Task Priority Control approach for Underwater Vehicle-Manipulator System (UVMS)|7|1|master|false|MATLAB|10.02MB|2025-02-06|2019-11-30|N/A|false|N/A
+alexzhang007/wishbone_uvc|Wishbone protocol open source universal verification component (UVC). It is easy to be used in UVM verification environment for opencpu. |7|1|master|true|SystemVerilog|34KB|2024-12-18|2016-02-28|N/A|false|N/A
+adnanashraf17501/UVM_AMBA3_APB_FUNCTIONAL-COVERAGE|N/A|7|0|main|false|SystemVerilog|930KB|2025-07-08|2021-06-11|N/A|false|N/A
+SohaibAlaraby/UART-Verification-Based-On-UVM|N/A|7|1|main|true|SystemVerilog|2.34MB|2025-12-30|2024-08-03|N/A|false|N/A
+Risto97/pygears-uvm|SystemC UVM environment generator for PyGears components. RTL simulated with Verilator|7|3|master|true|C++|71KB|2025-06-10|2019-07-22|N/A|false|N/A
+MohamedEhab13/UVM-Based-Verification-for-AHB-APB-Bridge|This project verifies an AHB-APB bridge using SystemVerilog UVM|7|2|main|true|SystemVerilog|1.08MB|2025-12-16|2025-03-15|N/A|false|N/A
+Kholoud-Ebrahim/I2C_Master|Implementation and Functional Verification of I2C Master using UVM methodology. |7|1|master|true|SystemVerilog|442KB|2025-12-09|2023-12-07|N/A|false|N/A
+JoseIuri/Aurora|Automatic testbench and reference flow generation tool compatible with UVM and SVA.|7|1|master|true|Python|24.38MB|2024-06-17|2019-08-19|N/A|false|N/A
+GaloisInc/SocialCyberLAGOON|LAGOON - Leveraging AI to Guard Online Open-source Networks - Galois/UVM Sociotemporal Graph Analysis Tooling|7|3|main|true|Python|510KB|2025-08-10|2021-12-21|N/A|false|N/A
+FreePDF64/FreePDF64|PDF-Dateien erzeugen|7|4|main|true|Pascal|8694.32MB|2025-09-13|2024-01-13|N/A|false|N/A
+Emi-Pushpam/AHB-with-FIFO|UVM methodology|7|1|master|true|SystemVerilog|33KB|2025-02-20|2020-03-04|N/A|false|N/A
+Dragon-Git/uvm_syoscb|A better UVM scoreboard framework|7|1|main|true|SystemVerilog|10.67MB|2025-09-13|2024-01-07|N/A|false|N/A
+Divyesh945/AXI_VIP_Verification|Verification environment for the AXI protocol|7|1|main|true|SystemVerilog|25KB|2025-12-29|2024-10-25|N/A|false|N/A
+ChungKee/UVM-Testbench-Generator|Generate the uvm testbench automatically|7|0|main|true|Python|162KB|2025-07-26|2023-12-08|N/A|false|N/A
+Basavakirana/AHB2APB-Bridge-Verification|Verification of AHB to APB Bridge using UVM|7|0|main|false|SystemVerilog|2.39MB|2025-10-24|2024-03-10|N/A|false|N/A
+AFEI1100/easyUVM-master|N/A|7|4|main|true|SystemVerilog|9KB|2025-09-03|2020-12-01|N/A|false|N/A
+zhelnio/uvm_ahb_lite|uvm ahb lite environment|6|3|master|true|SystemVerilog|38KB|2024-07-23|2019-02-11|N/A|false|N/A
+schulz89/Verification-Platform-for-Star-Trackers|This is a verification platform for testing star tracker algorithms|6|0|master|true|C++|336KB|2025-09-07|2019-02-14|N/A|true|N/A
+rsaarelm/uvmapper|N/A|6|0|master|true|Rust|1.58MB|2024-09-25|2022-01-07|N/A|false|N/A
+rajkumarraval/i2c_wb_sv_uvm|N/A|6|4|master|false|SystemVerilog|35KB|2023-06-19|2018-08-19|N/A|false|N/A
+raja-aadhithan/Router-1x3-Design|Router with 3 FIFOs |6|0|main|false|SystemVerilog|13KB|2025-10-15|2021-09-04|N/A|false|N/A
+ottohorvath/vip_clock|UVM based clock generator VIP|6|1|master|true|SystemVerilog|15KB|2025-06-03|2019-04-06|N/A|false|N/A
+mdimrankhanlimon/APB_UVM_Verification|Rigorous verification of APB AMBA5 with 400+ tests. Design and Verification documentations provided. A python script is used to run regression.|6|0|main|true|Python|2.54MB|2025-11-18|2025-03-17|N/A|false|N/A
+mballance/uvm-sc|UVM SystemC source|6|1|master|true|C++|8.62MB|2023-01-28|2017-08-08|N/A|true|N/A
+kippy620/uvm|Learning uvm step by step.|6|0|master|true|SystemVerilog|233KB|2024-07-05|2016-02-23|N/A|false|N/A
+kashifminhas/IBEX-Design-Verification-Environment|RISCV-DV based UVM Environment for IBEX Core|6|0|master|true|SystemVerilog|210KB|2024-11-27|2022-06-09|N/A|false|N/A
+hmomkar/UVM_primer|Contains UVM example from Ray salemi authored book|6|0|master|true|SystemVerilog|5.87MB|2025-05-20|2016-03-18|N/A|false|N/A
+gregorykemp/sample_uvm_testbench|a sample UVM testbench|6|2|main|true|SystemVerilog|49KB|2025-11-06|2021-04-02|N/A|false|N/A
+gchinna/ahb_pkg|AHB package with UVM master and slave agents.|6|2|main|true|SystemVerilog|11KB|2024-04-27|2020-11-28|N/A|false|N/A
+emrii/DPRAM-Design-and-UVM-based-Verification|RTL design for a DUAL-PORT RAM and a UVM based testbench for functional verification. This project was undertaken to gain familiarity with UVM constructs.|6|0|main|true|SystemVerilog|19KB|2025-12-22|2021-07-01|N/A|false|N/A
+egorman44/1G-PCS-VIP|UVM component that could be used in your Verification environment|6|1|master|false|SystemVerilog|52KB|2025-04-28|2020-11-17|N/A|false|N/A
+dudebroSW/AutoUVMOF|Automate UV unwrapping with Ministry of Flat’s engine|6|0|main|true|Python|34KB|2025-11-22|2025-02-16|N/A|false|N/A
+cp024s/MIPS-Processor-Verification-UVM|A 16 bit Five Stage Pipelined MIPS Processor Verification using UVM|6|1|main|true|Verilog|34KB|2025-12-02|2023-11-20|N/A|false|N/A
+chiselverify/otherverify| Examples of verification solutions (e.g.|6|0|main|true|SystemVerilog|63KB|2024-02-15|2022-10-04|N/A|false|N/A
+chanum/uvm_spi_apb_verification|N/A|6|0|master|true|SystemVerilog|258KB|2025-12-22|2022-07-12|N/A|false|N/A
+chan-henry/uvm_ref_flow_1.1|Fork of Cadence's UVM 1.1 reference flow (modified by CVC)|6|0|master|true|Verilog|21.65MB|2024-05-03|2017-04-23|N/A|false|N/A
+blargony/uvm_agent_gen|UVM Agent Generator|6|10|master|true|SystemVerilog|168KB|2022-05-12|2015-06-16|N/A|false|N/A
+acc4uvmlabs/uvm_labs|N/A|6|1|master|true|N/A|80KB|2025-02-20|2017-05-13|N/A|false|N/A
+Vivek-Dave/UVM_TestBench_For_D_Flip_Flop|Complete UVM TestBench For Verification Of D Flip Flop|6|5|main|true|SystemVerilog|75KB|2025-09-05|2021-06-16|N/A|false|N/A
+Travissss/100BT1_DV|An uvm environment for 100Base-T1 (IEEE 802.3bw) Phy|6|1|master|false|SystemVerilog|1.04MB|2024-03-04|2021-02-14|N/A|false|N/A
+PlusPlusOneGmbH/TD_UvManagedPrefab|A simple prefab for TD-Projects that is managed by UV.|6|0|master|true|Python|92KB|2025-12-05|2025-07-16|N/A|false|N/A
+Miical/uvm-cache|UVM based NutShell Cache authentication platform|6|0|main|true|SystemVerilog|173KB|2025-09-07|2023-10-18|N/A|false|N/A
+JamesLinnnnn/JTAG_TAP_Controller_Verification_UVM|N/A|6|0|main|true|SystemVerilog|629KB|2025-12-15|2025-02-24|N/A|false|N/A
+HippoCampusRobotics/uvms|N/A|6|4|main|true|C++|6.94MB|2025-12-16|2023-11-17|N/A|false|N/A
+GuangMing34/uvm_zhangqiang_source_code|uvm实战(张强) 卷一 源码，原始链接如下|6|3|main|true|SystemVerilog|3.40MB|2025-11-30|2024-09-12|N/A|false|N/A
+Crimsonninja/elen613|Code for ELEN613: SOC Verification|6|1|master|true|Verilog|57.95MB|2025-10-15|2020-05-07|N/A|false|N/A
+Amirk97/IIR-FIR_IP_SystemVerilog|Open-source RTL IP developement for IIR/FIR filters in SystemVerilog|6|0|main|true|SystemVerilog|361KB|2025-12-27|2025-06-23|N/A|false|N/A
+ASantosMorales/Numerical_Analysis|Numerical Analysis lecture for Mechatronics Department at UVM Guadalajara Sur|6|0|master|false|Jupyter Notebook|747KB|2024-02-22|2020-02-21|N/A|false|N/A
+1varuna/fifo_tb_uvm|Self learnt example to write a UVM based TB. (Under construction).|6|2|master|true|SystemVerilog|1.10MB|2025-07-23|2020-07-27|N/A|false|N/A
+yuravg/uvm_book_examples|UVM Book Examples - A Practical Guide to Adopting the Universal Verification Methodology (UVM) Second Edition by Kathleen Meade and Sharon Rosenberg|5|3|master|true|Verilog|4.74MB|2025-12-04|2023-08-24|N/A|false|N/A
+xver/icecream_sv|IceCream for SystemVerilog:  Never use $display and `uvm_info to debug SystemVerilog again.|5|0|main|true|SystemVerilog|282KB|2025-11-14|2024-02-24|N/A|false|N/A
+wbbbbbb123/UVM-based-Asynchronous-FIFO-verification-platform-design|N/A|5|0|main|true|SystemVerilog|390KB|2025-08-10|2022-08-08|N/A|false|N/A
+vinaypatil123/AXI4_verification_IP|Development of verification IP for AMBA AXI4 Protocol using UVM|5|2|master|true|SystemVerilog|64KB|2025-05-14|2019-10-03|N/A|false|N/A
+verification-explorer/mreg|UVM register model course|5|0|main|true|SystemVerilog|337KB|2024-05-08|2024-04-25|N/A|false|N/A
+tudortimi/vgm_abstract_registry|UVM extension to support registering abstract classes with the factory|5|2|master|false|SystemVerilog|13KB|2025-08-15|2016-02-07|N/A|false|N/A
+tudortimi/uvm-extras|Extensions to the UVM|5|2|master|true|SystemVerilog|35KB|2025-07-24|2020-05-03|N/A|false|N/A
+shivanandgsr/AHB-Lite_verification-UVM|N/A|5|0|main|true|SystemVerilog|8.20MB|2024-01-23|2022-01-04|N/A|false|N/A
+raulduke9119/Claude3-5-Agent-Python|self made agent what have  bunch of tools can create files|5|0|main|true|Python|29KB|2025-05-05|2024-07-19|N/A|false|N/A
+r-fin/tut_uvm_pcie_pipe|Demonstration of UVM applied PCIe PIPE|5|0|main|true|SystemVerilog|261KB|2025-11-04|2025-01-07|N/A|false|N/A
+prasannaprajapati/Examples_of_UVM|N/A|5|0|main|true|SystemVerilog|213KB|2025-12-08|2024-12-16|N/A|false|N/A
+ottohorvath/vip_reset|A simple basic reset VIP based on UVM 1.1d.|5|2|master|true|SystemVerilog|10KB|2025-06-03|2019-04-21|N/A|false|N/A
+nelsoncsc/basic_uvmc|A simple testbench with two refmods using UVM Connect|5|2|master|true|SystemVerilog|10KB|2025-04-24|2016-10-16|N/A|false|N/A
+mitshine/tutorials-on-UVM-and-RAL|examples for UVM and RAL model from candy lovers|5|1|main|true|SystemVerilog|129KB|2025-08-07|2022-09-02|N/A|false|N/A
+matandalmeida/gcd_uvm|Basic UVM environment for GCD IP|5|1|master|true|SystemVerilog|242KB|2022-06-08|2019-08-16|N/A|false|N/A
+kumarrishav14/I2C|VIP for I2C|5|0|main|true|N/A|33KB|2025-03-18|2021-01-21|N/A|false|N/A
+jwzimmer-zz/tv-tropes|UVM Stat 287 Final Project repo - network of tropes from TV Tropes wiki|5|3|main|true|HTML|886.44MB|2025-08-23|2020-10-19|N/A|false|N/A
+jnear/compiler-construction-assignments|Assignment code for UVM Compiler Construction course|5|1|master|true|Racket|74KB|2023-04-07|2019-01-29|N/A|false|N/A
+jchengX/AXI_DRIVER|N/A|5|3|master|true|SystemVerilog|24KB|2024-12-20|2017-06-03|N/A|false|N/A
+hiremathpriyag/i2c_uvm|N/A|5|2|master|true|SystemVerilog|15.55MB|2024-03-24|2020-05-06|N/A|false|N/A
+hiiaka/suni_uvm_for_subl|SystemVerilog UVM snippets for Sublime Text|5|2|master|true|N/A|12KB|2023-07-06|2014-07-13|N/A|false|N/A
+go2uvm/Waves2UVM|Repo for Waves2UVM with WaveDrom and other formats|5|3|master|true|N/A|42KB|2025-06-09|2017-02-15|N/A|false|N/A
+fvutils/uvmf-full|Full UVM Framework snapshot|5|0|main|true|SystemVerilog|17.69MB|2024-08-19|2022-04-01|N/A|false|N/A
+funningboy/xbus|an easy bus verification example based on UVM/SV framework |5|0|master|true|C++|172KB|2024-07-04|2014-02-06|N/A|false|N/A
+funannoka/SoC-verification-using-UVM|N/A|5|1|master|true|SystemVerilog|24.87MB|2025-10-11|2018-11-07|N/A|false|N/A
+euvm/avst_keccak|UVM Testbench for Keccak sha3 core downloaded from Opencores https://opencores.org/projects/sha3|5|4|master|true|Verilog|13KB|2024-11-09|2019-06-14|N/A|false|N/A
+eng-ahmed-reda/fifo_uvm_verification|RTL FIFO Design and Verification using SystemVerilog and UVM|5|0|main|true|SystemVerilog|43KB|2025-07-18|2025-05-17|N/A|false|N/A
+edcote/uvmgen|UVM verification component and testbench generator tool|5|1|master|true|SystemVerilog|26KB|2022-04-06|2018-09-22|N/A|false|N/A
+diegob94/tinyalu_UVMSC|UVM SystemC + Verilator example|5|0|master|true|C++|77KB|2025-04-13|2020-08-29|N/A|false|N/A
+carlos-alberto-code/punto-de-venta-uvm|Sistema de punto de venta desarrollado en Python para una tienda tradicional|5|0|master|true|Python|1.83MB|2024-12-04|2024-03-02|N/A|false|N/A
+asimkhan8107/UVM-30DAYS|30 days of UVM to cover all-most all concept of UVM |5|2|main|true|SystemVerilog|13.28MB|2024-11-07|2023-07-04|N/A|false|N/A
+VerificationXpert/opensource-uvm|A collection of experiments and resources combining UVM with Verilator|5|1|master|true|Makefile|2KB|2025-07-15|2025-01-19|N/A|false|N/A
+TheRA1A/UVM_PROJECTS|N/A|5|0|master|true|JavaScript|2.05MB|2025-04-22|2024-10-24|N/A|false|N/A
+SystematIC-Design/cocotbext-ral|A port of the uvm-python RAL to use BusDrivers|5|2|main|true|Python|108KB|2025-01-12|2021-02-28|N/A|false|N/A
+SnrNotHere16/Asynchronous-FIFO|An FPGA implementation of Cummings' Asynchronous FIFO |5|1|main|true|SystemVerilog|15.45MB|2025-05-26|2021-11-16|N/A|false|N/A
+Shivanagender123/UART-16550|This is UVM testbench for UART with multiple test cases.|5|1|master|true|SystemVerilog|25KB|2024-02-17|2019-02-02|N/A|false|N/A
+Pavankumargunnamsetti/AXI_VIP|AXI Verification using UVM|5|2|main|true|SystemVerilog|3.52MB|2025-10-28|2024-10-20|N/A|false|N/A
+PacoReinaCampo/SoC-NTM|Neural Turing Machine for a System on Chip verified with UVM/OSVVM/FV|5|2|main|true|SystemVerilog|80.36MB|2026-01-04|2020-05-03|N/A|false|N/A
+PacoReinaCampo/PU-DV|Processing Unit verified with UVM/OSVVM/FV|5|4|main|true|SystemVerilog|17.68MB|2026-01-04|2020-03-04|N/A|false|N/A
+NodeFly/nodefly-uvmon|N/A|5|3|master|true|JavaScript|517KB|2014-08-08|2013-06-24|N/A|false|N/A
+NikolaF-95/RAM_VIP|UVM VIP for Single Port RAM Synchronous Read/Write|5|1|master|true|SystemVerilog|34KB|2024-06-13|2020-07-12|N/A|false|N/A
+Mohamed-Alhady/Pipelined_RISC-V_CV32E40P_UVM_Verification|This repository has documents|5|2|main|true|SystemVerilog|20.32MB|2025-08-16|2025-06-14|N/A|false|N/A
+MilanKubavat/UVM|UVM Examples & Projects|5|2|master|false|SystemVerilog|59KB|2024-08-11|2017-09-17|N/A|false|N/A
+LitchiKnight/UVM_register_model_best_practice|N/A|5|2|main|true|N/A|516KB|2025-12-07|2023-09-28|N/A|false|N/A
+LJ9859/UVMForkieList|Forkies on UserVM to stay away from|5|3|main|true|HTML|611KB|2025-03-10|2025-01-20|N/A|false|N/A
+KelvinVale/uvm_sc_py_phase_jump|This repository contains an example of how to create an UVM verification|5|1|master|true|SystemVerilog|3.48MB|2025-02-22|2020-02-12|N/A|false|N/A
+JamesLinnnnn/Network-on-Chip-NoC-Verification-in-UVM|N/A|5|0|main|true|SystemVerilog|135KB|2025-12-15|2025-05-01|N/A|false|N/A
+JainTwinkle/CRAC-early-development|This is a public repository for the early development of CRAC (Checkpoint-Restart Architecture for CUDA Streams and UVM). A free and open-source production version is planned for the future.|5|5|master|true|C++|1.64MB|2025-07-24|2020-06-05|N/A|false|N/A
+Ivy-End/SPI-Slave|SPI Slave Module Verificated by UVM|5|0|main|true|SystemVerilog|69.59MB|2025-09-12|2023-04-24|N/A|true|N/A
+Ismail821/uvm_verification_ahb_apb_bridge|UVM Verification enviroinment for AHB to APB bridge. Supports upto 8 APB slave Devices. |5|2|main|true|SystemVerilog|18.38MB|2025-08-07|2023-05-14|N/A|false|N/A
+Dragon-Git/uvm_bridge|Bridge systemverilog UVM API with Python by DPI-C|5|0|main|true|C|200KB|2025-12-15|2024-06-11|N/A|false|N/A
+DigitalLabIIESTS/VLSI-Front-End|Requirements for VLSI front-end Engineer |5|1|main|true|N/A|3.17MB|2024-12-26|2022-07-27|N/A|false|N/A
+BigPig0/uvMoudles|some common util moudles based on libUV|5|2|master|true|C|5.68MB|2023-10-23|2018-09-01|N/A|false|N/A
+AkshayXPatil/Design-verification|UVM  and Systemverilog based test benches for functional verification of a RAM module|5|5|master|true|SystemVerilog|9KB|2025-06-17|2019-01-01|N/A|false|N/A
+Abdul-muheet-ghani/UVM-Practice|This repository containing the practice code from beginning related to SystemVerilog OOP and UVM|5|1|main|true|SystemVerilog|128KB|2025-12-05|2022-05-29|N/A|false|N/A
+zoatel/MIPI-D-PHY|Open-source RTL|4|3|master|true|SystemVerilog|25.86MB|2025-12-06|2025-02-02|N/A|false|N/A
+yazawa-ichio/UVMBinding|Unity DataBinding Package|4|1|master|true|C#|656KB|2025-10-16|2021-07-03|N/A|false|N/A
+yassershokr/UART_Test_using_UVM|N/A|4|0|main|true|SystemVerilog|334KB|2024-12-01|2024-07-20|N/A|false|N/A
+xver/svdb_gateway|SVDB Gateway :  DPI-C library that links SystemVerilog simulations with external SQLite databases for configuration|4|1|main|true|SystemVerilog|836KB|2025-11-14|2025-06-05|N/A|false|N/A
+vmorillon/kitsuvm|Template-based UVM project generator|4|0|main|true|Rust|99KB|2025-01-16|2022-10-14|N/A|false|N/A
+verification-gentleman-blog/creating-uvm-tests-dynamically|N/A|4|0|main|true|SystemVerilog|33KB|2025-11-28|2022-11-20|N/A|false|N/A
+verification-explorer/callback_iterator|Spicing up your UVM driver: noise injection made easy with callback iterators|4|0|main|true|SystemVerilog|33KB|2024-07-14|2023-09-20|N/A|false|N/A
+uwesimm/uvm-indirect-registers|an infrastructure to implement arbitrary indirect registers on top of uvm|4|3|master|true|SystemVerilog|735KB|2022-04-06|2017-11-06|N/A|false|N/A
+uranusb/SYN_FIFO_UVM|A UVM based testbench for the synchronous FIFO.|4|1|main|true|SystemVerilog|14KB|2024-12-15|2021-05-04|N/A|false|N/A
+tpoikela/uvm-python-rdl|Python package for generating uvm-python register models from SystemRDL 2.0 descriptions.|4|1|master|true|Python|43KB|2025-03-20|2020-06-14|N/A|false|N/A
+togetherandbetter/DesignVerification|uvm|4|0|master|true|N/A|245.41MB|2024-09-28|2018-12-25|N/A|false|N/A
+techvinodreddy/async_fifo_uvm|N/A|4|1|topology-print|true|SystemVerilog|14KB|2024-08-15|2022-02-21|N/A|false|N/A
+systemc/UVM-Connect|Connecting SystemC with SystemVerilog|4|0|master|false|N/A|48KB|2022-03-14|2012-03-25|N/A|false|N/A
+sugureshkumar/2-1-Mux-Verification-using-UVM|this is for example to learn the UVM methodology |4|4|master|true|SystemVerilog|5KB|2025-11-19|2017-11-17|N/A|false|N/A
+rag1404/Round-robin-Arbiter-with-UVM-TB|Round robin arbiter with UVM Test bench|4|2|master|true|SystemVerilog|3KB|2024-05-08|2019-11-04|N/A|false|N/A
+quangphan2405/yapp_router|Design and verify a YAPP router using UVM methodology|4|3|master|true|SystemVerilog|122KB|2025-12-16|2021-01-12|N/A|false|N/A
+parzival3/F-CSP|Constraint Random Verification for Chisel3 and Chisel Tester2|4|1|main|true|Scala|575KB|2022-05-27|2020-10-15|N/A|false|N/A
+nguyenquanicd/apbUartUvmSystemC|A SystemC UVM environment for UART-APB|4|1|master|true|C++|27.17MB|2024-02-05|2019-09-15|N/A|false|N/A
+navpatel1/Advanced-Verification-of-Digital-Circuits-Using-SystemVerilog-and-UVM|Verification of digital circuits using advanced techniques with SysVerilog and UVM|4|0|master|true|SystemVerilog|241KB|2025-12-16|2024-08-31|N/A|false|N/A
+myrik8333/i2c|uvm based tb for i2c|4|0|master|false|Verilog|16KB|2025-07-23|2020-04-17|N/A|false|N/A
+mrthetkhine/UVMForMac|UVM port for Mac OS|4|0|master|true|C++|58KB|2025-06-01|2019-06-03|N/A|false|N/A
+merledu/UVMverifier|N/A|4|1|main|true|N/A|9.27MB|2025-12-22|2025-05-09|N/A|false|N/A
+meeeeet/UVM-based-FPU-VIP|N/A|4|1|main|true|SystemVerilog|5.88MB|2025-07-14|2023-08-31|N/A|false|N/A
+maddnias/uVM|A simple virtual machine written in C with a C# compiler|4|1|master|true|C|196KB|2020-02-28|2014-06-18|N/A|false|N/A
+kurotori4423/AttributeToUVMap|N/A|4|0|main|true|Python|4KB|2022-07-06|2022-03-08|N/A|false|N/A
+kruegz/cpu|CPU design with SystemVerilog/UVM verification|4|2|master|true|SystemVerilog|14KB|2025-08-07|2019-09-08|N/A|false|N/A
+kkurenkov/uvm-empty-project|generator for verification environment|4|0|main|true|SystemVerilog|30KB|2024-07-12|2022-10-20|N/A|false|N/A
+kaitoukito/learnUVM|N/A|4|2|master|false|HTML|2.89MB|2025-12-16|2021-10-29|N/A|false|N/A
+jkaugust/Verification-of-APB-Protocol-using-UVM-System-Verilog-|Developing verification environment in System Verilog to test the functionality of APB protocol using UVM.|4|0|master|true|SystemVerilog|47KB|2026-01-08|2018-09-18|N/A|false|N/A
+jg-fossh/uvm_python_gen.vim|VIM / NeoVim plugin to auto-generate the shell for uvm-python verifiaction IP.|4|1|main|true|Vim script|21KB|2025-01-12|2021-03-19|N/A|false|N/A
+jg-fossh/uvm_python_Wishbone_Pipeline_Slave|Wishbone Slave(Pipelined) Bus Interface Verification Agent|4|0|main|true|Python|8.95MB|2022-10-11|2021-06-25|N/A|false|N/A
+iprabhat29/Asynchronous-FIFO|Design and Verification of Asynchronous FIFO using System Verilog/UVM|4|1|master|true|SystemVerilog|5KB|2025-06-02|2019-08-02|N/A|false|N/A
+imjp2020/UVM_FIFO_TB|This testbench is based on SV and UVM Class based to verify Verilog HDL Design|4|0|main|true|SystemVerilog|23KB|2026-01-01|2022-09-24|N/A|false|N/A
+hengfengzhang/uvm_lab|A UVM environment including scoreboard and agent|4|2|main|true|SystemVerilog|7KB|2022-08-08|2020-10-19|N/A|false|N/A
+gyx3598/uvm|优秀的UVM项目整理|4|1|main|true|N/A|9KB|2025-09-19|2021-04-29|N/A|false|N/A
+gopro-uvm-rtl-verification/AXI4-Interconnect-Fabric-Verification-with-UVM|Synthesizable AXI4 crossbar with a full UVM verification environment — RTL|4|0|main|true|SystemVerilog|46KB|2025-12-26|2025-08-21|N/A|false|N/A
+fifthheaven/SMC_Verification|verify SMC via UVM|4|0|master|false|SystemVerilog|42KB|2023-08-03|2020-04-28|N/A|false|N/A
+everactive/bathtub|BDD Gherkin implementation in native SystemVerilog|4|1|main|true|SystemVerilog|36KB|2025-01-18|2023-04-12|N/A|false|N/A
+esynr3z/eda-log-colorizer|🎨 Colorize your boring EDA logs|4|3|master|true|Shell|383KB|2025-01-17|2021-12-05|N/A|false|N/A
+eastonwhite/QuantReasoning|Materials for Foundations of Quantitative Reasoning (BIO381) at UVM|4|0|master|true|HTML|90.25MB|2023-08-22|2018-12-11|N/A|false|N/A
+dave41266/cpu8080-alu|UVM code to verify ALU|4|2|main|false|SystemVerilog|28KB|2024-08-12|2021-04-14|N/A|false|N/A
+contactpro/UVM_Command_Center|UVM Command Center - UVM Testbench Builder (DEMO) - Demo of UVM Verification Workflow IDE.|4|3|master|true|Python|5.62MB|2024-03-23|2018-05-21|N/A|false|N/A
+chanum/UVM-Cookbook-Examples|Examples with UVM|4|2|main|true|SystemVerilog|1.22MB|2025-12-21|2021-12-11|N/A|false|N/A
+ceaj91/cifar10-cnn_accelerator|CNN accelerator for CIFAR-10 on Zybo Z7-10 FPGA. System modeling in SystemC|4|0|main|true|C|76.91MB|2025-12-27|2025-03-31|N/A|false|N/A
+cc-hook/uvm_easy_printer|A hybrid uvm printer|4|1|main|true|SystemVerilog|4KB|2025-04-16|2022-06-28|N/A|false|N/A
+arjunabinash/UART_UVM| UART- Universal Asynchronous Receiver and transmitter is a hardware device which facilitates serial transmission and reception of data. In this work presented here|4|0|main|false|SystemVerilog|8KB|2025-05-31|2023-12-27|N/A|false|N/A
+antmicro/uvmdvgen|N/A|4|3|main|true|SystemVerilog|259KB|2025-11-14|2025-01-19|N/A|false|N/A
+amamory-verification/vfsd-utopia|ATM-Utopia module and testbench.|4|5|master|true|SystemVerilog|41.02MB|2025-12-08|2018-05-08|N/A|false|N/A
+ZhoulabCPH/UVM_ITH|N/A|4|2|master|false|R|10KB|2026-01-04|2024-10-14|N/A|false|N/A
+Youssefmdany/Design-and-UVM-Verification-of-The-I2C-Master_Controller|Design and UVM Verification of The I2C Master Controller|4|0|main|true|SystemVerilog|21.67MB|2025-12-16|2023-07-18|N/A|false|N/A
+Vivek-Dave/UVM_TestBench_For_ShIft_Register|Complete UVM TestBench For Verification Of Shift Register |4|3|main|true|SystemVerilog|77KB|2025-09-27|2021-05-20|N/A|false|N/A
+Vivek-Dave/UVM_TestBench_For_Adder|Complete UVM TB For Verification Of Adder|4|1|main|true|SystemVerilog|87KB|2025-10-08|2021-04-17|N/A|false|N/A
+VSHEV92/AXIS_UVM_Agent|UVM агент для верификации модулей с AXI-Stream интерфейсом|4|1|main|true|SystemVerilog|17KB|2025-08-22|2021-05-12|N/A|false|N/A
+UnionVMS/UVMS-RulesModule-APP|N/A|4|2|dev|true|Java|7.50MB|2020-05-03|2016-07-08|N/A|false|N/A
+UnionVMS/UVMS-Frontend|N/A|4|2|dev|true|JavaScript|47.52MB|2019-05-02|2016-07-11|N/A|false|N/A
+UnionVMS/UVMS-ExchangeModule-APP|N/A|4|3|dev|true|Java|5.41MB|2023-09-05|2016-07-08|N/A|false|N/A
+UnionVMS/UVMS-ActivityModule-APP|N/A|4|2|dev|false|Java|7.27MB|2019-11-25|2017-06-20|N/A|false|N/A
+Thirumavalavasethurayar/Automated-Sequence-Item-Generation-for-Different-Serial-Communication-Protocols|Python script to create sequence item from spreadsheet|4|0|main|true|SystemVerilog|1.01MB|2025-04-24|2025-04-15|N/A|false|N/A
+Satya7733/Asynchronous_FIFO|This project contains Design and UVM Verification of Asynchronous FIFO in System Verilog |4|1|main|true|SystemVerilog|5.42MB|2025-10-06|2025-01-02|N/A|false|N/A
+Rubayet13/APB_UVM|N/A|4|0|main|true|SystemVerilog|4.21MB|2025-07-05|2024-02-03|N/A|false|N/A
+PacoReinaCampo/PU-NTM|Neural Turing Machine for a Processing Unit verified with UVM/OSVVM/FV|4|2|main|true|SystemVerilog|92.50MB|2026-01-04|2020-05-03|N/A|false|N/A
+MohamedHussein27/SPI-Slave-with-RAM-UVM|This project uses UVM to verify an SPI Slave connected to internal RAM. It includes multiple agents (active and passive) and integrates assertion-based verification for both SPI and RAM behavior.|4|0|main|true|SystemVerilog|8.50MB|2025-10-06|2025-04-09|N/A|false|N/A
+MohamedEhab13/DDR4-Controller-Verification-using-UVM|N/A|4|0|main|false|SystemVerilog|19KB|2025-12-15|2025-03-28|N/A|false|N/A
+Lianghao-Yuan/UVM-Verification-IP-for-switch|A complete UVM verification IP for simple switch (router)|4|5|master|true|SystemVerilog|656KB|2024-07-26|2015-06-26|N/A|false|N/A
+LastWhisperPZW/UVM_SPI_verify|N/A|4|3|master|false|Verilog|1.54MB|2024-11-24|2017-10-29|N/A|false|N/A
+KlyntarNetwork/web1337|A gateway for amazing Web1337 by KLYNTAR|4|0|main|true|JavaScript|13.75MB|2025-11-25|2022-09-30|N/A|false|N/A
+Kholoud-Ebrahim/Synchronous_FIFO|A simple synch FIFO designed in Verilog and verified in UVM methodology including scoreboards|4|1|master|true|SystemVerilog|7.28MB|2025-04-02|2023-08-14|N/A|false|N/A
+KKIDOL/uvm_for_ahb_sramc|N/A|4|1|main|true|Verilog|43KB|2025-10-25|2023-08-16|N/A|false|N/A
+JamesLinnnnn/APB_Design_and-Verification_in_UVM|N/A|4|0|main|true|SystemVerilog|71KB|2025-12-15|2025-11-09|N/A|false|N/A
+HaogeL/apb_uart_UVM_structure|N/A|4|0|master|true|SystemVerilog|95KB|2024-03-15|2020-02-15|N/A|false|N/A
+Gonadeepika/AHB_APB_VERIFICATION| 1)Architected the class based verification environment in UVM. 2)Defined Verification Plan. l 66%  3)Verified the RTL module with UVM Test Bench with different test scenarios like single READ|4|0|main|true|Verilog|42KB|2025-09-14|2024-03-27|N/A|false|N/A
+Daniyal-Tahsildar/FIFO_TB_UVM|Implementation of a Synchronous FIFO along with a Testbench developed using UVM|4|1|main|true|SystemVerilog|242KB|2025-08-11|2023-08-12|N/A|false|N/A
+ChrisAndrea2011/Sync_FIFO|Synchronous FIFO code verified using UVM verification environment.|4|2|master|true|SystemVerilog|67KB|2025-05-31|2021-04-25|N/A|false|N/A
+CharanK-glitch/RV32I|Sapphire SoC: RV32I RISC-V core optimized for FPGAs|4|1|main|true|Verilog|4.67MB|2025-11-22|2025-03-23|N/A|false|N/A
+Alexnorvag/spi_vip_uvm|N/A|4|1|master|true|SystemVerilog|7KB|2022-10-11|2018-01-10|N/A|false|N/A
+AdarshPrakash789/-Coverage-Driven-Verification-of-High-Speed-Interface|Full PCIe interface coverage with 20% higher regression throughput using UVM-based strategy; programmed test workflows. Tech: SystemVerilog|4|0|main|true|N/A|9KB|2025-12-07|2025-04-11|N/A|false|N/A
+AbdelrahmanYassien11/Verification-of-a-simple-Memory-using-UVM|Verification of a simple Memory using UVM utilizing modularization and adaptability|4|0|main|true|SystemVerilog|6.48MB|2024-11-28|2024-07-26|N/A|false|N/A
+10611anil/functional-hardware-verification-of-8-bit-calculator|Implemented verification environment in system verilog by using UVM(Universal Verification Methodology).|4|0|master|true|SystemVerilog|7KB|2024-06-11|2019-07-03|N/A|false|N/A
+zhichaolin/axi-ram|My project aims to test a axi-ram module using UVM method.|3|0|main|true|SystemVerilog|92KB|2025-09-06|2022-08-09|N/A|false|N/A
+yvesdubief/UVM-ME249-CFD-Python|Toward writing a CFD code in python|3|3|master|true|Jupyter Notebook|40.09MB|2025-11-29|2017-10-03|N/A|false|N/A
+xuann6/uvm_riscv_processor_verification|N/A|3|0|master|true|SystemVerilog|95KB|2025-10-13|2025-03-24|N/A|false|N/A
+williaml33moore/immutables|Explorations of immutable objects in SystemVerilog and UVM|3|0|main|true|SystemVerilog|84KB|2026-01-07|2024-09-11|N/A|false|N/A
+verification-explorer/visitor-pattern|Elevate Your UVM Register Block Setup with the Visitor Pattern|3|0|main|true|SystemVerilog|6KB|2025-09-08|2023-09-28|N/A|false|N/A
+uvmaero/AERO-Boards-KiCad|UVM AERO boards.|3|1|master|true|HTML|42.28MB|2022-05-24|2018-11-25|N/A|false|N/A
+uvm-plaid/uvmhs|N/A|3|6|master|true|Haskell|131.06MB|2026-01-09|2018-12-12|N/A|false|N/A
+tyallembert/UVMap|A mobile app focusing on helping students from The University of Vermont navigate campus.|3|2|main|true|Swift|2.95MB|2024-01-12|2022-09-23|N/A|false|N/A
+tonyalfred/Synchronous-FIFO-Design-and-Verification-using-Verilog-and-UVM|Build a UVM Environment for an a Synchronous FIFO. Concepts like virtual sequencer|3|0|main|true|Verilog|18KB|2025-08-12|2023-08-04|N/A|false|N/A
+tonyalfred/Memory-Verification-using-UVM|Build a UVM Environment for an parametrized memory module|3|0|main|true|SystemVerilog|10KB|2025-03-29|2023-03-03|N/A|false|N/A
+tirumalnaidu/uvm-i2c-controller|UVM Verification of i2c Master Core Wishbone Specification|3|2|master|true|Verilog|864KB|2024-09-20|2020-09-24|N/A|false|N/A
+sven0601/RISCV-UVM-Verification|N/A|3|4|master|true|N/A|54KB|2025-12-25|2022-03-15|N/A|false|N/A
+suhasr1991/Veriification-of-LCD-Controller-Design|A project on UVM to verify the functionality of LCD controller design. A UVM testbench was created from scratch. AHB master/slave agents created to get the data in memory for LCD controller to access the data. Monitors and scoreboards were created to compare the data from LCDVD output to expected output in a file. Also wrote a logic to compare the number of cycles between two frame pulses with the expected number of cycles in a file. This was done such that the frame is received in the two frame pulses.|3|0|master|true|SystemVerilog|6.06MB|2024-05-07|2018-03-05|N/A|false|N/A
+shtzw965/puvm|for bash and vcs; set VCS_HOME and UVM_HOME in env; add the dir of vcs to PATH; export WORK_HOME=`pwd`; export SIM_TOOL=VCS; PATH=$WORK_HOME/bin:$PATH;|3|1|main|false|SystemVerilog|118KB|2025-12-30|2023-12-27|N/A|false|N/A
+seabeam/yuu_int|UVM interrupt VIP|3|1|main|true|SystemVerilog|5KB|2025-01-26|2023-04-09|N/A|false|N/A
+sathyapriyanka/AXI4_UVC_UVM|N/A|3|0|main|true|SystemVerilog|525KB|2025-04-30|2021-05-24|N/A|false|N/A
+sathviks/UVM_FUNDAMENTALS|UVM Fundamentals code challenge WELCOME TO MY 100 DAYS OF RTL  My Name is Sathvik S|3|0|main|true|SystemVerilog|1.27MB|2024-06-27|2023-06-17|N/A|false|N/A
+samarth2317/verification_i2c_uvm|N/A|3|0|main|false|SystemVerilog|29KB|2023-10-08|2020-11-17|N/A|false|N/A
+rpjayaraman/lint-based-uvm_tb_generator|This python script uses pyslang module to parse design file and collects input|3|0|main|true|SystemVerilog|139KB|2025-08-28|2025-01-01|N/A|false|N/A
+rksingh23/UVM_TestBench|Please find my Extensive Research and Verification Plan|3|0|main|true|SystemVerilog|26KB|2025-07-13|2021-04-04|N/A|false|N/A
+raja10rajesh/UVM_ethernet_Switch|UVM testing methodology for ethernet switch|3|1|master|false|SystemVerilog|119KB|2024-06-27|2020-05-18|N/A|false|N/A
+praveenkhemalapure/LCD_CONTROLLER_UVM_ENV|lpcxx24 uvm verification environement|3|0|master|false|SystemVerilog|4.02MB|2024-05-11|2018-04-01|N/A|false|N/A
+opendv360/verification-diagrams|This collection of verification diagrams is created to help educators|3|1|main|true|N/A|36.32MB|2025-11-24|2025-08-01|N/A|false|N/A
+ollin18/ComplexSystems.jl|Some  complex system implementations|3|2|master|true|Julia|7.69MB|2022-01-25|2018-10-08|N/A|false|N/A
+ninglixin98/UVM|UVM_study|3|0|main|false|N/A|25KB|2025-02-20|2022-07-07|N/A|false|N/A
+nbrummel/uvm-templates|This repo provides uvm templates to start a sv uvm project.|3|1|master|true|SystemVerilog|8KB|2024-04-07|2016-09-06|N/A|false|N/A
+myowndevice/UVmetr|Измерить УФ индекса и температуры|3|1|master|true|C|16.02MB|2020-06-23|2019-02-11|N/A|false|N/A
+mo1234-bit/SPI-UVM|This project implements a Universal Verification Methodology (UVM) environment for verifying an SPI (Serial Peripheral Interface) Slave module integrated with a 512x8 RAM controller. The verification framework ensures compliance with the SPI protocol|3|1|main|true|SystemVerilog|535KB|2025-12-30|2025-07-22|N/A|false|N/A
+merldsu/PY_UVM_Tutorial|This repository will contain all the files regarding the Py-UVM tutorial|3|1|main|true|Python|20KB|2025-09-09|2023-05-09|N/A|false|N/A
+manoharbandaru/arbiter_testbench|UVM testbench for a simple arbiter|3|0|master|true|SystemVerilog|11KB|2023-09-13|2018-06-27|N/A|false|N/A
+makararasi/UVM_RISCV|N/A|3|2|main|true|Verilog|148KB|2024-05-11|2021-09-11|N/A|false|N/A
+liurh123/uvm1.1d_source_code|uvm1.1d_source_code|3|3|master|false|HTML|2.91MB|2022-05-15|2015-10-27|N/A|false|N/A
+kei-seu/APB_watchdog|UVM verification platform for cmsdk_apb_watchdog IP core|3|0|master|false|SystemVerilog|56KB|2025-11-25|2023-08-02|N/A|false|N/A
+juzhimin/CAN_UVM|N/A|3|0|master|false|SystemVerilog|156KB|2024-03-07|2016-12-18|N/A|false|N/A
+jauerb/uvm_thesis|Style file for UVM Thesis / Dissertation|3|4|master|true|Shell|176KB|2024-12-18|2013-05-28|N/A|false|N/A
+jacky141283/UVM_10GbE_MAC|N/A|3|1|master|false|Verilog|51KB|2023-04-24|2019-01-02|N/A|false|N/A
+ivanMilin/UVM-for-ALU|Uvod u UVM verifikaciju|3|0|main|true|SystemVerilog|21KB|2025-06-14|2023-06-08|N/A|false|N/A
+ivanMilin/UVM-Verification-of-CNN-hardware-accelerator|Project used for BSc thesis|3|0|main|true|SystemVerilog|35KB|2025-12-16|2024-11-13|N/A|false|N/A
+israelalan/Functional-Verification|Verification of 128-bit AES Pipelined Cipher block using UVM methodology|3|1|master|false|Verilog|27KB|2025-02-24|2019-06-07|N/A|false|N/A
+hrishikeshpujari/UVM-Testbench-for-Flex-Timer|N/A|3|0|master|true|SystemVerilog|27KB|2021-04-19|2019-11-24|N/A|false|N/A
+haiboCode233/UVM_APB_FIFO_REG|An UVM project to verify sync fifo with a depth reg.|3|0|main|true|SystemVerilog|780KB|2026-01-02|2025-07-11|N/A|false|N/A
+guttatus/uvm_multiplier|N位移位累加乘法器及其UVM验证环境|3|0|main|true|SystemVerilog|12KB|2024-12-28|2023-10-24|N/A|false|N/A
+fvutils/uvmf-core|Core UVM Framework libraries with modifications for mkdv|3|0|main|true|Python|757KB|2024-01-11|2022-04-01|N/A|false|N/A
+fhideous/UVM-SimpleCache|N/A|3|0|master|false|SystemVerilog|41KB|2025-12-16|2022-02-10|N/A|false|N/A
+efabless/EF_UVM|N/A|3|6|main|true|Python|613KB|2025-06-24|2024-02-04|N/A|false|N/A
+dwvshep/RiscV-Processor-Verification|UVM Test Bench and SystemVerilog Code For Risc-V Out-of-Order Processor Including CoreMark Benchmarking|3|0|main|true|SystemVerilog|34.73MB|2025-12-16|2025-05-31|N/A|false|N/A
+div-2405/SystemVerilog-for-Verification|Flip-Flop|3|0|main|true|SystemVerilog|506KB|2025-03-07|2025-01-02|N/A|false|N/A
+dg2300/AXI_WB_TB|Basic UVM Testbench to verify AXI stream spec design. Added a wishbone BFM to mimic Wishbone design. |3|1|main|true|Verilog|317KB|2025-09-10|2023-02-18|N/A|false|N/A
+dcblack/uvm_templates|Templates for UVM that work with the newscript tools on SourceForge|3|2|master|true|Verilog|16KB|2025-11-24|2013-07-31|N/A|false|N/A
+cquickstad/uvm_unit|A Unit-Testing Framework for SystemVerilog and UVM|3|0|master|true|SystemVerilog|1.38MB|2025-03-26|2017-05-23|N/A|false|N/A
+cn9826/SDR_CTRL_UVM|EE382M-Verification course project|3|0|master|true|Verilog|5.31MB|2023-08-22|2020-05-02|N/A|false|N/A
+cameronnthomas/Ultra-UVM|A full-stack image processing System-on-Chip (SoC) project using SystemC and UVM|3|1|main|true|C++|101KB|2025-08-01|2024-06-19|N/A|false|N/A
+beeflobill/uvm-1.2|A copy of the release from: http://www.accellera.org/images/downloads/standards/uvm/uvm-1.2.tar.gz.  It's nice to browse code online.|3|3|master|true|SystemVerilog|2.11MB|2024-05-24|2015-04-09|N/A|false|N/A
+ashwinkumar-sivakumar/Asynchronous-FIFO-System-Verilog--Design-Verification-UVM|Develop Specification|3|0|main|false|JavaScript|40.60MB|2024-07-04|2024-01-23|N/A|false|N/A
+appledore22/ALU_Verification_IP|Verification IP for ALU written using SystemVerilog (UVM)|3|2|master|true|SystemVerilog|241KB|2023-06-02|2019-08-02|N/A|false|N/A
+anssprasad/UVM_Examples|N/A|3|2|master|true|SystemVerilog|5.57MB|2022-08-24|2016-06-05|N/A|false|N/A
+amrelbatarny/UVM_RAL-based_Register_File_Verification|This repository contains a UVM-based verification environment for a Register File module using the UVM Register Abstraction Layer (RAL). The project includes RTL code for the Register File|3|1|main|true|SystemVerilog|17KB|2025-11-30|2024-09-04|N/A|false|N/A
+ameetgohil/eth-uvm|N/A|3|0|master|true|SystemVerilog|8KB|2022-07-02|2016-02-05|N/A|false|N/A
+ahmd-kamel/AES-Encryption-Standard|Verification of Advanced Encryption Standard (AES-128) Using the Universal Verification Methodology (UVM).|3|1|main|true|Verilog|591KB|2025-12-22|2024-08-23|N/A|false|N/A
+abdurrafayn/uvm_adder_verification|N/A|3|0|main|false|SystemVerilog|9KB|2025-08-10|2025-06-25|N/A|false|N/A
+Vivek-Dave/UVM_TestBench_For_S_R_Latch|Simple and Complete UVM TestBench For Verification Of S R Latch|3|2|main|true|SystemVerilog|77KB|2025-05-13|2021-06-18|N/A|false|N/A
+Vivek-Dave/UVM_TeatBench_For_ROM|Complete UVM TestBench for verification of ROM|3|2|main|true|SystemVerilog|87KB|2025-08-24|2021-04-17|N/A|false|N/A
+UnitedBitcoin/gjavac|Java and Kotlin compiler for uvm|3|1|master|true|Kotlin|14.24MB|2021-12-30|2018-04-10|N/A|false|N/A
+UnionVMS/UVMS-USM4UVMSLibrary|N/A|3|1|dev|true|Java|470KB|2021-12-16|2016-07-05|N/A|false|N/A
+Shivanagender123/Shift_Register|This is normal basic UVM testbench for shift register with reference model using queues in scoreboard and RTL|3|0|master|true|SystemVerilog|10KB|2024-10-14|2019-01-05|N/A|false|N/A
+Shihhaolin/Four-port-switch-|This project is basically from Cadence training course Essential Systemverilog for UVM. All copyright is from Cadence. The project only for my personal practice.  The packet switch design has four port. The switch would get the data packets on a port and transmits the packet to one or more ports which depending on the packet data.|3|0|main|true|SystemVerilog|20KB|2024-06-29|2021-07-28|N/A|false|N/A
+SeiffAhmed22/Synchronous-FIFO-UVM-Verification|This repository contains the UVM-based verification of a Synchronous FIFO. It includes constrained random stimulus generation|3|2|main|true|SystemVerilog|2.93MB|2025-11-17|2024-10-14|N/A|false|N/A
+SUHANI102003/50-days-of-Verification|This repo contains the verification basics of System verilog and UVM|3|0|main|true|SystemVerilog|3.08MB|2025-12-02|2025-05-17|N/A|false|N/A
+Rickyuy/UVM_notebook|N/A|3|1|main|false|N/A|24.39MB|2025-03-13|2023-01-16|N/A|false|N/A
+Purdue-SoCET/UVM-Jumpstart|This repo gives quick practical introduction to UVM. |3|1|main|true|SystemVerilog|2.20MB|2025-07-02|2025-01-27|N/A|false|N/A
+PratheekB/suv|Static Analysis Directed UVM|3|0|main|true|C++|187.04MB|2025-03-01|2024-08-11|N/A|false|N/A
+Poorna-Sri/Candi_Ven_Mac|Design for Candy Vending Machine and UVM Based test Environment for verification|3|2|master|true|SystemVerilog|29KB|2025-04-28|2020-11-05|N/A|false|N/A
+PokeyMystery/SerDes-Design-UVM-and-Physical-Design|SerDes RTL design|3|0|main|true|Verilog|1.23MB|2025-11-18|2024-05-10|N/A|false|N/A
+PedroHSCavalcante/env-mult-clk-domain|Environment for multiple clock domains|3|3|master|true|SystemVerilog|13KB|2024-03-15|2019-09-19|N/A|false|N/A
+PacoReinaCampo/MPSoC-FinTech|Financial Technology with MPSoC-NTM verified with UVM/OSVVM/FV|3|1|main|true|SystemVerilog|60.58MB|2026-01-04|2020-05-03|N/A|false|N/A
+PKhuang-TW/pkhuang_axi_vip|(Ongoing) AXI4 UVM VIP with master/slave/loopback modes|3|0|main|true|SystemVerilog|97KB|2025-12-11|2025-05-25|N/A|false|N/A
+OmarAmer01/UVM_OC8051_ALU|A UVM verification environment for the OpenCores implementation of the Intel 8051 ALU.|3|0|main|false|Verilog|2.92MB|2025-04-22|2024-05-20|N/A|false|N/A
+MohamedHussein27/FIFO-UVM|This Repository contains the Universal Verification Methodology (UVM) verification of a Synchronous FIFO design|3|1|main|true|SystemVerilog|3.13MB|2025-12-03|2024-10-05|N/A|false|N/A
+Mirke01/spi_master-UVM-verification|This repository contains a comprehensive verification environment for an SPI Master DUT using the Universal Verification Methodology (UVM).|3|0|main|true|SystemVerilog|480KB|2025-11-24|2024-09-27|N/A|false|N/A
+ManBenit/uvmenv|Open source framework based on Python and Universal Verification Metodology (UVM)|3|1|main|true|Shell|5.71MB|2025-12-16|2024-07-18|N/A|false|N/A
+Maha-amaze/APB-with-UART_UVM|N/A|3|0|master|true|Rich Text Format|336KB|2023-07-14|2020-03-04|N/A|false|N/A
+Loneknight73/uvmlogfilter|A Scala program to filter UVM logs|3|1|master|true|Scala|424KB|2024-02-19|2019-03-16|N/A|false|N/A
+Lianghao-Yuan/UVM-Implementation-APB-Monitor|an APB protocol monitor(assertion interface and coverage UVM component)|3|1|master|true|HTML|4.78MB|2025-06-25|2015-06-30|N/A|false|N/A
+Kholoud-Ebrahim/APB_Register_File|UVM based Verification of APB Register File. The UVM Env includes RAL Model. The simulation results contain functional and code coverage reports.|3|0|master|false|SystemVerilog|349KB|2025-04-24|2023-11-01|N/A|false|N/A
+Jcbnunez/uvm-fqr|Foundations of Quantitative Reasoning|3|0|main|true|R|4.65MB|2024-11-05|2023-12-14|N/A|false|N/A
+Hithaishisr/verification-of-apb-based-uart-master-core|UVM-based functional verification of an APB-based UART Master Core RTL. Includes multi-agent environment|3|0|main|true|SystemVerilog|1023KB|2025-12-30|2025-11-01|N/A|false|N/A
+Griggorii/linux-image-5.9.3_amd64.deb_light_zstd_ultra_fast_kernel_wayland_fast|new structure linux-libc-dev + /usr/include/x86_64-linux-gnu/ |3|1|main|true|Batchfile|102KB|2025-05-29|2020-11-15|N/A|false|N/A
+GIRIDHAR37/UVM_CODES|N/A|3|1|main|false|SystemVerilog|17.65MB|2025-07-15|2024-09-13|N/A|false|N/A
+FreedomIntelligence/UVM|N/A|3|1|main|true|Python|143KB|2025-10-30|2025-10-15|N/A|false|N/A
+Francis-Nguyen/MEM_MMU_LIB|Build an UVM library to manage all stimulus data which was transferred to SOC's memories|3|0|main|true|SystemVerilog|725KB|2024-05-11|2023-02-20|N/A|false|N/A
+EngAhmed21/SPI-using-UVM|Implementation of Serial Peripheral Interface (SPI) communication protocol using SystemVerilog and the verification is done using Universal Verification Methodology (UVM)|3|0|main|true|SystemVerilog|31KB|2025-05-31|2023-11-02|N/A|false|N/A
+ELvisJoo/asyn_fifo_verification_UVM|基于UVM的异步fifo验证 Asynchronous FIFO UVM Verification.|3|2|main|true|SystemVerilog|3.55MB|2026-01-07|2025-09-26|N/A|false|N/A
+Divyesh945/Router_1_X_3|Design and verification files for an 8-bit Router 1x3|3|0|main|true|SystemVerilog|26KB|2025-12-29|2024-10-25|N/A|false|N/A
+DMA-Technologies/uvm-demo|N/A|3|0|main|true|C++|253KB|2025-11-01|2024-10-28|N/A|false|N/A
+Autumn64/tienda-online|Proyecto de Tecnologías de Construcción de Servicios Web de UVM Hispano|3|0|main|true|HTML|9.92MB|2025-12-14|2025-11-12|N/A|false|N/A
+AuringzaibSabir/uvm_sample|This repository contains a sample code of the UVM environment. Use this code as a reference for writing a complex UVM framework.|3|2|main|true|SystemVerilog|35KB|2023-04-01|2022-01-10|N/A|false|N/A
+AlphaLyrae0/UVM_RAL_DPI_C_Example|Example of C/C++ register access with name through UVM RAL|3|0|main|true|SystemVerilog|46KB|2025-07-12|2023-05-28|N/A|false|N/A
+AlphaLyrae0/UVM_DPI_Example|Example of DPI-C usage in UVM with Vivado simulator (xsim) and Altair (Metrics) DSim|3|0|main|true|SystemVerilog|47KB|2025-08-17|2023-01-09|N/A|false|N/A
+AlphaLyrae0/Easy_UVM_Examples|Examples to apply UVM to existing module based test benches at ease|3|0|main|true|SystemVerilog|85KB|2025-11-16|2022-12-23|N/A|false|N/A
+AbdelrahmanYassien11/uvm_hierarchy_blueprint|just a blueprint for an empty uvm_hierarchy with the necessary connections for intra/inter class communication |3|0|main|false|SystemVerilog|6KB|2025-06-20|2024-09-13|N/A|false|N/A
+AbdelrahmanYassien11/Verification-of-a-Synchronous-FIFO-using-UVM-SVA|Verification of a Synchronous FIFO using UVM & SVA|3|1|main|true|SystemVerilog|22.84MB|2025-07-04|2024-08-01|N/A|false|N/A
+AbdelrahmanYassien11/Verification-of-AMBA-AHB-LITE-using-UVM|Verification of AMBA AHB LITE using UVM in preparation for the AHB Verification|3|0|main|true|SystemVerilog|41.59MB|2025-07-05|2024-09-01|N/A|false|N/A
+Aayrl/mc_denizens|Minecraft Denizen Plugin Scripts for Minecraft Servers running Craft Bukkit 1.7.5 + with the Citizens 2|3|2|master|true|N/A|113.49MB|2023-10-11|2014-04-07|N/A|false|N/A
+ANIL-RONGALA/systolic-NN-accelerator-on-FPGA-with-metrics|FPGA-based systolic-array neural accelerator: a scalable 4×4 PE array architecture with tile-based matrix-multiply|3|3|main|true|Verilog|178KB|2026-01-07|2025-09-03|N/A|false|N/A
+ALittleBitFour/msgpack_sv|MsgPack_SV is a UVM compatible SystemVerilog implementation of an encoder and decoder for the MessagePack serialization format.|3|1|main|true|SystemVerilog|85KB|2025-05-21|2022-10-17|N/A|false|N/A
+yassinelkashef/UVM-Verification-of-AXI4-Lite-Interface-|UVM Verification of AXI4-Lite Interface |2|3|main|true|Verilog|35KB|2025-12-16|2023-10-24|N/A|false|N/A
+yanivnana/uvm_first_step|First Step in UVM|2|1|master|true|SystemVerilog|149KB|2022-10-11|2020-07-11|N/A|false|N/A
+xiaoan109/uart_example|Mentor APB_UART UVM Example|2|0|main|true|SystemVerilog|19.26MB|2025-07-03|2025-01-09|N/A|false|N/A
+william1nguyen/uvm|Ubuntu server with Docker|2|0|master|true|Makefile|3.62MB|2025-09-12|2025-05-27|N/A|false|N/A
+wfy-yr/uvm-env-eample|this is a env eample|2|2|main|true|Perl|292KB|2022-07-25|2021-03-09|N/A|false|N/A
+vpand/uvmsdkusermanual|UraniumVM sdk user manual.|2|1|main|true|N/A|1.23MB|2025-05-20|2024-04-17|N/A|false|N/A
+vmoeykens/cs211-final-project|Final project for Prof Joe Near's CS211 at UVM|2|0|main|true|Jupyter Notebook|700KB|2023-02-07|2020-12-06|N/A|false|N/A
+vinodsake/Matrix-Muliplier|Matrix muliplier using system verilog and UVM|2|0|main|true|Makefile|15KB|2024-03-29|2020-10-31|N/A|false|N/A
+vi535/AHB---to---APB---Bridge---Verification|UVM-based verification of AHB-to-APB bridge in SystemVerilog|2|0|main|true|SystemVerilog|29KB|2025-07-22|2025-04-21|N/A|false|N/A
+verification-explorer/systemverilog-clocking-blocks-tutorial|SystemVerilog tutorial on how and why to use clocking blocks|2|0|main|true|Verilog|989KB|2025-08-06|2025-07-21|N/A|false|N/A
+vaibhavirastogi/APB-Slave-BFM-UVM-Testbench|Testbench and design code to verify APB Protocol|2|0|main|true|SystemVerilog|14KB|2024-02-21|2023-09-05|N/A|false|N/A
+tyxuanyuanlx/UVM|N/A|2|2|master|true|SystemVerilog|280KB|2025-12-08|2014-11-15|N/A|false|N/A
+tylergithub/8b_10b_Encoder_Verification_EE273|Design and verify an 8b/10b encoder with CRC Using UVM|2|0|main|true|SystemVerilog|67KB|2024-12-19|2021-04-18|N/A|false|N/A
+tusharpathaknyu/UVMForge|🚀 AI-Powered UVM Testbench Generator - Transform natural language specs into production-ready verification environments|2|0|main|true|Python|534KB|2026-01-09|2025-12-15|N/A|false|N/A
+tsengs0/UART_RTL_UVM|This is a simple exercise of UART transceiver's RTL design along with UVM-based verification|2|1|main|true|SystemVerilog|13KB|2025-02-23|2024-03-11|N/A|false|N/A
+the-hobbes/etsApplication|Web application to apply for work|2|0|master|true|PHP|648KB|2013-10-09|2013-03-10|N/A|false|N/A
+taichi-ishitani/tvip|N/A|2|1|master|false|SystemVerilog|35KB|2025-11-08|2017-05-09|N/A|false|N/A
+suraj1singh2460/UART|Universal Asynchronous Receiver / Transmitter design|2|0|master|true|N/A|7.60MB|2023-09-09|2023-08-22|N/A|false|N/A
+sumiravishan/RISCV32_LINUX_UVM|Embeded Linux Boot in RISCV32IMA|2|0|main|true|SystemVerilog|18.96MB|2024-08-18|2023-05-24|N/A|false|N/A
+so1taynguyen/Router-1x3-UVM-Verification-IP|A simple UVM VIP for Router 1x3|2|0|main|true|SystemVerilog|938KB|2025-10-02|2025-05-19|N/A|false|N/A
+skates17/Rehab-Tracker|Rehab Tracker App for UVM Medical Center|2|3|master|true|Swift|9.27MB|2017-05-01|2016-12-14|N/A|false|N/A
+shubhv26/UVM_ALU|ALU implementation and its testbench verification using UVM.|2|1|master|false|SystemVerilog|41KB|2022-03-01|2019-07-16|N/A|false|N/A
+serbenas/serbenas.gethub.FIFO_UVM|Our FIFO design verification plan utilizes UVM methodology with strategically placed assertions and coverage groups to ensure rigorous validation. By tracking stimuli and responses exhaustively|2|0|main|true|SystemVerilog|11KB|2024-09-09|2024-06-03|N/A|false|N/A
+selvaruban-johnson/APB_UVM|N/A|2|0|master|false|SystemVerilog|12KB|2023-02-15|2020-06-14|N/A|false|N/A
+seiyata/uvmap-extractor|Extract UV map from .obj file|2|0|master|true|Perl|3KB|2025-02-18|2017-01-30|N/A|false|N/A
+scutdig/PyChip-PyUVM|PyChip verification library PyUVM|2|1|master|false|C++|12.27MB|2021-12-30|2020-10-26|N/A|false|N/A
+scchow/uvms_simulator_install|N/A|2|1|main|true|Shell|28KB|2021-10-12|2020-11-24|N/A|false|N/A
+sartori-labs/Verif-LLM|An open-source benchmark for generating Verification Suites using UVM with natural language|2|0|main|true|SystemVerilog|598KB|2025-03-26|2024-08-01|N/A|false|N/A
+rdou/UVM-Verification-Testbench-For-APB|N/A|2|1|master|true|SystemVerilog|3KB|2020-06-16|2016-05-18|N/A|false|N/A
+rajeshbhuyan/uvm_testbench_generator|generate complete uvm_testbench using pyhton script|2|1|main|true|Python|13KB|2023-06-27|2021-03-14|N/A|false|N/A
+r-mitchell-s/RTL_Cache|Self-directed design of a two-level cache hierarchy. Completed over winter break following fall 2024.|2|0|main|true|SystemVerilog|6KB|2025-12-16|2025-01-07|N/A|false|N/A
+prasannaprajapati/logic_gates_UVM_Verification|N/A|2|0|main|true|SystemVerilog|251KB|2025-07-15|2024-12-01|N/A|false|N/A
+pranavShreyas/RISC-V-Verification|Verification of RISC-V processor using System Verilog and UVM|2|0|master|true|N/A|0KB|2024-04-05|2017-02-25|N/A|false|N/A
+pknminor/ctags-uvm|systemverilog uvm ctags setup|2|1|master|true|N/A|5KB|2021-03-25|2016-10-25|N/A|false|N/A
+phase/uvm|Uninteresting Virtual Machine|2|0|master|false|C|10KB|2021-09-24|2016-07-13|N/A|false|N/A
+petarstamenkovic/Functional_Verification|Course from a 4th year of studies. Development of a UVM testbenches.|2|0|main|true|VHDL|1.70MB|2024-03-27|2023-07-07|N/A|false|N/A
+pavesiriccardo/UVmodeldisk|Fitting rotating disk models to interferometric data|2|2|master|true|Python|55KB|2020-06-07|2018-08-14|N/A|false|N/A
+oz-matt/ozphy_uvm|N/A|2|3|main|false|SystemVerilog|908KB|2024-11-24|2021-02-17|N/A|false|N/A
+overcookedlobster/uvm-uart|A testbench + RTL for UART RX/TX in UVM for training|2|0|main|true|SystemVerilog|38KB|2025-08-23|2025-04-21|N/A|false|N/A
+overcookedlobster/uvm-i2c-axil|Personal UVM Verification|2|0|main|true|SystemVerilog|6KB|2025-12-16|2024-10-31|N/A|false|N/A
+oga-engineering/codma_uvm|UVM style testbench for the CODMA project|2|0|main|true|SystemVerilog|35KB|2025-04-29|2023-08-14|N/A|true|N/A
+nstrayer/math295|Code and data for Professor James Bagrow's|2|1|master|true|Python|47.59MB|2015-07-03|2014-09-10|N/A|false|N/A
+npatsiatzis/fifo_asynchronous|N/A|2|0|main|true|Python|7.25MB|2025-07-04|2022-12-15|N/A|false|N/A
+mwhite494/Beta-Air|2016 UVM SEED Team #14 Beta Air|2|0|master|true|Eagle|5.51MB|2016-09-22|2016-05-14|N/A|false|N/A
+moghamry25/UVM_FIFO|N/A|2|0|main|false|SystemVerilog|18.05MB|2024-10-12|2024-10-10|N/A|false|N/A
+mitshine/XOR-Complement-UVM|Implementation of XOR Complement using UVM Methodology|2|0|master|true|SystemVerilog|7KB|2024-01-08|2019-02-11|N/A|false|N/A
+minjiexm/uvm_scratch|A Serial Open UVM Training Labs from Scratch|2|0|master|true|N/A|80KB|2023-09-05|2019-08-22|N/A|false|N/A
+minjiexm/uvm-1.1d|uvm-1.1d source code|2|0|master|true|SystemVerilog|2.77MB|2023-03-05|2020-04-08|N/A|false|N/A
+midisenpai/SHA-Module|A simple SHA-256 implementation in VHDL and Verilog|2|0|master|true|Verilog|66KB|2025-07-30|2019-12-05|N/A|false|N/A
+maheshpalaka298/Router_1X3|Router 1X3 Design and Verification using Verilog|2|0|main|true|Verilog|779KB|2025-05-16|2024-11-12|N/A|false|N/A
+lsteveol/gr_uvm_reg_agent|UVM Register Agent used with the gen_regs flow|2|0|master|true|SystemVerilog|53KB|2023-04-26|2020-04-29|N/A|false|N/A
+lorizhixuing/seabeami|UVM register utility generation by inputting xls table|2|0|main|true|JavaScript|264KB|2023-08-02|2021-09-20|N/A|false|N/A
+lookwhoistalkinguvm/VoiceEditorUVM|VoiceEditor for UVM|2|0|master|true|Python|21.36MB|2021-11-05|2020-08-29|N/A|false|N/A
+lmadem/APB_Slave_Verification|Verification of APB Slave in UVM Environment|2|0|main|true|SystemVerilog|36KB|2024-09-01|2024-06-06|N/A|false|N/A
+lmadem/ALU_Verification|ALU Verification environment in UVM architecture with predictor component and DPI-C model|2|0|main|true|SystemVerilog|36KB|2024-09-01|2024-06-14|N/A|false|N/A
+lmadem/16X16-Router|Verification of 16X16 in System Verilog and UVM architecture|2|0|main|true|SystemVerilog|94KB|2024-09-16|2024-07-02|N/A|false|N/A
+lhlawrence/UVM-VSS|N/A|2|1|main|true|Python|11.50MB|2025-10-23|2024-12-09|N/A|false|N/A
+laowang111101/UvMmkKEoQa|【Java计算机毕业设计分享】大学生选修选课系统的设计与实现，MySQL Java开发 毕业设计 实战项目【附源码、文档报告、代码讲解】选题定题、开题报告、任务书、程序开发、文档编写和辅导、文档降重、程序讲解、答辩辅导等|2|0|main|true|N/A|3KB|2025-11-04|2025-11-04|N/A|false|N/A
+labwet/uvm|Urbit Version Manager - a utility script for managing different releases of the Urbit runtime (Vere)|2|0|main|true|Shell|24KB|2025-07-24|2025-07-08|N/A|false|N/A
+kkurenkov/kvt_clk_rst_vip|Easy clock and reset UVM agent|2|1|main|true|SystemVerilog|9KB|2025-11-08|2023-09-16|N/A|false|N/A
+kittu843132/UVM_PROJECTS|N/A|2|0|master|true|JavaScript|2.04MB|2025-01-09|2024-10-25|N/A|false|N/A
+keatoncscheible/uvm_101|UVM basic tutorial|2|1|master|true|Python|17KB|2025-08-07|2023-07-27|N/A|false|N/A
+jiru1997/design-and-verification-of-MCDF-phase3|design-and-verification-of-MCDF-phase3|2|1|main|true|SystemVerilog|33KB|2023-06-13|2021-11-17|N/A|false|N/A
+jg-fossh/uvm_python_Wishbone_Pipeline_Master|Wishbone Master(Pipelined) Bus Interface Verification Agent|2|0|main|true|Python|31.80MB|2025-01-12|2021-06-25|N/A|false|N/A
+jakeread/uvmc|micro vmc machine|2|1|master|true|N/A|4.37MB|2024-12-21|2018-07-29|N/A|false|N/A
+jacksonsdean/evolutionary-robotics|UVM CS206|2|1|main|true|Python|152.66MB|2025-06-02|2022-01-18|N/A|false|N/A
+huy7715/Noel_report|Verfication Synchronous FIFO using SV without UVM|2|0|main|true|SystemVerilog|49KB|2025-10-07|2023-12-23|N/A|false|N/A
+hussin-mohamed/UVM_generator|N/A|2|1|main|true|SystemVerilog|10.36MB|2025-08-09|2025-05-06|N/A|false|N/A
+hao310rui140326/my_uvm_demo|my_uvm_demo|2|0|main|true|SystemVerilog|6.79MB|2025-05-14|2021-02-04|N/A|false|N/A
+gopro-uvm-rtl-verification/RISC-V-CPU-Core-UVM-Based-ISA-Compliance-Verification|RV32IM RISC-V CPU core with a full UVM verification environment and ISA-compliance via Spike (DPI-C): constrained-random|2|0|main|false|SystemVerilog|47KB|2025-12-27|2025-08-20|N/A|false|N/A
+gopro-uvm-rtl-verification/PCIe-Gen3-Endpoint-Subsystem-Verification|UVM + DPI-C reference model for PCIe Gen3 endpoint (transaction layer)|2|1|main|true|SystemVerilog|231KB|2025-10-25|2025-08-18|N/A|false|N/A
+gggmmm/minmax|Synthesizable min/max module with UVM tb|2|0|main|true|SystemVerilog|242KB|2025-12-09|2022-03-20|N/A|false|N/A
+gcdagis97/verification-pipelined-MIPS-with-UVM|Simulation and functional verification of a MIPS processor using UVM.|2|2|master|true|Verilog|1.16MB|2024-11-24|2019-09-09|N/A|false|N/A
+ganesh-ps/UVM_verification|N/A|2|0|master|true|SystemVerilog|472KB|2020-08-04|2019-05-24|N/A|false|N/A
+fvutils/uvm-py|Python implementation of the UVM API|2|1|master|true|Python|254KB|2025-01-12|2019-05-06|N/A|true|N/A
+faisaltashildar/110-Sequence-Detector-UVM-PD|A 110 sequence detector implemented using Verilog and SystemVerilog with UVM for verification. Includes physical design (RTL to GDSII) for ASIC/FPGA implementation. The project covers design|2|0|main|true|Verilog|21.58MB|2025-03-13|2025-03-12|N/A|false|N/A
+erikweis/vacc|A package to faciliate running python scrips on the UVM's VACC..|2|0|main|true|Python|23KB|2024-07-29|2022-08-10|N/A|false|N/A
+elirazd/Verifcation-APB-transceiver|Verification test (with UVM) of 3 interfaces transceiver include APB|2|0|main|false|SystemVerilog|774KB|2024-05-07|2021-08-09|N/A|false|N/A
+ejchao/ECE748|Advanced Functional Verification with UVM|2|0|main|false|SystemVerilog|24.73MB|2025-12-16|2024-02-19|N/A|false|N/A
+dighrasker/MultiCore_L2_Cache|A UVM-based verification environment for a multi-core|2|0|main|true|SystemVerilog|60KB|2026-01-02|2025-06-26|N/A|false|N/A
+deekshithkrishnegowda/EE279-Verification-of-DAC-and-ADC-in-UVM-environment|EE279 Final project|2|0|master|true|Objective-C|3.31MB|2024-05-20|2018-10-13|N/A|false|N/A
+darpanchoudhary/1x3-Router-UVM-TestBench|Router UVM Testbench|2|0|main|true|SystemVerilog|79KB|2025-07-13|2021-08-19|N/A|false|N/A
+cristian-slav/uvm_thread_decoupler|Utility class to decouple a task from its caller process so that a call to kill() method of the parent process does not terminate the targeted task.|2|1|main|true|SystemVerilog|13KB|2023-04-20|2023-01-31|N/A|false|N/A
+cirofabianbermudez/01_simple_adder_uvm|A simple adder implementation and verification using UVM 1.2|2|0|main|true|SystemVerilog|290KB|2025-11-04|2024-05-24|N/A|false|N/A
+chiselverify/jUvm|Verification of digital circuits in Java and Scala|2|0|main|true|Scala|5KB|2024-09-17|2024-06-22|N/A|false|N/A
+chetha123/AXI_Protocol|Design and UVM testbench code for AXI Protocol|2|0|main|false|SystemVerilog|11KB|2025-08-07|2023-05-14|N/A|false|N/A
+chandrashub/uvm_plusargs|N/A|2|0|master|true|SystemVerilog|3KB|2023-02-20|2018-08-23|N/A|false|N/A
+chalersWang/PY_UvmGen|the uvm environment generating with python|2|0|master|true|Python|7.40MB|2025-01-12|2023-11-13|N/A|false|N/A
+bhendi-boi/uvm_uart|A repo containing uvm tb for uart module|2|0|main|true|SystemVerilog|8KB|2025-07-23|2024-10-20|N/A|false|N/A
+bhendi-boi/uvm_apb_ram|A repo containing uvm tb for apb_ram module|2|1|main|true|JavaScript|625KB|2025-07-23|2024-11-02|N/A|false|N/A
+basemhesham/UVM_Bsed_Verification_for_Asynchronous_FIFO|SystemVerilog design and UVM verification environment for an 8-bit asynchronous FIFO|2|1|main|true|SystemVerilog|160KB|2025-05-23|2025-05-23|N/A|false|N/A
+ayusdixit/Digital-ASIC-LAB|Verilog Codes for various Design  |2|2|main|true|SystemVerilog|1.41MB|2025-01-05|2023-09-14|N/A|false|N/A
+aymanaadel/AEGIS256_UVM_Verification|N/A|2|0|main|true|SystemVerilog|1.31MB|2024-10-29|2024-07-27|N/A|false|N/A
+ayengec/FPGA-Design-with-Systemverilog|SystemVerilog brings a higher level of abstraction to the Verilog designer. Constructs and commands like Interfaces|2|2|main|true|SystemVerilog|40.42MB|2025-04-03|2021-05-09|N/A|false|N/A
+ashoksanjay/Router1x3_UVM-Verification|N/A|2|0|master|false|Verilog|2.21MB|2025-11-06|2025-08-26|N/A|false|N/A
+arjunabinash/HALFADDER_UVM|A combinational circuit that adds two single-bit binary numbers and produces the sum and carry as output. |2|0|main|false|SystemVerilog|6KB|2024-02-05|2023-12-27|N/A|false|N/A
+aritramanna/Basic_Out_Of_Order_Protocol_UVM_TB_Implementation|UVM TB Implementation of a basic  out of order Memory Slave|2|0|main|true|SystemVerilog|14KB|2026-01-08|2025-10-06|N/A|false|N/A
+apriya-ram/uvm_fundametal_series|Learning UVM step by step and understand the simple uvm APB code |2|0|main|false|SystemVerilog|7KB|2024-08-20|2024-08-05|N/A|false|N/A
+allenderalencar/UVM_Register_bank|N/A|2|2|master|true|SystemVerilog|10.53MB|2021-06-23|2019-11-14|N/A|false|N/A
+akzare/TWireSerIntrfc|A verification test case for a master implementation of the Two-Wire Serial Register Interface based on Systemverilog and UVM.|2|1|master|true|SystemVerilog|29KB|2022-07-08|2017-11-19|N/A|false|N/A
+akiki19950827/gen_uvm_reg_model|N/A|2|0|main|true|Python|21KB|2025-03-25|2023-09-25|N/A|false|N/A
+ajp4707/uvm_workshop|My diary of learning UVM for hardware verification.|2|0|main|false|SystemVerilog|2.18MB|2024-08-23|2024-08-07|N/A|false|N/A
+accellera-official/uvm-tests|N/A|2|2|main|true|N/A|0KB|2025-06-14|2023-06-06|N/A|false|N/A
+abssafi/amba-atb-vip|UVM based VIP for AMBA ATB Protocol|2|1|main|true|SystemVerilog|8.35MB|2025-09-24|2025-07-18|N/A|false|N/A
+abdurrafayn/YAPP_Interface_UVM|N/A|2|0|main|false|SystemVerilog|12.49MB|2025-06-27|2025-06-26|N/A|false|N/A
+aaronrjmanj/APB-SV-UVM-Testbench|APB Slave DUT|2|0|main|true|N/A|2KB|2025-06-21|2021-06-25|N/A|false|N/A
+Zameo08/PLL_UVM_MS|N/A|2|0|main|true|SystemVerilog|106.29MB|2025-09-14|2025-05-02|N/A|false|N/A
+Youssefmdany/Verification-of-UART-core-using-UVM|Verification of UART core using UVM|2|1|main|false|SystemVerilog|14KB|2025-12-16|2023-07-25|N/A|false|N/A
+Yashas2801/Router_1x3_verification_uvm|A 1x3 router directs incoming data packets from a single input to one of three outputs based on the destination address.|2|0|main|true|SystemVerilog|19KB|2025-02-10|2025-01-06|N/A|false|N/A
+Yashas2801/Ring_counter_verification_uvm|8-Bit Ring cocunter / Onehot counter Verification (UVM) |2|0|main|true|SystemVerilog|8.06MB|2025-01-08|2025-01-06|N/A|false|N/A
+YasaswiniK13/RISC-V_ALU_Core_Testbench_Development|Designed a UVM testbench for a RISC-V ALU core|2|0|main|true|SystemVerilog|13KB|2025-12-24|2024-08-08|N/A|false|N/A
+Vivek-Dave/UVM_TestBench_For_Up_Down_Counter|Complete UVM TB For Verification Of Up_Down_Counter|2|0|main|true|SystemVerilog|472KB|2025-10-08|2021-04-18|N/A|false|N/A
+Vivek-Dave/UVM_TestBench_For_Up_Counter|Complete UVM TB For Verification Of Up_Counter|2|0|main|true|SystemVerilog|74KB|2025-03-20|2021-04-18|N/A|false|N/A
+Vivek-Dave/UVM_TestBench_For_ALU|Complete UVM TestBench For Verification Of Arithmetic And Logical Unit |2|0|main|true|SystemVerilog|130KB|2025-06-27|2021-05-25|N/A|false|N/A
+VanshK123/AI-Inference-Accelerator|Turnkey AI Inference Accelerator: 5 nm ASIC core|2|0|main|true|SystemVerilog|1.22MB|2025-12-11|2025-06-23|N/A|false|N/A
+VSHEV92/CycloneV_StarterKit_Leds7_UVM|Тестовое окружение на примере проекта с семисегментными индикаторами с использованием UVM|2|0|main|true|SystemVerilog|13KB|2025-06-17|2021-05-03|N/A|false|N/A
+VSHEV92/AXI_Lite_UVM_Agent|UVM агент для верификации IP-ядер с AXI-Lite интерфейсом|2|0|main|true|SystemVerilog|5.25MB|2025-06-17|2021-10-29|N/A|false|N/A
+UnionVMS/UVMS-UVMSCommonsLibrary|N/A|2|1|dev|true|Java|1.11MB|2021-12-16|2016-07-11|N/A|false|N/A
+UnionVMS/UVMS-SpatialModule-APP|Spatial module APP|2|0|dev|false|Java|80.51MB|2022-02-28|2016-07-08|N/A|false|N/A
+UnionVMS/UVMS-ReportingModule-APP|N/A|2|0|dev|false|Java|22.30MB|2019-01-10|2016-07-08|N/A|false|N/A
+UnionVMS/UVMS-MovementModule-APP|N/A|2|4|swe-dev|true|Java|4.41MB|2021-12-21|2016-07-08|N/A|false|N/A
+UnionVMS/UVMS-GeoServer|A custom version of GeoServer (see https://github.com/geoserver/geoserver for more details)|2|2|master|true|Java|77.94MB|2017-11-16|2016-12-12|N/A|false|N/A
+UnionVMS/UVMS-AssetModule-APP|Store and handle Assets such as Vessels|2|6|asset_se|true|Java|27.09MB|2021-12-22|2016-07-04|N/A|false|N/A
+UjvalMadhu/Verification-Projects|This repository contains various projects involved with the verification of digital systems|2|0|main|false|SystemVerilog|850KB|2025-04-18|2025-01-30|N/A|false|N/A
+UT-LCA/UVMAsyncBench|N/A|2|0|TACO_2025|true|C|367.78MB|2025-01-29|2023-08-06|N/A|false|N/A
+TejaRaghuveer/gpu-noc-verification-suite-|A comprehensive|2|0|master|true|SystemVerilog|168KB|2026-01-08|2025-11-18|N/A|false|N/A
+TejaRaghuveer/UVM-GPU-shader-verification-|UVM testbench and verification environament for GPU shader block RTL project|2|0|master|true|SystemVerilog|114KB|2026-01-08|2025-11-10|N/A|false|N/A
+THRIVIKRAM123/uvm-verification-full-adder|This repository provides a Universal Verification Methodology (UVM) testbench designed to verify any combinational logic. The example used here is a Full Adder|2|0|main|true|SystemVerilog|170KB|2025-09-23|2025-05-12|N/A|false|N/A
+THRIVIKRAM123/uvm-full-adder-virtual-sequencer|This repository includes a basic UVM testbench with config|2|0|main|true|SystemVerilog|25KB|2025-09-23|2025-05-18|N/A|false|N/A
+Sunni-Sagar/AHB2APB-Bridge-Verification|AHB2APB Bridge Verification by using Universal Verification Methodology (UVM)|2|2|main|true|Verilog|43KB|2025-11-14|2024-09-19|N/A|false|N/A
+SowmyaMB30/LC3-UVMF-Verification|N/A|2|0|main|true|SystemVerilog|15.09MB|2025-11-19|2025-11-06|N/A|false|N/A
+SophoWang/uvm_cookbook_examples|N/A|2|2|master|false|HTML|2.65MB|2024-11-26|2020-03-15|N/A|false|N/A
+SleekPanther/uvm-blackboard-autofill-netid|Autofill NetID when logging into Blackboard & syncs across signed-in Chrome browsers|2|0|master|true|JavaScript|9.53MB|2023-08-04|2018-02-01|N/A|false|N/A
+SleekPanther/noah-patullo-repositories|A list of projects I've worked on. GitHub's organization is lacking in my opinion|2|1|master|true|N/A|30KB|2023-10-22|2016-12-03|N/A|false|N/A
+Siddharthc8/ASIC-Design-and-Verification|This repository contains a collection of Verilog and SystemVerilog design files|2|0|main|true|SystemVerilog|2.71MB|2026-01-07|2024-11-20|N/A|false|N/A
+Sheheryar672/SPI-Controller-Memory-with-UVM-Verification|N/A|2|0|main|true|SystemVerilog|7KB|2025-04-18|2025-02-09|N/A|false|N/A
+Sheheryar672/APB-RAM-with-UVM-Verification|N/A|2|0|main|true|SystemVerilog|7KB|2025-04-18|2025-02-09|N/A|false|N/A
+Sheheryar672/-UART-Transmitter-Receiver-with-UVM-Verification|RTL design of UART protocol includes both transmitter and receiver|2|0|main|true|SystemVerilog|8KB|2025-04-18|2025-02-09|N/A|false|N/A
+Shankeydev/apb_RAL|the design contains five register|2|0|main|true|SystemVerilog|6KB|2025-01-28|2024-04-21|N/A|false|N/A
+SerLippo/Lemmings|This is a simple UVM env for DV starters.|2|0|master|true|SystemVerilog|16KB|2022-03-23|2021-07-31|N/A|false|N/A
+SeiffAhmed22/SPI-Slave-with-Single-Port-RAM-UVM|Fully verified SPI Slave design with Single-Port RAM using UVM (Universal Verification Methodology). This project includes a complete UVM-based testbench with sequences|2|0|main|true|SystemVerilog|369KB|2025-03-13|2024-08-06|N/A|false|N/A
+Satya7733/UART|Design and Verification of UART using class based verification and UVM|2|0|main|true|SystemVerilog|13KB|2025-06-14|2025-01-07|N/A|false|N/A
+SarangPurnaye/AXI4-Lite|Title: Design and Verification of AXI-4 Lite Protocol.  Platform: RTL Coding (Verilog/System Verilog)  Duration: 1 Months  Description: In this Project we have design master and slave in Verilog. We are using AXI-4  Lite protocol for interfacing Master  and Slave.  Verification is completed using SV and  UVM. |2|0|master|true|N/A|0KB|2025-02-22|2019-03-21|N/A|false|N/A
+SahithiNuka/UVM|N/A|2|0|main|true|SystemVerilog|131KB|2025-11-10|2025-03-15|N/A|false|N/A
+SagarSorathiya2002/APB_UVM|APB_VERIFICATION_UVM|2|0|main|true|SystemVerilog|277KB|2025-07-05|2023-06-16|N/A|false|N/A
+SJTU-YONGFU-RESEARCH-GRP/awesome-systemverilog-uvm|A comprehensive one-stop hub for learning Universal Verification Methodology (UVM)|2|0|main|true|Jupyter Notebook|82KB|2026-01-09|2026-01-06|N/A|false|N/A
+RobertFanning/TestbenchGenerator|UVM Testbench Generator: VHDL Interpreter and UVM code generator|2|1|master|true|C#|1.00MB|2020-06-16|2019-04-11|N/A|false|N/A
+RevanthNandamuri1341b0/ALU-Verification-Environment|Development UVM Verification Environment for ALU DUT|2|3|master|true|SystemVerilog|14KB|2025-04-28|2021-08-22|N/A|false|N/A
+Razan175/AXI4-Compliant-Memory-Mapped-Slave-UVM|A complete UVM environment to verify the AXI4 design with the integrated memory applying Coverage-Driven Verification (CDV) principles using key features of SystemVerilog.|2|0|main|false|SystemVerilog|2.12MB|2025-12-14|2025-08-21|N/A|false|N/A
+QueenField/UVM-31-DAYS|Learning UVM|2|1|main|true|SystemVerilog|762KB|2025-09-18|2024-01-29|N/A|false|N/A
+Purdue-SoCET/AXI-UVM|N/A|2|0|main|true|SystemVerilog|40.90MB|2025-12-16|2024-12-17|N/A|false|N/A
+Pirate-Emperor/CipherX|CipherX is a verification project for Advanced Encryption Standard (AES-128) using Universal Verification Methodology (UVM). It leverages Verilog|2|0|main|true|Verilog|2.67MB|2024-11-16|2024-11-02|N/A|false|N/A
+Penghua558/jesd204b-UVM|UVM verification environment to verifty JESD204B|2|2|main|false|SystemVerilog|230KB|2025-04-09|2024-10-19|N/A|false|N/A
+PedroHSCavalcante/mult-dut-parl-stim|Multiple DUT with parallel stimulus|2|2|master|true|SystemVerilog|47KB|2022-05-06|2019-08-19|N/A|false|N/A
+PedroHSCavalcante/basic-uvm-env|Basic UVM Environment|2|2|master|true|SystemVerilog|28KB|2023-10-19|2019-07-25|N/A|false|N/A
+PXVI/GENUVM|Automated script to generate a generic UVM testbench with compatible makefile and internal scripts.|2|0|main|true|N/A|1KB|2024-06-15|2022-09-04|N/A|false|N/A
+OYounis/UVM-RV|N/A|2|0|master|false|SystemVerilog|56KB|2022-04-08|2021-11-15|N/A|false|N/A
+OTANK10/UVM|Building a UVM TestBench from Scratch to test a 32-bit Serial Bus Aligner.|2|0|main|true|Verilog|732KB|2025-06-27|2025-06-19|N/A|false|N/A
+Nikola2444/UVM_verif_examples|N/A|2|1|master|true|Verilog|40KB|2024-08-28|2020-05-09|N/A|false|N/A
+Nachiket497/uvm_tb_gen_python|N/A|2|0|main|true|Python|27KB|2025-01-12|2024-02-12|N/A|false|N/A
+MohamedEhab13/SPI-Verification-using-UVM|N/A|2|0|main|true|SystemVerilog|9KB|2025-11-24|2025-01-05|N/A|false|N/A
+Moayad-Ahmed/Reusable-Verification-Framework-for-Deep-Learning-Accelerators-using-PyUVM-COCOtb-and-PSS|Reusable and scalable verification framework for Deep Neural Network (DNN) accelerators using Pyuvm|2|0|main|true|Python|15KB|2025-12-22|2025-12-21|N/A|false|N/A
+Mhd-Shah/Verification-of-D--flipflop-using-UVM|Verification of D-FF using UVM on EDA playground|2|0|main|true|SystemVerilog|93KB|2024-03-09|2023-11-19|N/A|false|N/A
+Mekky7/UVM-enviroment-of-Spartan-6-FPGA-DSP48A1-|N/A|2|0|main|false|SystemVerilog|24KB|2024-06-27|2024-06-26|N/A|false|N/A
+MarwanMohamed12/Shift-Register-Integration-with-ALSU-Verification-Using-UVM|N/A|2|0|main|true|SystemVerilog|67KB|2025-04-15|2024-10-08|N/A|false|N/A
+MarwanMohamed12/SPI|Designed an SPI slave module integrated with memory for read and write operations. Developed a comprehensive UVM environment to verify its functionality|2|0|main|true|SystemVerilog|14KB|2025-12-15|2025-01-08|N/A|false|N/A
+MarleyLobao/UVM_Traffic_RAL|This repository organizes the ChipVerify website code so that it is executable in a verification environment that uses the Register Abstraction Layer (RAL) in frontdoor and backdoor modes|2|2|main|true|SystemVerilog|352KB|2025-10-14|2023-03-21|N/A|false|N/A
+LingShuang545/UVM_DPI_MATLAB_CRC5|Interaction between Reference Model of UVM Environment and MATLAB in Linux System|2|0|main|true|Verilog|106KB|2025-12-30|2025-12-28|N/A|false|N/A
+Kyouma48596/UVM-Based-NoC-Verification|This repository contains a UVM based testbench written by me in order to carry out the block level verification of an NoC Mesh|2|0|main|false|C|20.00MB|2024-06-03|2022-04-04|N/A|false|N/A
+KelvinVale/julia_to_uvm_verification|It is a Julia script to generated VIP|2|2|main|true|Julia|29KB|2025-11-20|2023-01-29|N/A|false|N/A
+Jestice08/UVM_Based_Verif_of_XGMACCORE|UVM-Baesd Verification for 10G Media Access Contriol Core|2|1|master|true|Verilog|19.52MB|2024-09-23|2019-04-23|N/A|false|N/A
+Jcbnunez/uvm-popgen|N/A|2|0|main|true|N/A|133KB|2025-12-11|2025-01-16|N/A|false|N/A
+JMcGhee-CPE/RISCV_Verilog|This repo will serve as a scratchpad for my future VHDL/Verilog related projects. I intend to improve my skills in UVM|2|0|main|true|Verilog|6KB|2024-09-12|2023-07-15|N/A|false|N/A
+IDWMaster/UVM|Universal Virtual Machine (with exception of FFI)|2|0|master|false|C++|28KB|2019-06-14|2017-11-24|N/A|false|N/A
+ICJJ/uvm_zhangqiang|uvm实战代码整理，来自张强的uvm实战一书|2|0|master|true|SystemVerilog|45.11MB|2025-03-14|2024-08-22|N/A|false|N/A
+HassanTaqiEddin/ASIC-Design-And-Verification-Project|Pipelined Processor|2|0|main|true|Verilog|123KB|2025-02-13|2024-10-02|N/A|false|N/A
+HamzaShabbir517/GPIO_UVM_Framwork|This repository provides a UVM framework for verifying GPIO peripherals with an AXI4-Lite interface. It offers a modular|2|0|main|true|SystemVerilog|540KB|2024-12-21|2024-12-02|N/A|false|N/A
+Hamster-Tom/PSDC_SPI_Project|Repo for PSDC UVM Project|2|0|main|true|SystemVerilog|3.40MB|2025-09-26|2025-08-11|N/A|false|N/A
+Hampton-bit/uvm-yapp-router-verification-yapp-uvc|UVM testbench for verifying a packet router using the YAPP (Yet Another Packet Protocol)|2|0|main|true|SystemVerilog|10KB|2025-06-27|2025-06-24|N/A|false|N/A
+Gonadeepika/Counter_verification|  1)Architected the class based verification environment in UVM. 2)Defined Verification Plan. l 66%  3)Verified the RTL module with UVM Test Bench with different test scenarios like single READ|2|0|main|true|SystemVerilog|490KB|2025-02-22|2024-05-13|N/A|false|N/A
+Gainsta/I2C_UVM_project|N/A|2|0|main|false|HTML|337KB|2023-04-06|2021-05-20|N/A|false|N/A
+Filza01/Ibex-Core-Verification-with-UVM|Creating a UVM based verification environment for the verification of the Ibex core.|2|2|main|true|SystemVerilog|134.20MB|2025-11-30|2023-10-25|N/A|false|N/A
+FarahMoataz/Synchronous-FIFO-Verification-using-UVM|N/A|2|0|main|false|SystemVerilog|1.87MB|2025-06-24|2025-06-24|N/A|false|N/A
+Eyrehu/UVM_ISP|N/A|2|1|main|true|SystemVerilog|1.15MB|2025-02-04|2023-10-11|N/A|false|N/A
+DuBirdFly/MIG_DDR3_UVM|N/A|2|1|main|false|Verilog|1.35MB|2025-03-22|2024-08-05|N/A|false|N/A
+Dragon-Git/uvm_reference|N/A|2|1|master|true|SystemVerilog|169KB|2025-11-11|2020-07-11|N/A|false|N/A
+Dragon-Git/flexible-indirect-registers-with-uvm|N/A|2|0|main|true|SystemVerilog|733KB|2025-11-05|2024-01-06|N/A|false|N/A
+DhariniPatel1109/axi4lite-uvm-verification-ip|Professional UVM verification environment for AXI4-Lite protocol.  Features self-checking scoreboard|2|0|main|true|SystemVerilog|38KB|2025-12-11|2025-10-20|N/A|false|N/A
+Dharanish16/Router_1x3_Design_UVM_Verification|N/A|2|0|main|true|SystemVerilog|73KB|2025-11-03|2025-06-01|N/A|false|N/A
+DelgadoJesus/PROYECTO-POKEMON|Proyecto en node y express para un sistema del evento Campeonato de Robótica UVM. |2|0|main|false|JavaScript|2.87MB|2023-11-22|2023-10-07|N/A|false|N/A
+ChuanlaiZang/UVM_Verification|UVM Verification example|2|0|Master|true|SystemVerilog|154KB|2024-10-31|2023-07-26|N/A|false|N/A
+Buraddo23/Switch-testbench|UVM Testbench for a basic Switch module|2|0|master|false|SystemVerilog|3.19MB|2022-03-13|2019-11-05|N/A|false|N/A
+BlockLink/uvm|N/A|2|3|master|true|C++|14.56MB|2021-01-07|2018-01-08|N/A|false|N/A
+BharathS11/avmm_sha3|UVM testbench for an sha3 implementation with Avalon MM interface|2|8|master|true|Verilog|20KB|2024-12-25|2019-06-23|N/A|false|N/A
+BTA-design-services/tb_lint|TB_LINT - Modular Linting Framework|2|1|main|true|Python|6.18MB|2026-01-07|2025-10-15|N/A|false|N/A
+Autumn64/portfolio-uvm|Read-only; all PRs will be ignored! |2|0|main|true|Java|3.51MB|2025-11-01|2023-12-18|N/A|false|N/A
+ArthurMdrs/FFT-Module-Verification|This is a UVM testbench for the functional verification of a FFT module.|2|0|main|true|SystemVerilog|16.80MB|2024-08-23|2023-10-06|N/A|false|N/A
+AnisAbidRafique/SPI_CORE_Verification|Verified SPI using Wishbone master in uvm environment|2|0|main|false|SystemVerilog|25KB|2025-05-30|2024-10-04|N/A|false|N/A
+Alfred9998/UVM_v2|N/A|2|0|main|false|C++|109.53MB|2021-11-22|2021-06-06|N/A|false|N/A
+AlaaTaha32/Memory-RTL-Design-and-Verification|RTL of a RAM block is designed using Verilog. Testing it by developing two verification environments: class-based and UVM-based in SystemVerilog.|2|0|main|true|SystemVerilog|38KB|2025-02-22|2024-03-31|N/A|false|N/A
+AdarshPrakash789/Verification-of-System-on-Chip-SoC-Design-using-UVM|This project showcases a Universal Verification Methodology (UVM)-based verification framework for a System-on-Chip (SoC) design comprising multiple subsystems including CPU|2|0|main|true|N/A|18KB|2025-10-11|2025-04-11|N/A|false|N/A
+AdarshPrakash789/Coverage-Driven-Verification-of-High-Speed-Interface-PCIe-|This project presents a comprehensive|2|0|main|true|N/A|9KB|2025-10-24|2025-04-11|N/A|false|N/A
+AbanobEvram/UVM_Synchronous_FIFO|This project focuses on verifying a FIFO (First-In-First-Out) design using UVM. |2|0|main|true|SystemVerilog|3.98MB|2024-12-09|2024-10-14|N/A|false|N/A
+20KT1A0460/axi-uvm-test-bench|axi master and slave uvm test bench|2|0|main|true|SystemVerilog|46KB|2025-05-08|2024-11-21|N/A|false|N/A
+zzssspppp/UVM|N/A|1|0|master|false|N/A|18.41MB|2024-02-22|2024-01-29|N/A|false|N/A
+yuri-panchul/non-uvm-axi-lite-verification-ip|Non-UVM AXI-Lite Verification IP. Started as an educational examples in older Valid-Ready-Etc repo for the Digital Circuit Synthesis School|1|2|main|true|SystemVerilog|19KB|2025-10-24|2025-08-05|N/A|false|N/A
+yongyw123/spi_uvm|A UVM hello world.|1|0|main|true|HTML|6.03MB|2025-08-19|2025-08-12|N/A|false|N/A
+yiliang079/verification_uvm|useless|1|0|main|true|N/A|5.44MB|2022-01-26|2022-01-18|N/A|false|N/A
+yhsc0001/xinpianyanzhengUVMhuanjingzidongshengchenggongju|N/A|1|0|main|true|N/A|2KB|2025-07-16|2025-04-04|N/A|false|N/A
+xuehao-su/UVM|UVM verification platform|1|0|main|true|N/A|20KB|2021-06-29|2020-10-19|N/A|false|N/A
+xkk3599/uvm_practice|uvm practice|1|0|main|false|HTML|2.89MB|2023-06-13|2022-08-17|N/A|false|N/A
+xiejiadiwu/uvm_learn|这是一个uvm学习中的各种知识点与问题记录|1|0|main|true|N/A|1KB|2024-02-26|2023-04-10|N/A|false|N/A
+wedogg/mcdt_uvm|N/A|1|1|master|false|SystemVerilog|15KB|2022-06-03|2022-06-02|N/A|false|N/A
+wangying830/uvm|uvm learning |1|0|master|true|HTML|10.33MB|2023-02-23|2022-09-21|N/A|false|N/A
+wa-kakalala/uvm_demo|uvm_demo验证平台|1|0|master|true|SystemVerilog|159KB|2025-05-14|2024-12-22|N/A|false|N/A
+vdspw/UVM-learning|Has descriptions of UVM codes |1|0|main|true|SystemVerilog|183KB|2025-12-16|2025-03-23|N/A|false|N/A
+tyh2305/uvmm|N/A|1|0|main|false|Shell|49KB|2023-08-04|2023-07-16|N/A|false|N/A
+tridot64/uvm_to_diagram|UVM to a diagram|1|0|master|true|SystemVerilog|11KB|2025-08-06|2024-09-08|N/A|false|N/A
+teddywhy/uvm_apb|UVM APB VIP|1|0|main|true|SystemVerilog|21.78MB|2024-02-19|2024-01-02|N/A|false|N/A
+take-works-tech/face_uvmap|Generate UV maps from facial images using MediaPipe Face Mesh and affine warping for 3D texture alignment.|1|0|main|true|Python|1.91MB|2025-09-14|2025-05-22|N/A|false|N/A
+t123eus/uvmp|repo for practicing python template scripts in UVM|1|0|main|true|Python|4KB|2025-01-12|2023-11-15|N/A|false|N/A
+svenka3/fpuvm|UVM for FPGA - code base|1|7|main|true|Tcl|61KB|2024-04-14|2021-09-03|N/A|false|N/A
+sv8194/uvm_accumulator|N/A|1|0|main|true|SystemVerilog|262KB|2024-07-22|2022-10-30|N/A|false|N/A
+smilingthax/uvm|Simple threaded-code based assember/vm|1|0|master|true|C|5KB|2022-06-28|2020-10-19|N/A|false|N/A
+sidharrthnarasimhan/uvm_logic|sample uvm complete structure for beginners |1|1|master|false|SystemVerilog|8KB|2017-05-27|2016-11-21|N/A|false|N/A
+shehab-25/FIFO-UVM-Verification-Project|FIFO UVM Verification Project|1|0|main|true|SystemVerilog|1.19MB|2024-11-11|2024-10-20|N/A|false|N/A
+shawnohare/uvmono-example|Example uv monorepo|1|0|main|true|Python|54KB|2025-03-15|2025-01-06|N/A|false|N/A
+shantanu5092/APB-master-slave-verification-IP-using-UVM|Developing an APB master/slave verification IP using UVM|1|2|master|true|N/A|1KB|2024-04-24|2017-05-06|N/A|false|N/A
+sensukho/UVM_ver_1.0.0|UVM Captive Portal|1|0|master|true|PHP|17.15MB|2016-09-04|2013-12-10|N/A|false|N/A
+sapphirep/fifo_uvm|Synchronous FIFO RTL + UVM Testbench|1|0|main|true|SystemVerilog|421KB|2025-09-01|2024-12-15|N/A|false|N/A
+sam159/uVM|8-bit Virtual Machine written in C|1|0|master|false|C++|774KB|2023-02-03|2018-10-16|N/A|false|N/A
+s-i-r-i/UVM_SRAM|Description: Implemented the SRAM using Verilog HDL independently. Architected the class based verified envi- ronment using SV. Verified the RTL module using UVM|1|0|main|true|SystemVerilog|12KB|2025-04-08|2025-04-07|N/A|false|N/A
+ryuz/study_uvm|uvmの勉強用|1|1|master|true|SystemVerilog|9KB|2024-01-15|2022-12-03|N/A|false|N/A
+rohith2h2/uvm-gen|N/A|1|0|main|true|Python|18KB|2025-05-18|2025-05-16|N/A|false|N/A
+rahul1990bhatia/UVMburger|A easy way to learn uvm|1|0|main|true|JavaScript|3.35MB|2025-11-23|2025-11-21|N/A|false|N/A
+puti2018/Yi-Dan|UVM |1|0|master|true|N/A|5KB|2021-02-22|2020-01-03|N/A|false|N/A
+priyankp87/apb_uvm|UVM based verification environment for Advanced Peripheral Bus.|1|0|master|false|N/A|0KB|2025-07-13|2018-11-26|N/A|false|N/A
+pravinzode/UVM|N/A|1|0|main|true|Verilog|15.29MB|2026-01-05|2025-11-13|N/A|false|N/A
+oz-matt/EasierUVM-SimpRisc-ws|Verification suite of the SimpRisc CPU using the EasierUVM code gen|1|2|master|false|SystemVerilog|17.81MB|2024-11-24|2020-06-28|N/A|false|N/A
+nisalpanagoda/uvml|SystemVerilog RTL verification framework|1|0|main|false|N/A|0KB|2025-02-22|2023-05-11|N/A|false|N/A
+nilaydesai13/APB_UVM|N/A|1|0|main|true|SystemVerilog|10KB|2024-02-21|2023-04-14|N/A|false|N/A
+nikonov1101/uvm|UVM stands for ǘltradumb ṽirtual ṃachine|1|0|master|false|Go|60KB|2021-09-27|2019-12-16|N/A|false|N/A
+nguyensinhton9x/uvm_uart_apb_env|uvm_ver_3|1|1|master|false|SystemVerilog|47KB|2019-08-14|2019-07-19|N/A|false|N/A
+neoH/AUE|Advanced UVM Examples|1|0|master|true|SystemVerilog|219KB|2020-10-15|2020-03-29|N/A|false|N/A
+nelsoneugene/Sequence-Detector-|This repository contains Verilog and UVM-based design and verification files for a sequence detector (110)|1|2|main|true|Verilog|6.19MB|2025-05-21|2025-05-21|N/A|false|N/A
+nbiotcloud/ucdp-uvm|Unified Chip Design Platform - Unified Verification Environment|1|0|main|true|Python|82KB|2025-11-05|2025-04-10|N/A|false|N/A
+namezmud/UVMeter|Arduino based handheld UV meter|1|1|master|true|Arduino|12KB|2020-03-09|2017-05-23|N/A|false|N/A
+mzpmazeping/uvm_easy_mam|A memory allocation Manager  based uvm_mem_mam，with good usability.|1|2|main|true|N/A|3KB|2025-02-25|2023-04-10|N/A|false|N/A
+mystery1322/uvm-assembler|simple-vm-asm|1|0|main|true|Python|5KB|2025-12-16|2025-12-12|N/A|false|N/A
+mwnock/uvm_component|UVM component|1|1|master|true|N/A|188KB|2020-08-12|2014-01-15|N/A|false|N/A
+mvivek16/UVM-Examples|Examples from Verification academy|1|0|master|true|SystemVerilog|136KB|2020-11-28|2015-06-16|N/A|false|N/A
+monicakarine/UVMforVerification|First steps with UVM for Verification|1|0|main|true|C|8.35MB|2025-07-24|2024-07-07|N/A|false|N/A
+mohamedtarek54/SPI_UVM|UVM-Based verification environment to verify SPI module|1|0|main|true|SystemVerilog|24KB|2023-12-17|2023-12-07|N/A|false|N/A
+mohamedtarek54/Memory_UVM|Full UVM environment to verify a simple memory unit|1|0|main|true|SystemVerilog|13KB|2024-05-24|2023-11-22|N/A|false|N/A
+mohabtarek650/AMBA_APB_UVM|N/A|1|2|main|false|SystemVerilog|15KB|2024-11-24|2024-10-26|N/A|false|N/A
+moghamry25/SPI_UVM|N/A|1|0|main|true|SystemVerilog|31.12MB|2025-06-18|2025-03-27|N/A|false|N/A
+mitchelfalcon/naile|UVM Tarea Logica de Programacion|1|3|gh-pages|true|TypeScript|331KB|2025-11-16|2025-11-15|N/A|false|N/A
+mingo99/uvm_test|N/A|1|0|main|false|SystemVerilog|1.16MB|2024-03-15|2022-07-15|N/A|false|N/A
+mballance/uvm_sdv|Software-Driven Verification extension library for UVM|1|3|master|true|C|98KB|2023-12-07|2016-03-16|N/A|false|N/A
+marwanibrahim546/counter_UVM|N/A|1|0|main|true|SystemVerilog|11KB|2022-11-30|2020-10-30|N/A|false|N/A
+marti-vidal-i/UVMultiFit|Advanced visibility modelfitting for NRAO's CASA package|1|1|main|false|Python|4.06MB|2025-04-29|2024-05-01|N/A|false|N/A
+marszzibros/UVMMC|N/A|1|0|main|false|Jupyter Notebook|17.53MB|2024-11-11|2023-06-02|N/A|false|N/A
+manideepbachu/Single-Port-RAM|SRAM design and UVM tb|1|0|main|true|SystemVerilog|6KB|2025-07-03|2025-01-17|N/A|false|N/A
+mahmedadawy2013/UVM_UART|N/A|1|0|main|true|SystemVerilog|466KB|2024-02-05|2024-01-09|N/A|false|N/A
+madhumitamukherjee/zero_detector_mealy_machine|Mealy machine and UVM verification|1|0|main|true|N/A|434KB|2023-11-25|2021-11-18|N/A|false|N/A
+m1cha1s/uVM|N/A|1|0|main|false|C++|7KB|2021-09-08|2021-09-06|N/A|false|N/A
+lwflwf1/uvm-generator|uvm testbench generator|1|0|master|false|SystemVerilog|78KB|2021-06-23|2021-05-06|N/A|false|N/A
+lvzii/uvm-dpi-precompiled|precompiled uvm dpi|1|0|main|true|N/A|0KB|2025-08-20|2025-08-19|N/A|false|N/A
+lohithay/UVM-Simulation-JTAG|UVM Simulation Model for a JTAG Interface|1|2|master|true|N/A|2.43MB|2021-06-23|2019-11-05|N/A|false|N/A
+llfl/uvm_abc|It is a new repo about my uvm learning cases(worked on VCS)|1|0|main|true|SystemVerilog|9KB|2025-07-08|2020-10-12|N/A|false|N/A
+linkosoul/Time_Rift|Proyecto final de UVM|1|2|master|false|N/A|20.66MB|2019-03-25|2019-03-24|N/A|false|N/A
+leandrotozzi/python-dpic|Python Connected to UVM Environments|1|0|master|false|C|76KB|2022-05-21|2018-09-09|N/A|false|N/A
+kranthikiranufl/UVM_Project|This respository includes all my projects which are implemented with UVM testbenches|1|0|master|false|SystemVerilog|2.56MB|2022-08-04|2017-09-25|N/A|false|N/A
+kowdoorshashank/AMBA_CHI|With UVM|1|0|main|true|SystemVerilog|10KB|2025-11-28|2025-08-04|N/A|false|N/A
+kishore440/UVM_TEMPLTE|uvm template including sequence item|1|0|master|true|SystemVerilog|11KB|2020-03-14|2019-11-24|N/A|false|N/A
+kevinku0101/uvm_ref|N/A|1|0|master|true|SystemVerilog|962KB|2021-06-18|2019-08-02|N/A|false|N/A
+kevinhoang90/UVM|N/A|1|0|main|true|JavaScript|800KB|2024-06-13|2024-06-07|N/A|false|N/A
+karlshi419/uvm|N/A|1|0|master|true|SystemVerilog|152KB|2022-06-05|2015-02-27|N/A|false|N/A
+kanthimathi-2303/ALU_UVM|A UVM-driven verification setup for an ALU design|1|0|main|false|SystemVerilog|18KB|2025-08-26|2025-08-11|N/A|false|N/A
+justinsim02/UVM-Examples|SystemVerilog for Verification Spear 2016|1|0|main|true|SystemVerilog|10KB|2024-05-22|2024-03-05|N/A|false|N/A
+jdbancal/uvmac|vhash + one-time-pad = unconditionally secure Wegman-Carter Message Authentication Code|1|0|master|true|C|18KB|2023-06-15|2021-09-28|N/A|false|N/A
+j-sam1211/PROJECTS|UVM|1|0|master|true|SystemVerilog|2.00MB|2023-08-22|2020-06-09|N/A|false|N/A
+j-marjanovic/uvm-playground|N/A|1|0|main|true|SystemVerilog|5KB|2025-09-30|2022-05-07|N/A|false|N/A
+iprabhat29/UART_UVM_Verification|UART Design and Verification using SV/UVM1.1|1|3|master|true|SystemVerilog|358KB|2025-06-26|2019-01-29|N/A|false|N/A
+iprabhat29/AMBA_APB_UVM_DESIGN_VERIFICATIOn|APB Protocol Design and Verification using UVM/SV|1|2|master|true|SystemVerilog|9KB|2024-08-16|2019-02-10|N/A|false|N/A
+ikindalikelatex/dsim_uvm|Basic UVM testbench using DSim with CMake|1|0|main|true|SystemVerilog|10KB|2025-08-17|2025-08-17|N/A|false|N/A
+hyw-zero/uvm|uvm library|1|1|master|true|HTML|384.05MB|2024-01-08|2022-11-22|N/A|false|N/A
+hussin-mohamed/fifo_uvm|N/A|1|0|main|true|SystemVerilog|43KB|2025-08-09|2024-10-13|N/A|false|N/A
+hussin-mohamed/ALSU_UVM|N/A|1|0|main|true|SystemVerilog|44KB|2025-08-09|2024-10-13|N/A|false|N/A
+huabi-01/uvm_template|The repository consists of uvm testbench template and auto-generate uvm tb script|1|0|main|false|SystemVerilog|16KB|2023-07-10|2022-07-19|N/A|false|N/A
+hiiaka/uvm_example|RTLを語る会2019用|1|0|master|false|SystemVerilog|7KB|2022-05-14|2019-11-07|N/A|false|N/A
+hevangel/publications|PDFs of my publications|1|2|master|true|N/A|28.00MB|2022-12-14|2019-10-23|N/A|false|N/A
+hessek1/CASTOR-UVMOS|N/A|1|0|main|true|Roff|8.06MB|2025-02-25|2023-08-18|N/A|false|N/A
+hemanth-VP/UVM_RAL|N/A|1|1|main|false|SystemVerilog|13KB|2025-02-05|2024-05-10|N/A|false|N/A
+hector4like6gorillaz/UVMrepo|N/A|1|0|main|true|JavaScript|382KB|2021-11-23|2021-11-06|N/A|false|N/A
+hassyy/systemverilog-uvm|N/A|1|0|master|false|SystemVerilog|1.72MB|2021-03-01|2015-11-08|N/A|false|N/A
+hashaam1217/UVM_VSIM|N/A|1|0|main|true|SystemVerilog|8.65MB|2024-11-17|2024-11-12|N/A|false|N/A
+harshJe108/UVM|N/A|1|0|main|false|N/A|103KB|2023-11-29|2023-02-11|N/A|false|N/A
+hanyax/Decoder_UVMTest|UVM Framework Testbench for av Decoder module|1|0|master|true|SystemVerilog|368KB|2020-09-24|2020-06-11|N/A|false|N/A
+guptasanchi/mips-uvm|N/A|1|0|master|true|C|78KB|2017-04-09|2017-01-14|N/A|false|N/A
+geaninne/utopia_uvm|N/A|1|0|master|true|SystemVerilog|42KB|2019-09-22|2019-06-01|N/A|false|N/A
+gchinna/vutils_pkg|SV & UVM verification utilities|1|0|main|true|SystemVerilog|4KB|2022-05-04|2020-11-28|N/A|false|N/A
+embedded-explorer/UVM_Learning|Documenting Journey of Exploring UVM|1|0|main|true|SystemVerilog|34KB|2025-01-30|2024-02-23|N/A|false|N/A
+educup/uvm-action|A GitHub Action for upgrade the version of a Unity project in a repository|1|1|main|true|N/A|16KB|2020-12-22|2020-12-22|N/A|false|N/A
+dzplay/uvmExplore|基于accel的UVM库，探索UVM使用技巧|1|0|main|true|SystemVerilog|3.32MB|2024-09-19|2024-06-14|N/A|false|N/A
+dh73/UVM_Learnings|UVM for personal learnings repo|1|0|master|true|SystemVerilog|1KB|2022-07-02|2017-02-16|N/A|false|N/A
+devendrarai1998/uvmaster|N/A|1|0|master|true|CSS|85.80MB|2024-12-18|2024-06-04|N/A|false|N/A
+devadutt-github/AXI4_uvmVerify|Verification of an AXI4-Lite interface using the Universal Verification Methodology (UVM).|1|0|main|true|SystemVerilog|24KB|2025-12-17|2024-12-29|N/A|false|N/A
+deeprobin/uvm|The universal virtual machine. |1|0|main|true|N/A|1KB|2022-07-27|2022-07-15|N/A|false|N/A
+dcblack/uvm_objections|UVM Objection performance|1|0|master|true|SystemVerilog|132KB|2019-05-02|2014-06-26|N/A|false|N/A
+coolnikitav/learning|This repo has my Verilog|1|2|main|true|SystemVerilog|15.08MB|2025-12-16|2023-07-28|N/A|false|N/A
+coolash4/uvm|UVM Examples|1|15|master|true|SystemVerilog|123KB|2017-01-27|2017-01-27|N/A|false|N/A
+contactpro/UVMTEMPLATES|UVM Templates for Rapid Implementation of Universal Verification Methodology FPGA/ASIC/SOC Testbenches.|1|0|master|true|N/A|1KB|2020-11-10|2019-07-07|N/A|false|N/A
+codefather-labs/uvmachine|Simple virtual machine with C|1|0|master|true|C|51KB|2022-06-17|2020-04-14|N/A|false|N/A
+clowak/Ramdas_UVMReference|N/A|1|0|master|true|SystemVerilog|21KB|2021-07-20|2018-07-16|N/A|false|N/A
+chetanmelagiri/uart_vip|UART Protocol Verification Using UVM|1|1|master|true|N/A|5KB|2023-08-06|2019-07-09|N/A|false|N/A
+charrich97/Decode_Verification|Decoder UVM Testbench|1|0|main|false|SystemVerilog|84KB|2023-04-05|2022-10-31|N/A|false|N/A
+chadnkit/uvm_testbench|UVM Testbench coded following tutorial from Verification Guide|1|0|master|true|SystemVerilog|7KB|2023-08-19|2018-02-25|N/A|false|N/A
+cdnmcgrath/juvb12|UVM 1.2 UVC template builder for UVM|1|0|master|true|Perl|15KB|2021-11-24|2018-02-08|N/A|false|N/A
+cazador481/system_verilog-parse|System-Verilog UVM completion engine|1|1|master|true|HTML|12.02MB|2017-04-06|2016-03-09|N/A|false|N/A
+buchion/buchibot|UVM - Python|1|0|simulation|true|N/A|110KB|2025-01-12|2024-10-10|N/A|false|N/A
+avalanche123/uvmemcached|libuv memcached client and ruby bindings|1|0|master|true|C|212KB|2014-04-27|2014-04-01|N/A|false|N/A
+ashishtummuri/Router_UVM|N/A|1|0|main|false|SystemVerilog|19.41MB|2025-08-14|2025-08-14|N/A|false|N/A
+artlm77/PYTHON-UVM|N/A|1|0|main|true|Python|386KB|2025-01-12|2020-10-15|N/A|false|N/A
+arntsonl/uvmoonpatrol|Automatically exported from code.google.com/p/uvmoonpatrol|1|0|master|false|C++|3.91MB|2024-12-27|2015-03-12|N/A|false|N/A
+arjperi/uvmTB|Bare Bone test bench for an addsub hardware unit|1|0|master|true|SystemVerilog|22KB|2021-06-10|2019-02-13|N/A|false|N/A
+anupamhassapurty/Vim|Vim config for SV/UVM|1|0|main|true|Vim Script|66KB|2023-09-24|2022-06-04|N/A|false|N/A
+antoinemadec/uvm_vips|collection of UVM Verication IPs|1|0|main|false|SystemVerilog|1.28MB|2025-10-20|2022-11-23|N/A|false|N/A
+andreemedeiros/Adder-UVM|Basic verification environment using UVM.|1|0|main|true|SystemVerilog|88KB|2024-06-20|2024-03-24|N/A|false|N/A
+amiq-eda/example-projects-uvm-1.2_ubus|N/A|1|2|master|true|SystemVerilog|38KB|2023-06-23|2021-11-05|N/A|false|N/A
+alanjiang628/DeepSeek_UVM_Gen|UVM Testbench with DeepSeek Genarated|1|0|main|true|SystemVerilog|20KB|2025-11-04|2025-04-22|N/A|false|N/A
+akilystic/uvm|N/A|1|1|master|true|SystemVerilog|5KB|2020-07-14|2020-07-13|N/A|false|N/A
+akerlund/PYRG|Python Register Generator for UVM|1|0|master|true|Python|47KB|2021-09-25|2021-03-20|N/A|false|N/A
+adideb-das/riscv_uvm|N/A|1|0|master|false|SystemVerilog|46KB|2025-10-07|2024-06-29|N/A|false|N/A
+abhishekvarma827/UVM|N/A|1|0|main|false|SystemVerilog|215KB|2025-12-12|2022-09-26|N/A|false|N/A
+abarajithan11/uvm_decrypter|N/A|1|0|main|true|SystemVerilog|84KB|2025-03-09|2023-06-13|N/A|false|N/A
+ZXLearning/uvmpy|UVM in Python for IC Verification|1|1|master|true|Python|2KB|2025-01-12|2019-05-29|N/A|false|N/A
+Vivek-Dave/UVM|Basic Examples in UVM|1|0|main|true|SystemVerilog|184KB|2022-04-02|2021-04-16|N/A|false|N/A
+Vivek-Dave/UVM_TestBench_For_Ring_Counter|Complete UVM TestBench For Verification Of Ring (Onehot) Counter|1|3|main|true|SystemVerilog|74KB|2025-05-13|2021-06-19|N/A|false|N/A
+VarunVijay625/UVMGuesser|N/A|1|0|main|false|HTML|127.75MB|2025-12-05|2025-05-29|N/A|false|N/A
+VERSO-UVM/CS-2300-Advanced-Programming|A class collaborative exercise for Advanced Programming at UVM|1|7|main|true|Java|48KB|2025-05-28|2023-03-10|N/A|false|N/A
+UnionVMS/UVMS-UVMSTestLibrary|N/A|1|0|master|false|Java|57KB|2016-12-08|2016-07-12|N/A|false|N/A
+Tet3to0n/UVMfirstRepo|N/A|1|0|main|false|JavaScript|2KB|2021-11-22|2021-11-12|N/A|false|N/A
+TeresaTing/UVMSR|Article information and code for UVMSR|1|1|master|true|Python|15KB|2025-04-06|2024-07-31|N/A|false|N/A
+Symfony-Plugins/uvmcSolrSearchPlugin|git mirror for http://www.symfony-project.org/plugins/uvmcSolrSearchPlugin|1|0|master|true|PHP|116KB|2013-09-30|2012-07-01|N/A|false|N/A
+Symfony-Plugins/uvmcDoctrineTaskExtraPlugin|git mirror for http://www.symfony-project.org/plugins/uvmcDoctrineTaskExtraPlugin|1|0|master|true|PHP|92KB|2013-10-12|2012-07-01|N/A|false|N/A
+SylvanFranklin/account-console|UVM CS class project|1|0|main|true|Svelte|140KB|2024-11-06|2024-11-06|N/A|false|N/A
+SomeoneSerge/uvms|μVMs: slowly comprehending spectrum-os.org|1|0|master|false|Nix|30KB|2025-09-21|2025-09-20|N/A|false|N/A
+Shwetapatil05/uvm_framework|N/A|1|1|main|true|SystemVerilog|34.63MB|2022-07-13|2022-05-03|N/A|false|N/A
+ShubhaSudeshShetty/FIFO_UVM|N/A|1|0|master|true|SystemVerilog|10.95MB|2025-08-06|2025-07-23|N/A|false|N/A
+Shashvat300/UVM|N/A|1|0|main|true|N/A|8KB|2023-09-06|2023-08-13|N/A|false|N/A
+Saul97319/portal-uvm|N/A|1|0|main|true|JavaScript|100KB|2025-12-28|2025-12-20|N/A|false|N/A
+Satjpatel/UVMPractice|UVM Practice on my own on a Small ALU|1|0|main|true|N/A|0KB|2022-06-16|2022-06-09|N/A|false|N/A
+SamiIonesi/Memory_UVM|N/A|1|0|main|true|SystemVerilog|5KB|2024-10-27|2024-02-16|N/A|false|N/A
+SamKLowe/calc_uvmf|A uvm Framework project using a basic calculator as a design|1|0|master|true|SystemVerilog|8KB|2021-05-15|2018-11-20|N/A|false|N/A
+Risto97/svuvm-socmake|SystemVerilog UVM SoCMake package|1|1|master|false|CMake|32KB|2025-02-16|2024-10-10|N/A|false|N/A
+RishabSeshadri/UVMapper|N/A|1|0|main|true|Python|13.11MB|2024-12-21|2024-02-26|N/A|false|N/A
+Ravikumar0110/G2UVM_sig_access_UVM_verification|N/A|1|1|main|false|SystemVerilog|23KB|2023-04-05|2022-11-25|N/A|false|N/A
+Rahma-Aly/ALU-UVM|UVM based verification of a simple ALU design|1|0|main|false|SystemVerilog|11KB|2025-04-23|2023-12-17|N/A|false|N/A
+RaashVision/UVMonitorApp|N/A|1|0|master|true|Dart|653KB|2020-04-23|2020-02-27|N/A|false|N/A
+R2D2Power/UVM|Labs And Assignments from UVM|1|0|main|true|SystemVerilog|19KB|2021-12-20|2021-12-16|N/A|false|N/A
+Pratikshiku/UvmbhBvMEBlWBuK|Online-Book-Mall|1|0|main|true|N/A|1.95MB|2025-09-19|2025-09-19|N/A|false|N/A
+PhilOls/uvm.vip|N/A|1|2|master|true|SystemVerilog|134KB|2023-02-22|2017-11-17|N/A|false|N/A
+Passionate0424/CLAHE_uvm|clahe_verilog的uvm验证部分|1|0|main|true|Verilog|367KB|2025-12-31|2025-12-11|N/A|false|N/A
+ParkitectNexus/SketchupUVMapper|N/A|1|0|master|true|Ruby|45KB|2024-09-20|2016-01-07|N/A|false|N/A
+Nipun-9420/uvm_enviroments|testing of enviroment congiguration|1|0|main|false|SystemVerilog|13KB|2024-03-25|2024-02-27|N/A|false|N/A
+Nagarjun444/SRAM_UVM|Sram design and verification using UVM|1|0|main|true|SystemVerilog|10KB|2023-07-06|2023-04-22|N/A|false|N/A
+MrARwho/UVMverifier|N/A|1|0|main|true|N/A|1KB|2025-05-04|2024-12-01|N/A|false|N/A
+Mohsannaeem/dummy_uvm|N/A|1|0|master|false|SystemVerilog|6KB|2025-05-11|2024-07-29|N/A|false|N/A
+MicroGrit/grm|Generate UVM Register Model|1|0|master|true|SystemVerilog|28KB|2025-10-10|2022-07-02|N/A|false|N/A
+MaxDimas/UVM|N/A|1|0|main|true|Python|19KB|2023-09-21|2023-09-21|N/A|false|N/A
+MaulingMonkey/uvm|N/A|1|0|master|true|Rust|13KB|2021-11-24|2021-11-24|N/A|false|N/A
+Mad-Hat-uvm/SV_UVM|System Verilog based UVM testbenches|1|1|main|true|SystemVerilog|232KB|2025-04-07|2024-08-15|N/A|false|N/A
+Mad-Hat-uvm/PyUVM|UVM in Python|1|0|main|false|Python|0KB|2025-01-12|2024-11-13|N/A|false|N/A
+LooiXIV/UVM_Repo|UVM Assignments and Projects|1|0|master|true|Jupyter Notebook|8.75MB|2019-01-09|2018-05-16|N/A|false|N/A
+LeoYu1128/uvms_dynamics|Ros2_control plugin providing virtual underwater vehicle and manipulator system capabilities.|1|0|main|true|N/A|46KB|2025-12-11|2025-05-21|N/A|false|N/A
+Larusso/uvm_jni|A jni wrapper for the unity version manager core library|1|1|master|true|Rust|10KB|2018-11-26|2018-11-23|N/A|false|N/A
+LaharB/UVM-Theory|This repo consists of all the UVM concepts that I'm learning /revising in order to make UVM-based testbenches.|1|0|main|true|N/A|8.37MB|2026-01-09|2025-12-05|N/A|false|N/A
+L-add7/UVM_add|uvm_learn|1|0|main|true|SystemVerilog|15.71MB|2023-10-29|2023-10-24|N/A|false|N/A
+JoshuaDickerson/Vroomba|UVM Roomba experiments|1|0|master|true|Matlab|13.34MB|2014-02-01|2012-03-31|N/A|false|N/A
+JohnBagshaw/UVM|Design Verification Tasks|1|0|main|true|SystemVerilog|24KB|2024-05-16|2023-05-07|N/A|false|N/A
+JenspederM/uvmono|N/A|1|1|main|true|Python|160KB|2025-01-12|2024-12-20|N/A|false|N/A
+JANAKIRAMEMANI/FIFO_UVM|N/A|1|0|main|true|SystemVerilog|21KB|2022-04-08|2022-01-31|N/A|false|N/A
+Infanta-Janova-I/UVMS|N/A|1|0|main|true|HTML|36.27MB|2022-06-26|2022-06-26|N/A|false|N/A
+IC-huanglc/uvm_ref_flow|Cadence uvm refercen flow|1|0|master|false|Verilog|9.14MB|2025-12-15|2023-11-29|N/A|false|N/A
+HoangDuyHuong/UART_TX_Verification|Use UVM|1|0|main|true|SystemVerilog|3KB|2025-11-30|2025-11-27|N/A|false|N/A
+HoangDuyHuong/Counter-Up-Down-8-bit-Verification|Use UVM|1|0|main|true|SystemVerilog|3KB|2025-11-24|2025-11-24|N/A|false|N/A
+HoangDuyHuong/Basic_UVM|Study basic UVM|1|0|main|true|SystemVerilog|12KB|2025-11-24|2025-11-10|N/A|false|N/A
+Hello-Jin-World/UVM_list|N/A|1|0|main|false|SystemVerilog|23KB|2025-02-11|2025-02-10|N/A|false|N/A
+Hazlinda/APB_UVM|N/A|1|0|master|true|N/A|8KB|2022-08-10|2019-08-02|N/A|false|N/A
+HarshMuni123/uvm_learning|Repo include my uvm code learnt during the DV engineer journey|1|0|main|true|SystemVerilog|3.02MB|2026-01-09|2025-11-23|N/A|false|N/A
+Gonadeepika/uvm-sequences|N/A|1|0|main|true|SystemVerilog|14KB|2024-05-25|2024-05-18|N/A|false|N/A
+Gegedaye/mdl_scb|little uvm env|1|0|master|false|SystemVerilog|9KB|2021-04-02|2019-02-20|N/A|false|N/A
+Exlerd/updater-uvm|HELL YEAAAAAAH UPDATEEEEEEEEEEEEEEEEEER!!!!!!!!!!!!!!!|1|0|main|false|N/A|1KB|2025-03-02|2025-03-02|N/A|false|N/A
+ElHamzi-Abderrahim/uvm-practices|This repository is containing the |1|0|main|true|SystemVerilog|472KB|2025-11-24|2025-05-11|N/A|false|N/A
+EMALOK/UVM|A Java like Virtual Machine that runs bytecode|1|0|UVM|true|C++|70KB|2025-12-01|2022-02-24|N/A|false|N/A
+DragonBls/uvm_formation|Repo for uvm formation|1|0|master|true|Perl|13.31MB|2025-10-15|2022-11-16|N/A|false|N/A
+Dor1988/ETHERNET_MAC_VERIF|ETHERNET MAC UVM VERIFICATION|1|0|main|true|Verilog|256KB|2024-12-30|2024-06-17|N/A|false|N/A
+Datum-Technology-Corporation/uvm|Moore.io UVM Distribution|1|0|main|true|SystemVerilog|10.21MB|2025-06-23|2021-10-06|N/A|false|N/A
+Csomi/hdl_uvm|UVM verification environment for modules and sub-systems from analogdevicesinc/hdl repository|1|0|master|true|SystemVerilog|3KB|2024-08-06|2020-04-25|N/A|false|N/A
+AnkitaMoholkar/UVM_Messages-|N/A|1|0|main|true|SystemVerilog|11KB|2021-03-21|2021-02-19|N/A|false|N/A
+Ali-Mohamed-cairo/FIFO_UVM|N/A|1|0|main|false|SystemVerilog|10.78MB|2024-10-17|2024-10-14|N/A|false|N/A
+Alexandre-Da-Cunha-Guiborat/UVM4Cs|N/A|1|0|main|true|C#|55KB|2025-11-25|2025-03-23|N/A|false|N/A
+Aishwaryaodela/UVM|N/A|1|0|main|false|SystemVerilog|5.17MB|2024-02-04|2024-02-04|N/A|false|N/A
+AhmedOsama2000/UVM_Environment|N/A|1|0|main|false|SystemVerilog|11KB|2023-02-23|2023-02-20|N/A|false|N/A
+Afsal1729/AHB_UVM|ahb_uvm verification|1|0|main|true|C|4.00MB|2022-07-14|2022-02-01|N/A|false|N/A
+AdamKeith1/My-UVMF|Jinja2 and YAML based UVM testbench generator. Similar to UVMF but developing as a means to practice UVM and integrate into my D&V projects down the line.|1|1|main|true|Jinja|54KB|2025-03-22|2024-08-16|N/A|false|N/A
+Abdullah-Shaaban/uvm-tb|Comprehensive simulation environment for SystemVerilog RTL using CocoTB + PyUVM and opensource simulators.|1|0|main|true|Python|18KB|2025-08-22|2025-08-21|N/A|false|N/A
+ADIVENKATRAMINENI/UVM|Journey of UVM|1|0|main|true|SystemVerilog|40.77MB|2025-12-28|2025-10-31|N/A|false|N/A
+31shal/uvm-config-db-usage-in-UVM|N/A|1|0|main|false|SystemVerilog|25KB|2022-07-13|2022-03-30|N/A|false|N/A
+21Bruce/uvm-notes|Notes on the internals of OpenBSD's UVM implementation|1|0|main|true|N/A|56KB|2023-11-13|2023-10-18|N/A|false|N/A
+21Bruce/UVMTd|System Daemons for testing UVM on OpenBSD|1|0|main|true|C|35KB|2023-10-13|2023-10-10|N/A|false|N/A
+openhwgroup/core-v-mcu-uvm|CORE-V MCU UVM Environment and Test Bench|0
+null|10969|0
+mitchelfalcon/tareaestructuras|UVM Tarea Logica de Programacion|0
+master|false|0
+main|false|0
+main|false|0
+main|false|0
+gh-pages|false|0
+false|N/A|0
+false|N/A|0
+false|N/A|0
+false|N/A|0
+false|N/A|0
+eunomia-bpf/gpu_ext|eBPF for GPU UVM offloading and scheduling in Linux kernel|0
+educup/uvm|Unity Version Manager CLI implemented with Python and Typer|0
+UVM Tarea Logica de Programacion|1|0
+TypeScript|89|0
+Template repository for ROS 2 development|41|0
+Template designed to get new developers with libbpf development. |14|0
+Robotic-Decision-Making-Lab/auv_controllers|Control algorithms for autonomous underwater vehicles (AUVs) and underwater vehicle manipulator systems (UVMS) implemented using ros2_control.|0
+Python template with CI/CD ready for production|5|0
+Makefile|562|0
+Dockerfile|20927|0
+DTC Digital Design Project Template|25|0
+C|18307|0
+73|1|0
+5|6|0
+4|8|0
+3|gh-pages|0
+36|1|0
+331KB|2025-11-16|0
+321KB|2025-12-08|0
+295KB|2024-12-04|0
+26|master|0
+2025-12-11|2025-11-20|0
+2025-11-16|2025-11-16|0
+2025-11-15|N/A|0
+2025-07-25|2020-12-21|0
+2025-06-04|2024-02-08|0
+2024-04-28|2022-02-09|0
+2024-01-08|N/A|0
+2023-03-23|N/A|0
+2020-12-04|N/A|0
+2020-07-07|N/A|0
+1|main|0
+1|main|0
+1|2|0
+16KB|2025-12-16|0
+1637KB|2026-01-09|0
+0|main|0

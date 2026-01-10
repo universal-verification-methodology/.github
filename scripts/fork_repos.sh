@@ -401,8 +401,20 @@ main() {
         fork_single_repo "$1"
     else
         print_error "Invalid arguments or repository file not found."
+        print_info ""
         print_info "Usage: $0 [repos_file] [github_token]"
         print_info "   or: $0 <owner/repo> [github_token]"
+        print_info ""
+        if [ $# -ge 1 ] && [[ ! "$1" =~ / ]]; then
+            print_warn "You provided '$1' which is not in the format 'owner/repo'."
+            print_info "Examples of valid repository names:"
+            print_info "  - maximecb/uvm"
+            print_info "  - cocotb/cocotb"
+            print_info "  - openhwgroup/core-v-verif"
+            print_info ""
+            print_info "To find repositories with '$1' in the name, use the search script first:"
+            print_info "  ./scripts/search_repos.sh 'language:systemverilog $1'"
+        fi
         exit 1
     fi
     

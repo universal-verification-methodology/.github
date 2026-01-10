@@ -253,6 +253,37 @@ get_org_repos() {
     fi
 }
 
+# Function to check if repository has README file
+check_readme_exists() {
+    local repo="$1"
+    local auth_header="$2"
+    local api_base="$3"
+    local default_branch="$4"
+    
+    # Check for common README file names
+    local readme_names=("README.md" "README.rst" "README.txt" "README" "readme.md" "Readme.md")
+    
+    for readme_name in "${readme_names[@]}"; do
+        local contents_url="${api_base}/repos/${repo}/contents/${readme_name}?ref=${default_branch}"
+        local contents_response
+        if [ -n "$auth_header" ]; then
+            contents_response=$(curl -s -H "$auth_header" -H "Accept: application/vnd.github.v3+json" "$contents_url" 2>/dev/null || echo "")
+        else
+            contents_response=$(curl -s -H "Accept: application/vnd.github.v3+json" "$contents_url" 2>/dev/null || echo "")
+        fi
+        
+        # If we get a valid response (not an error), README exists
+        if [ -n "$contents_response" ] && ! echo "$contents_response" | grep -q '"message"'; then
+            if echo "$contents_response" | grep -q '"name"'; then
+                echo "true"
+                return 0
+            fi
+        fi
+    done
+    
+    echo "false"
+}
+
 # Function to extract JSON field value (handles null values)
 extract_json_field() {
     local json="$1"
@@ -320,7 +351,10 @@ process_repo_parallel() {
     local stars=$(extract_json_field "$repo_response" "stargazers_count" "0")
     local forks=$(extract_json_field "$repo_response" "forks_count" "0")
     local default_branch=$(extract_json_field "$repo_response" "default_branch" "main")
-    local has_readme=$(extract_json_field "$repo_response" "has_readme" "false")
+    
+    # Check for README file (GitHub API doesn't provide has_readme field directly)
+    local has_readme=$(check_readme_exists "$repo" "$auth_header" "$api_base" "$default_branch")
+    
     local language=$(extract_json_field "$repo_response" "language" "N/A")
     local size=$(extract_json_field "$repo_response" "size" "0")  # Size in KB
     local updated_at=$(extract_json_field "$repo_response" "updated_at" "N/A")
