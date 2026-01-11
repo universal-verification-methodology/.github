@@ -127,8 +127,29 @@ ai_call() {
             else
                 headers=(-H "Content-Type: application/json")
             fi
+            
+            # Auto-detect model if not set or default is OpenAI model
+            local model="${AI_MODEL:-llama2}"
+            if echo "$model" | grep -qiE "gpt|claude|openai|anthropic"; then
+                log_info "Auto-detecting available Ollama model (current: $model is not an Ollama model)..."
+                # Try to get first available model
+                if command -v ollama >/dev/null 2>&1 && curl -s http://localhost:11434/api/tags >/dev/null 2>&1; then
+                    local available_model=$(ollama list 2>/dev/null | tail -n +2 | awk '{print $1}' | head -1 | sed 's/:latest$//' | sed 's/:.*$//' || echo "")
+                    if [ -n "$available_model" ]; then
+                        model="$available_model"
+                        log_info "Using available Ollama model: $model"
+                    else
+                        log_warning "No Ollama models found. Pull one with: ollama pull llama2"
+                        model="llama2"  # Default fallback
+                    fi
+                else
+                    log_warning "Ollama not running or not available. Using default model: llama2"
+                    model="llama2"  # Default fallback
+                fi
+            fi
+            
             data=$(jq -n \
-                --arg model "$AI_MODEL" \
+                --arg model "$model" \
                 --arg system "$system_prompt" \
                 --arg user "$prompt" \
                 '{
@@ -137,8 +158,16 @@ ai_call() {
                         {role: "system", content: $system},
                         {role: "user", content: $user}
                     ],
-                    temperature: 0.7
-                }')
+                    temperature: 0.7,
+                    max_tokens: 2000
+                }' 2>&1)
+            
+            # Debug: Check if data was created successfully
+            if [ $? -ne 0 ] || [ -z "$data" ]; then
+                log_error "Failed to create JSON data for Ollama API call"
+                log_error "jq error: $data"
+                return 1
+            fi
             ;;
         cursor)
             # Cursor API (OpenAI-compatible, uses OpenAI models)
@@ -172,25 +201,76 @@ ai_call() {
             ;;
     esac
     
-    response=$(curl -s "${headers[@]}" -d "$data" "$api_url" 2>/dev/null || echo "")
+    # Make the API call
+    # Capture stdout (response) and stderr (errors) separately
+    local curl_stderr_file
+    curl_stderr_file=$(mktemp)
+    local curl_stdout
+    curl_stdout=$(curl -s "${headers[@]}" -d "$data" "$api_url" 2>"$curl_stderr_file")
+    local curl_exit=$?
+    local curl_stderr
+    curl_stderr=$(cat "$curl_stderr_file" 2>/dev/null || echo "")
+    rm -f "$curl_stderr_file"
+    response="$curl_stdout"
     
+    # Check for curl errors
+    if [ $curl_exit -ne 0 ]; then
+        log_error "Curl failed with exit code: $curl_exit"
+        log_error "API URL: $api_url"
+        if [ -n "$curl_stderr" ]; then
+            log_error "Curl error: $(echo "$curl_stderr" | head -c 200)"
+        fi
+        if [ -n "$response" ]; then
+            log_error "Response (first 200 chars): $(echo "$response" | head -c 200)"
+        fi
+        return 1
+    fi
+    
+    # Check if response is empty
     if [ -z "$response" ]; then
+        log_error "Empty response from API: $api_url"
+        if [ -n "$curl_stderr" ]; then
+            log_error "Curl stderr: $(echo "$curl_stderr" | head -c 200)"
+        fi
+        return 1
+    fi
+    
+    # Check if response is valid JSON
+    if ! echo "$response" | jq . >/dev/null 2>&1; then
+        log_error "Invalid JSON response from API: $api_url"
+        log_error "Response (first 300 chars): $(echo "$response" | head -c 300)"
+        if [ -n "$curl_stderr" ]; then
+            log_error "Curl stderr: $(echo "$curl_stderr" | head -c 200)"
+        fi
         return 1
     fi
     
     # Extract content based on provider
+    local content=""
     case "$AI_PROVIDER" in
         openai|local|cursor)
-            echo "$response" | jq -r '.choices[0].message.content // empty' 2>/dev/null || echo ""
+            content=$(echo "$response" | jq -r '.choices[0].message.content // .message.content // empty' 2>/dev/null || echo "")
             ;;
         anthropic)
-            echo "$response" | jq -r '.content[0].text // empty' 2>/dev/null || echo ""
+            content=$(echo "$response" | jq -r '.content[0].text // empty' 2>/dev/null || echo "")
             ;;
         mcp)
             # MCP responses are handled separately
-            echo "$response" | jq -r '.result.content[0].text // .result // empty' 2>/dev/null || echo ""
+            content=$(echo "$response" | jq -r '.result.content[0].text // .result.content // .result // empty' 2>/dev/null || echo "")
             ;;
     esac
+    
+    # Check if content was extracted
+    if [ -z "$content" ] || [ "$content" = "null" ] || [ "$content" = "" ]; then
+        log_error "Failed to extract content from API response"
+        log_error "Response structure: $(echo "$response" | jq 'keys' 2>/dev/null || echo "invalid JSON")"
+        log_error "Full response (first 500 chars): $(echo "$response" | head -c 500)"
+        return 1
+    fi
+    
+    # Return the extracted content (to stdout)
+    echo "$content"
+    return 0
 }
 
 # MCP (Model Context Protocol) support functions
@@ -316,7 +396,29 @@ ai_call_with_mcp() {
     
     # Fall back to regular AI call with enhanced context
     # Use a fallback provider if MCP is just for context
-    local fallback_provider="${MCP_FALLBACK_PROVIDER:-openai}"
+    # Default to 'local' (Ollama) for no-API-key setup, but allow override
+    local fallback_provider="${MCP_FALLBACK_PROVIDER:-local}"
+    
+    # If fallback is 'local', check if Ollama is available, otherwise use openai (but warn about key)
+    if [ "$fallback_provider" = "local" ]; then
+        if ! command -v ollama >/dev/null 2>&1; then
+            log_warning "Ollama not found, falling back to OpenAI (requires API key)"
+            log_info "Install Ollama for free local AI: curl -fsSL https://ollama.ai/install.sh | sh"
+            fallback_provider="openai"
+        else
+            # Ensure Ollama is running
+            if ! curl -s http://localhost:11434/api/tags >/dev/null 2>&1; then
+                log_warning "Ollama not running, falling back to OpenAI (requires API key)"
+                log_info "Start Ollama: ollama serve"
+                fallback_provider="openai"
+            else
+                # Set local provider defaults
+                AI_BASE_URL="${AI_BASE_URL:-http://localhost:11434/v1}"
+                AI_MODEL="${AI_MODEL:-llama2}"
+            fi
+        fi
+    fi
+    
     local original_provider="$AI_PROVIDER"
     AI_PROVIDER="$fallback_provider"
     ai_call "$prompt" "$system_prompt"
@@ -332,58 +434,355 @@ ai_call_cursor_agent() {
     
     log_info "Using Cursor's built-in AI agent (no API key required)"
     
-    # Try to use Cursor's MCP servers first (available when Cursor IDE is running)
-    if [ "${CURSOR_AGENT_MODE:-mcp}" = "mcp" ]; then
-        # Check if we can access Cursor's MCP servers
-        # Cursor IDE typically exposes MCP servers when running
-        if [ -n "$MCP_SERVER" ]; then
-            log_info "Using MCP server: $MCP_SERVER"
-            # Use MCP approach
-            local original_provider="$AI_PROVIDER"
-            AI_PROVIDER="mcp"
-            ai_call_with_mcp "$prompt" "$system_prompt"
-            local result=$?
-            AI_PROVIDER="$original_provider"
-            if [ $result -eq 0 ]; then
-                return 0
-            fi
+    # Strategy 1: Try MCP only if we have a specific AI tool configured
+    # NOTE: Most MCP servers (like filesystem) provide context, not AI completions
+    # Only use MCP if we have an MCP_TOOL_NAME that can generate AI responses
+    if [ "${CURSOR_AGENT_MODE:-mcp}" = "mcp" ] && [ -n "${MCP_TOOL_NAME:-}" ] && [ -n "${MCP_SERVER:-}" ]; then
+        log_info "Attempting to use MCP tool: $MCP_TOOL_NAME"
+        local original_provider="$AI_PROVIDER"
+        AI_PROVIDER="mcp"
+        local mcp_response=$(ai_call_with_mcp "$prompt" "$system_prompt" 2>/dev/null)
+        local result=$?
+        AI_PROVIDER="$original_provider"
+        # Only use MCP response if it's non-empty and doesn't look like log messages
+        if [ $result -eq 0 ] && [ -n "$mcp_response" ] && [ "$mcp_response" != "" ] && ! echo "$mcp_response" | grep -qE "^\[INFO\]|^\[WARNING\]|^\[ERROR\]"; then
+            echo "$mcp_response"
+            return 0
         fi
+        log_info "MCP tool did not return valid AI response, falling back to Ollama..."
+    fi
         
-        # Try to detect Cursor's MCP servers automatically
-        # Cursor IDE may expose MCP servers through environment or standard locations
-        local cursor_mcp_servers=(
-            "$HOME/.cursor/mcp"
-            "$HOME/.config/cursor/mcp"
+    
+    # Strategy 2: Try to use Cursor's internal API endpoint (if accessible without key)
+    # Cursor IDE might expose a local API endpoint
+    if [ "${CURSOR_AGENT_MODE:-mcp}" = "internal" ] || [ -z "${CURSOR_AGENT_MODE}" ]; then
+        log_info "Attempting to use Cursor's internal API..."
+        
+        # Try Cursor's local API endpoint (common ports for local services)
+        local cursor_endpoints=(
+            "http://localhost:3000/v1/chat/completions"
+            "http://localhost:8080/v1/chat/completions"
+            "${CURSOR_API_URL:-https://api.cursor.com/v1/chat/completions}"
         )
         
-        for mcp_path in "${cursor_mcp_servers[@]}"; do
-            if [ -d "$mcp_path" ] || [ -f "$mcp_path" ]; then
-                log_info "Found potential Cursor MCP configuration at: $mcp_path"
-                # Try to use it
-                break
+        for endpoint in "${cursor_endpoints[@]}"; do
+            log_info "Trying Cursor API endpoint: $endpoint"
+            local test_response=$(curl -s -X POST "$endpoint" \
+                -H "Content-Type: application/json" \
+                -d "{\"model\":\"cursor\",\"messages\":[{\"role\":\"system\",\"content\":\"test\"},{\"role\":\"user\",\"content\":\"test\"}]}" \
+                2>/dev/null || echo "")
+            
+            if [ -n "$test_response" ] && ! echo "$test_response" | grep -q "error\|401\|403"; then
+                log_info "Cursor API endpoint appears to be available: $endpoint"
+                # Use this endpoint for the actual request
+                local response=$(curl -s -X POST "$endpoint" \
+                    -H "Content-Type: application/json" \
+                    -d "$(jq -n \
+                        --arg model "${AI_MODEL:-cursor}" \
+                        --arg system "$system_prompt" \
+                        --arg user "$prompt" \
+                        '{
+                            model: $model,
+                            messages: [
+                                {role: "system", content: $system},
+                                {role: "user", content: $user}
+                            ],
+                            temperature: 0.7,
+                            max_tokens: 2000
+                        }')" 2>/dev/null || echo "")
+                
+                if [ -n "$response" ]; then
+                    local content=$(echo "$response" | jq -r '.choices[0].message.content // .content // empty' 2>/dev/null || echo "")
+                    if [ -n "$content" ] && [ "$content" != "null" ]; then
+                        echo "$content"
+                        return 0
+                    fi
+                fi
             fi
         done
     fi
     
-    # If MCP doesn't work, try using Cursor's internal API (if accessible)
-    # Note: Cursor's internal API may not be directly accessible from scripts
-    # This is a placeholder for future Cursor API integration
-    if [ "${CURSOR_AGENT_MODE:-mcp}" = "internal" ]; then
-        log_warning "Cursor internal API mode not yet fully implemented"
-        log_info "Falling back to MCP mode"
-        CURSOR_AGENT_MODE="mcp"
-        ai_call_cursor_agent "$prompt" "$system_prompt"
-        return $?
+    # Strategy 3: Try using local Ollama (primary method for cursor-agent)
+    # Since MCP servers typically don't generate AI completions, Ollama is the reliable fallback
+    if command -v ollama >/dev/null 2>&1; then
+        log_info "Using local Ollama for AI generation..."
+        
+        # Check if Ollama is running
+        if ! curl -s http://localhost:11434/api/tags >/dev/null 2>&1; then
+            log_warning "Ollama is installed but not running. Start it with: ollama serve"
+            log_info "Trying to start Ollama in background..."
+            # Try to start Ollama (non-blocking)
+            nohup ollama serve >/dev/null 2>&1 &
+            sleep 2
+            # Check again
+            if ! curl -s http://localhost:11434/api/tags >/dev/null 2>&1; then
+                log_warning "Could not start Ollama. Please start it manually: ollama serve"
+                return 1
+            fi
+        fi
+        
+        # Get and normalize model name (strip :latest tag for API call)
+        local model="${AI_MODEL:-llama2}"
+        # Strip any tags for API call (Ollama API accepts base name)
+        model=$(echo "$model" | sed 's/:latest$//' | sed 's/:.*$//')
+        
+        # Verify model exists (optional check - can be slow, so we'll just try the API call)
+        log_info "Preparing to use Ollama model: $model"
+        
+        # Use Ollama for AI call
+        log_info "Using Ollama model: $model"
+        local original_provider="$AI_PROVIDER"
+        local original_base_url="$AI_BASE_URL"
+        local original_model="$AI_MODEL"
+        
+        AI_PROVIDER="local"
+        AI_BASE_URL="http://localhost:11434/v1"
+        AI_MODEL="$model"
+        
+        # Call ai_call and capture ONLY stdout (AI response content)
+        # ai_call outputs content to stdout and logs to stderr (>&2)
+        # So we redirect stderr to /dev/null to discard logs
+        local ollama_response
+        ollama_response=$(ai_call "$prompt" "$system_prompt" 2>/dev/null)
+        local result=$?
+        
+        # Restore original values
+        AI_PROVIDER="$original_provider"
+        AI_BASE_URL="$original_base_url"
+        AI_MODEL="$original_model"
+        
+        # Check if we got a valid response
+        if [ $result -eq 0 ] && [ -n "$ollama_response" ] && [ "$ollama_response" != "" ]; then
+            # Verify it's actual content, not error messages
+            if ! echo "$ollama_response" | grep -qE "^\[|^Curl|^API|^Failed|^Empty|^Invalid|^jq"; then
+                log_info "Ollama response received (${#ollama_response} chars): $(echo "$ollama_response" | head -c 100)..."
+                # Return the response (this goes to stdout)
+                echo "$ollama_response"
+                return 0
+            else
+                log_warning "Ollama response appears to be error messages, not content"
+                log_info "Response preview: $(echo "$ollama_response" | head -c 200)"
+            fi
+        else
+            if [ $result -ne 0 ]; then
+                log_warning "ai_call failed with exit code: $result"
+            fi
+            if [ -z "$ollama_response" ]; then
+                log_warning "ai_call returned empty response"
+            fi
+        fi
+        
+        # If we got here, ai_call failed - try direct API call as fallback
+        log_info "ai_call failed, trying direct Ollama API call as fallback..."
+        local direct_data
+        direct_data=$(jq -n \
+            --arg model "$model" \
+            --arg system "$system_prompt" \
+            --arg user "$prompt" \
+            '{
+                model: $model,
+                messages: [
+                    {role: "system", content: $system},
+                    {role: "user", content: $user}
+                ],
+                temperature: 0.7,
+                max_tokens: 2000
+            }' 2>&1)
+        
+        if [ $? -ne 0 ] || [ -z "$direct_data" ]; then
+            log_error "Failed to create JSON data for direct API call"
+            log_error "jq error: $direct_data"
+            return 1
+        fi
+        
+        local direct_response
+        direct_response=$(curl -s -X POST http://localhost:11434/v1/chat/completions \
+            -H "Content-Type: application/json" \
+            -d "$direct_data" 2>&1)
+        local curl_result=$?
+        
+        if [ $curl_result -ne 0 ] || [ -z "$direct_response" ]; then
+            log_error "Direct API call failed with exit code: $curl_result"
+            log_error "Response: $(echo "$direct_response" | head -c 200)"
+            return 1
+        fi
+        
+        # Check if response is valid JSON
+        if ! echo "$direct_response" | jq . >/dev/null 2>&1; then
+            log_error "Direct API returned invalid JSON: $(echo "$direct_response" | head -c 300)"
+            return 1
+        fi
+        
+        # Extract content
+        local direct_content
+        direct_content=$(echo "$direct_response" | jq -r '.choices[0].message.content // .message.content // empty' 2>/dev/null || echo "")
+        
+        if [ -n "$direct_content" ] && [ "$direct_content" != "null" ] && [ "$direct_content" != "" ]; then
+            log_info "Direct Ollama API call SUCCESS (${#direct_content} chars): $(echo "$direct_content" | head -c 100)..."
+            echo "$direct_content"
+            return 0
+        else
+            log_error "Direct API call returned JSON but no content field"
+            log_error "Response structure: $(echo "$direct_response" | jq 'keys' 2>/dev/null || echo "invalid")"
+            log_error "Full response: $(echo "$direct_response" | head -c 500)"
+            return 1
+        fi
     fi
     
-    # Final fallback: Use MCP with a local fallback or inform user
-    log_warning "Cursor agent not available. Make sure Cursor IDE is running with MCP enabled."
-    log_info "You can:"
-    log_info "  1. Ensure Cursor IDE is running"
-    log_info "  2. Configure MCP servers in Cursor settings"
-    log_info "  3. Or set AI_PROVIDER to 'openai' with an API key"
+    # Final fallback: Provide helpful instructions
+    log_warning "Could not connect to any AI provider. Options:"
+    log_info "  1. Install and start Ollama (recommended - no API key needed):"
+    log_info "     curl -fsSL https://ollama.ai/install.sh | sh"
+    log_info "     ollama pull llama2"
+    log_info "     ollama serve"
+    log_info "  2. Ensure Cursor IDE is running with MCP configured"
+    log_info "  3. Set AI_PROVIDER='local' with Ollama running"
+    log_info "  4. Or set AI_PROVIDER='openai' with an API key"
     
     return 1
+}
+
+# Parse structured AI response for repository analysis
+parse_ai_repo_response() {
+    local response="$1"
+    
+    # Extract DESCRIPTION section (everything after "DESCRIPTION:" until next section)
+    local description=$(echo "$response" | sed -n '/^DESCRIPTION:/,/^FEATURES:/p' | sed '1d;$d' | grep -v "^\[" | grep -v "^FEATURES:" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//' | tr '\n' ' ' | sed 's/[[:space:]]\+/ /g' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+    
+    # Extract FEATURES section (everything after "FEATURES:" until next section or end)
+    local features=$(echo "$response" | sed -n '/^FEATURES:/,/^USE_CASE:/p' | sed '1d;$d' | grep -E "^-|^[[:space:]]*-" | sed 's/^[[:space:]]*//' | sed 's/^-[[:space:]]*/- /' | sed 's/^\[//;s/\]$//' | sed 's/^Feature [0-9]\+:\s*//i' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+    
+    # Extract USE_CASE section (everything after "USE_CASE:" until end or next section)
+    local use_case=$(echo "$response" | sed -n '/^USE_CASE:/,$p' | sed '1d' | grep -v "^INSTRUCTIONS:" | grep -v "^\[" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//' | head -n 5 | tr '\n' ' ' | sed 's/[[:space:]]\+/ /g' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+    
+    # If parsing failed, try fallback methods
+    if [ -z "$description" ] || [ "$description" = "" ]; then
+        # Try finding description in first few lines (common formats)
+        description=$(echo "$response" | head -n 15 | grep -v "^FEATURES:" | grep -v "^USE_CASE:" | grep -v "^INSTRUCTIONS:" | grep -v "^\[" | sed 's/^description:\s*//i' | sed 's/^DESCRIPTION:\s*//i' | head -n 3 | tr '\n' ' ' | sed 's/[[:space:]]\+/ /g' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+    fi
+    
+    if [ -z "$features" ] || [ -z "$(echo "$features" | grep -v '^[[:space:]]*$')" ]; then
+        # Try finding features as bullet points (anywhere in response)
+        features=$(echo "$response" | grep -E "^-|^[[:space:]]+-|^[0-9]+\.|^[[:space:]]*[0-9]+\." | head -n 7 | sed 's/^[[:space:]]*//' | sed 's/^[0-9]\+\.\s*/- /' | sed 's/^\[//;s/\]$//' | sed 's/^Feature [0-9]\+:\s*//i' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+    fi
+    
+    # Clean up description - remove placeholder text
+    description=$(echo "$description" | sed 's/\[Write.*\]//g' | sed 's/\[.*\]//g' | sed 's/[[:space:]]\+/ /g' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+    
+    # Return as structured format
+    echo "DESCRIPTION:${description}"
+    if [ -n "$features" ]; then
+        echo "$features" | while IFS= read -r line; do
+            # Skip empty lines and placeholder text
+            if [ -n "$line" ] && ! echo "$line" | grep -qE "^\[|^Feature [0-9]+:"; then
+                # Ensure it starts with - for markdown
+                if [[ ! "$line" =~ ^- ]]; then
+                    line="- ${line}"
+                fi
+                echo "FEATURE:${line}"
+            fi
+        done
+    fi
+    if [ -n "$use_case" ] && ! echo "$use_case" | grep -qE "^\["; then
+        echo "USE_CASE:${use_case}"
+    fi
+}
+
+# Parse structured AI response for usage examples
+parse_ai_usage_response() {
+    local response="$1"
+    
+    # Extract USAGE_EXAMPLE section (code block)
+    # Look for section between USAGE_EXAMPLE: and EXPLANATION: or COMMON_USE_CASES:
+    local usage_section=$(echo "$response" | sed -n '/^USAGE_EXAMPLE:/,/^EXPLANATION:\|^COMMON_USE_CASES:/p' | sed '1d;$d')
+    
+    # Extract code from code blocks (between ``` markers)
+    local usage_example=""
+    if echo "$usage_section" | grep -q '```'; then
+        # Extract code between first ``` and second ``` markers (excluding the markers)
+        # Use a while loop for robust multi-line extraction
+        local in_block=false
+        usage_example=""
+        while IFS= read -r line; do
+            # Check if line starts with ```
+            if echo "$line" | grep -q '^```'; then
+                if [ "$in_block" = false ]; then
+                    in_block=true
+                    # Skip the opening ``` line
+                    continue
+                else
+                    # Found closing ```, stop extracting
+                    break
+                fi
+            elif [ "$in_block" = true ]; then
+                # We're inside the code block, add this line
+                if [ -z "$usage_example" ]; then
+                    usage_example="$line"
+                else
+                    usage_example="${usage_example}
+${line}"
+                fi
+            fi
+        done < <(printf '%s\n' "$usage_section")
+        
+        # Clean up the extracted code - limit length but preserve structure
+        if [ -n "$usage_example" ]; then
+            # Limit to 20 lines to avoid extremely long examples
+            usage_example=$(echo -e "$usage_example" | head -n 20)
+        fi
+    else
+        # No code block markers, extract everything except section headers
+        usage_example=$(echo "$usage_section" | grep -v "^EXPLANATION:" | grep -v "^COMMON_USE_CASES:" | grep -v "^INSTRUCTIONS:" | grep -v "^USAGE_EXAMPLE:" | sed 's/^[[:space:]]*//' | head -n 15)
+    fi
+    
+    # Extract EXPLANATION section
+    local explanation=$(echo "$response" | sed -n '/^EXPLANATION:/,/^COMMON_USE_CASES:/p' | sed '1d;$d' | grep -v '^```' | grep -v "^COMMON_USE_CASES:" | tr '\n' ' ' | sed 's/[[:space:]]\+/ /g' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+    
+    # Extract COMMON_USE_CASES section
+    local use_cases=$(echo "$response" | sed -n '/^COMMON_USE_CASES:/,$p' | sed '1d' | grep -v "^INSTRUCTIONS:" | grep -E "^-|^[[:space:]]*-" | sed 's/^[[:space:]]*//' | head -n 5)
+    
+    # Fallback: try to find code blocks directly if structured format not found
+    if [ -z "$usage_example" ] || [ "$usage_example" = "" ]; then
+        if echo "$response" | grep -q '```'; then
+            # Find first code block (between ``` markers) - extract content between markers
+            local in_block=false
+            usage_example=""
+            while IFS= read -r line; do
+                if echo "$line" | grep -q '^```'; then
+                    if [ "$in_block" = false ]; then
+                        in_block=true
+                    else
+                        break  # Found closing ```
+                    fi
+                elif [ "$in_block" = true ]; then
+                    if [ -z "$usage_example" ]; then
+                        usage_example="$line"
+                    else
+                        usage_example="${usage_example}
+${line}"
+                    fi
+                fi
+            done < <(printf '%s\n' "$response")
+            # Clean up
+            usage_example=$(echo "$usage_example" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//' | grep -v '^$' | head -n 15)
+        fi
+    fi
+    
+    # Fallback: try to extract explanation from common formats
+    if [ -z "$explanation" ]; then
+        explanation=$(echo "$response" | grep -i "explanation\|explains\|does\|shows" | head -n 2 | tr '\n' ' ' | sed 's/[[:space:]]\+/ /g' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+    fi
+    
+    # Return structured format
+    echo "USAGE_EXAMPLE:${usage_example}"
+    echo "EXPLANATION:${explanation}"
+    if [ -n "$use_cases" ]; then
+        echo "$use_cases" | while IFS= read -r line; do
+            if [ -n "$line" ]; then
+                echo "USE_CASE:${line}"
+            fi
+        done
+    fi
 }
 
 # Analyze repository with AI to generate better descriptions
@@ -401,17 +800,39 @@ Primary Language: ${language}
 Languages: ${languages}
 Topics: ${topics}"
 
-    local prompt="Analyze this GitHub repository and provide:
-1. A concise, engaging 2-3 sentence description that explains what this project does and why it's useful
-2. A list of 5-7 key features based on the repository information
-3. A brief use case or example of when someone would use this project
+    local prompt="You are analyzing a GitHub repository for hardware verification and SystemVerilog projects. Generate comprehensive README content.
 
-Be specific and technical. Focus on what makes this repository valuable.
+REPOSITORY INFORMATION:
+${context}
 
-Repository context:
-${context}"
+YOUR TASK:
+Analyze this repository and provide EXACTLY the following in this format:
 
-    ai_call "$prompt" "You are a technical documentation expert specializing in open-source software repositories."
+DESCRIPTION:
+[Write 2-3 sentences explaining what this project does, its purpose, and why it's valuable. Be specific about the verification methodology, testbench framework, or verification IP it provides. If it's about RISC-V cores, mention which cores. If it's about cocotb, mention it's a coroutine-based testbench framework. Do NOT start with the repository name.]
+
+FEATURES:
+- [Feature 1: Be specific and technical, e.g., \"Coroutine-based testbench framework for Python\" not \"Well-structured framework\"]
+- [Feature 2: Another specific technical feature]
+- [Feature 3: Another specific feature]
+- [Feature 4: Another specific feature]
+- [Feature 5: Another specific feature]
+- [Feature 6: Additional specific feature if applicable]
+- [Feature 7: Additional specific feature if applicable]
+
+USE_CASE:
+[1-2 sentences about when and why someone would use this project. Be specific about the verification use case.]
+
+INSTRUCTIONS:
+- Be specific and technical, avoid generic phrases like \"comprehensive\" or \"well-structured\" without context
+- Focus on what makes this repository unique and valuable
+- For verification projects, mention specific methodologies (UVM, SystemVerilog, cocotb, etc.)
+- If the project is for specific cores or IP, mention them
+- Write in clear, professional technical documentation style
+- Do NOT repeat the repository name in every feature
+- Output ONLY the three sections above (DESCRIPTION, FEATURES, USE_CASE) with nothing else"
+
+    ai_call "$prompt" "You are an expert technical writer specializing in hardware verification methodologies, SystemVerilog, RISC-V cores, and open-source verification projects. You write clear, specific, and technically accurate documentation."
 }
 
 # Generate usage examples with AI
@@ -421,18 +842,39 @@ ai_generate_usage() {
     local language="$3"
     local example_files="$4"
     
-    local prompt="Generate practical usage examples for a ${language} project called ${repo}.
+    local prompt="You are generating usage examples for a ${language} project called ${repo} in the hardware verification/SystemVerilog domain.
 
 ${example_files}
 
-Provide:
-1. A basic usage example (3-5 lines of code)
-2. A brief explanation of what the example does
-3. Common use cases
+YOUR TASK:
+Generate practical, runnable code examples in this EXACT format:
 
-Format the code example properly for ${language}."
+USAGE_EXAMPLE:
+\`\`\`${language}
+[3-8 lines of actual runnable code showing basic usage]
+\`\`\`
 
-    ai_call "$prompt" "You are a software documentation expert. Generate clear, practical code examples."
+EXPLANATION:
+[1-2 sentences explaining what this code does and how it works. Be specific about the API calls, setup, or workflow.]
+
+COMMON_USE_CASES:
+- [Use case 1: Specific scenario when someone would use this]
+- [Use case 2: Another specific scenario]
+- [Use case 3: Another scenario if applicable]
+
+INSTRUCTIONS:
+- Provide ACTUAL runnable code, not pseudo-code or placeholders
+- If this is a verification project (cocotb, SystemVerilog, UVM), show realistic testbench or test setup code
+- If this is a Python project, include proper imports
+- If example files were provided, base your example on them but make it simpler and more beginner-friendly
+- Make the code example practical and immediately useful
+- Explain what each key part does
+- Use proper ${language} syntax and best practices
+- If ${language} is \"Makefile\" or \"Shell\", show actual commands
+- Output ONLY the three sections above (USAGE_EXAMPLE, EXPLANATION, COMMON_USE_CASES) with nothing else
+- Do NOT add markdown headers or extra formatting beyond what's specified"
+
+    ai_call "$prompt" "You are an expert in ${language} programming and hardware verification. You create clear, accurate, and immediately useful code examples that help developers get started quickly."
 }
 
 # Analyze project structure with AI
@@ -463,9 +905,13 @@ api_request() {
         -s
         -X "$method"
         -H "Accept: application/vnd.github.v3+json"
-        -H "Authorization: token ${GITHUB_TOKEN}"
         -H "User-Agent: README-Generator/1.0"
     )
+    
+    # Only add Authorization header if token is provided
+    if [ -n "$GITHUB_TOKEN" ]; then
+        curl_args+=(-H "Authorization: token ${GITHUB_TOKEN}")
+    fi
 
     if [ -n "$data" ]; then
         curl_args+=(-d "$data")
@@ -473,21 +919,44 @@ api_request() {
 
     local response
     local http_code
-    response=$(curl -w "\n%{http_code}" "${curl_args[@]}" "$url" 2>/dev/null || echo -e "\n000")
-    http_code=$(echo "$response" | tail -n1)
-    response=$(echo "$response" | sed '$d')
+    local curl_stderr
+    
+    # Capture curl stderr for better error diagnostics
+    curl_stderr=$(curl -w "\n%{http_code}" "${curl_args[@]}" "$url" 2>&1)
+    response=$(echo "$curl_stderr" | sed '$d')
+    http_code=$(echo "$curl_stderr" | tail -n1)
+    
+    # Handle curl failures (HTTP 000 means curl itself failed)
+    if [ -z "$http_code" ] || [ "$http_code" = "000" ]; then
+        log_error "Failed to connect to GitHub API: $endpoint"
+        log_error "Curl error: $(echo "$curl_stderr" | head -n 5)"
+        log_info "This could be due to:"
+        log_info "  1. Network connectivity issues"
+        log_info "  2. GitHub API being unavailable"
+        log_info "  3. Firewall/proxy blocking connections"
+        log_info "  4. DNS resolution issues"
+        return 1
+    fi
 
     if [ "$http_code" -ge 200 ] && [ "$http_code" -lt 300 ]; then
         echo "$response"
     elif [ "$http_code" -eq 404 ]; then
         log_warning "Resource not found: $endpoint"
         echo "{}"
+    elif [ "$http_code" -eq 401 ]; then
+        log_warning "Authentication failed. If using a token, check it's valid."
+        log_info "For public repos, you can run without GITHUB_TOKEN"
+        echo "{}"
+    elif [ "$http_code" -eq 403 ]; then
+        log_warning "Access forbidden. Rate limit may be exceeded or token lacks permissions."
+        log_info "Check your GitHub token permissions or wait before retrying"
+        return 1
     elif [ "$http_code" -eq 429 ]; then
         log_error "Rate limit exceeded. Please wait before retrying."
-        exit 1
+        return 1
     else
         log_error "API request failed: HTTP $http_code"
-        echo "$response" | jq -r '.message // "Unknown error"' 2>/dev/null || echo "Unknown error"
+        echo "$response" | jq -r '.message // "Unknown error"' 2>/dev/null || echo "$response"
         return 1
     fi
 }
@@ -730,9 +1199,7 @@ generate_readme() {
     local readme=""
     readme+="# ${repo_name}\n\n"
 
-    if [ -n "$description" ]; then
-        readme+="${description}\n\n"
-    fi
+    # Description will be added in Overview section, not here to avoid duplication
 
     # Badges
     local badges=()
@@ -783,28 +1250,29 @@ generate_readme() {
         workflows_check=$(list_repo_contents "$owner" "$repo" ".github/workflows" "$branch" 2>/dev/null || echo "[]")
         if [ "$workflows_check" != "[]" ] && [ -n "$workflows_check" ]; then
             # Prefer common CI workflow names (in order of preference)
+            # Only select .yml or .yaml workflow files
             local preferred_workflows="ci.yml test.yml build.yml build-test.yml build-test-dev.yml"
             workflow_file=""
             for preferred in $preferred_workflows; do
-                if echo "$workflows_check" | jq -r '.[] | select(.type == "file") | .name' 2>/dev/null | grep -q "^${preferred}$"; then
+                if echo "$workflows_check" | jq -r '.[] | select(.type == "file") | .name' 2>/dev/null | grep -qE "^${preferred}$"; then
                     workflow_file="$preferred"
                     break
                 fi
             done
-            # If no preferred workflow found, get first non-backport workflow
+            # If no preferred workflow found, get first valid workflow file (.yml or .yaml only)
             if [ -z "$workflow_file" ]; then
-                workflow_file=$(echo "$workflows_check" | jq -r '.[] | select(.type == "file") | select(.name | test("backport|release|dependabot") | not) | .name' 2>/dev/null | head -n1 || echo "")
+                workflow_file=$(echo "$workflows_check" | jq -r '.[] | select(.type == "file") | select(.name | test("\\.ya?ml$")) | select(.name | test("backport|release|dependabot") | not) | .name' 2>/dev/null | head -n1 || echo "")
             fi
-            # Fallback to any workflow if still empty
+            # Fallback to any valid workflow file (.yml or .yaml) if still empty
             if [ -z "$workflow_file" ]; then
-                workflow_file=$(echo "$workflows_check" | jq -r '.[] | select(.type == "file") | .name' 2>/dev/null | head -n1 || echo "")
+                workflow_file=$(echo "$workflows_check" | jq -r '.[] | select(.type == "file") | select(.name | test("\\.ya?ml$")) | .name' 2>/dev/null | head -n1 || echo "")
             fi
         fi
         # Generate CI badge
         if [ -n "$workflow_file" ]; then
             badges+=("[![CI](https://github.com/${owner}/${repo}/actions/workflows/${workflow_file}/badge.svg?branch=${branch})](https://github.com/${owner}/${repo}/actions/workflows/${workflow_file})")
         else
-            # Fallback to generic CI badge
+            # Fallback to generic CI badge - link to actions page (no specific workflow)
             badges+=("[![CI](https://github.com/${owner}/${repo}/actions/workflows/ci.yml/badge.svg?branch=${branch})](https://github.com/${owner}/${repo}/actions)")
         fi
     fi
@@ -858,14 +1326,56 @@ generate_readme() {
     local ai_features=""
     local ai_description=""
     
-    if [ "$AI_ENABLED" = "true" ] || [ "$AI_ENABLED" = "1" ]; then
+    # Check for Cursor IDE manually generated content first (via environment variables)
+    if [ -n "${CURSOR_MANUAL_DESCRIPTION:-}" ] || [ -n "${CURSOR_MANUAL_FEATURES:-}" ]; then
+        log_info "Using Cursor IDE manually generated content from environment variables..."
+        # Use Cursor-generated content directly
+        if [ -n "${CURSOR_MANUAL_DESCRIPTION:-}" ]; then
+            ai_description="${CURSOR_MANUAL_DESCRIPTION}"
+            log_info "Using Cursor-generated description: $(echo "$ai_description" | cut -c1-80)..."
+        fi
+        if [ -n "${CURSOR_MANUAL_FEATURES:-}" ]; then
+            ai_features="${CURSOR_MANUAL_FEATURES}"
+            local feature_count=$(echo "$ai_features" | grep -c "^-" || echo "0")
+            log_info "Using Cursor-generated features: ${feature_count} features"
+        fi
+    elif [ "$AI_ENABLED" = "true" ] || [ "$AI_ENABLED" = "1" ]; then
         log_info "Using AI to analyze repository and generate enhanced content..."
+        # Capture only stdout (AI response), discard stderr (log messages)
         ai_overview=$(ai_analyze_repo "$owner" "$repo" "$description" "$language" "$topics" "$languages" 2>/dev/null || echo "")
         
-        if [ -n "$ai_overview" ]; then
-            # Try to parse AI response (format may vary)
-            ai_description=$(echo "$ai_overview" | head -n 3 | grep -v "^[0-9]" | sed 's/^description:\s*//i' | head -n 1 || echo "")
-            ai_features=$(echo "$ai_overview" | grep -E "^-|^[0-9]+\.|- " | head -n 7 || echo "")
+        # Debug: Log AI response (first 200 chars) - only if it's actual content
+        if [ -n "$ai_overview" ] && [ "$ai_overview" != "" ]; then
+            # Check if it's not just log messages
+            if ! echo "$ai_overview" | grep -qE "^\[INFO\]|^\[WARNING\]|^\[ERROR\]"; then
+                log_info "AI response received: $(echo "$ai_overview" | head -c 200)..."
+            else
+                log_warning "AI response appears to be log messages, not actual content"
+                ai_overview=""  # Clear it so we use fallback
+            fi
+        else
+            log_warning "AI returned empty response - using fallback content"
+        fi
+        
+        if [ -n "$ai_overview" ] && [ "$ai_overview" != "" ]; then
+            # Parse structured AI response
+            local parsed=$(parse_ai_repo_response "$ai_overview")
+            ai_description=$(echo "$parsed" | grep "^DESCRIPTION:" | sed 's/^DESCRIPTION://' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+            # Extract all FEATURE lines and join with newlines
+            ai_features=$(echo "$parsed" | grep "^FEATURE:" | sed 's/^FEATURE://' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//' | tr '\n' '\n')
+            local ai_use_case=$(echo "$parsed" | grep "^USE_CASE:" | sed 's/^USE_CASE://' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+            
+            # Log parsed results for debugging
+            if [ -n "$ai_description" ]; then
+                log_info "AI description extracted: $(echo "$ai_description" | cut -c1-80)..."
+            fi
+            if [ -n "$ai_features" ]; then
+                local feature_count=$(echo "$ai_features" | wc -l)
+                log_info "AI features extracted: ${feature_count} features"
+            fi
+            if [ -n "$ai_use_case" ]; then
+                log_info "AI use case extracted: $(echo "$ai_use_case" | cut -c1-80)..."
+            fi
         fi
     fi
 
@@ -873,12 +1383,34 @@ generate_readme() {
     readme+="## Overview\n\n"
     
     if [ -n "$ai_description" ]; then
+        # Use AI-generated description
         readme+="${ai_description}\n\n"
     elif [ -n "$description" ]; then
-        readme+="${description}\n\n"
-    fi
-    
-    if [ -z "$ai_description" ]; then
+        # Format GitHub description properly
+        # If description starts with repo name and colon, remove the prefix and format as sentence
+        local clean_description="$description"
+        local formatted_description=""
+        
+        # Check if description starts with repo name (case-insensitive check)
+        if echo "$clean_description" | grep -qiE "^${repo_name}[: ]"; then
+            # Remove repo name prefix (case-insensitive)
+            clean_description=$(echo "$clean_description" | sed -E "s/^${repo_name}[: ]+\s*//i" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+            # Capitalize first letter of description part
+            clean_description="$(echo "$clean_description" | sed 's/^./\U&/')"
+            # Format as proper sentence: "repo_name is description"
+            # Preserve repo name as-is (don't capitalize) - common in technical docs
+            formatted_description="${repo_name} is ${clean_description}"
+            # Add period if not present
+            if ! echo "$formatted_description" | grep -q '\.$'; then
+                formatted_description="${formatted_description}."
+            fi
+            readme+="${formatted_description}\n\n"
+        else
+            # Description doesn't start with repo name, use as-is
+            readme+="${clean_description}\n\n"
+        fi
+    else
+        # No description available, use template
         readme+="${repo_name} is "
         if [ -n "$language" ] && [ "$language" != "null" ]; then
             readme+="a ${language} project "
@@ -899,7 +1431,8 @@ generate_readme() {
     
     if [ -n "$ai_features" ]; then
         # Use AI-generated features
-        echo "$ai_features" | while IFS= read -r feature; do
+        # Use process substitution to avoid subshell issue
+        while IFS= read -r feature; do
             if [ -n "$feature" ]; then
                 # Ensure it starts with - for markdown list
                 if [[ ! "$feature" =~ ^- ]]; then
@@ -907,7 +1440,7 @@ generate_readme() {
                 fi
                 readme+="${feature}\n"
             fi
-        done
+        done < <(printf '%s\n' "$ai_features")
         readme+="\n"
     else
         # Fallback to default features
@@ -915,7 +1448,16 @@ generate_readme() {
         readme+="- Well-structured testbench framework\n"
         readme+="- Support for modern verification methodologies\n"
         if [ -n "$languages" ]; then
-            readme+="- Implemented in ${languages}\n"
+            # Format languages list (limit to first 5, add "and more" if longer)
+            # Normalize: remove extra spaces, ensure single space after comma, then take first 5
+            local languages_normalized=$(echo "$languages" | sed 's/[[:space:]]*,[[:space:]]*/, /g' | sed 's/[[:space:]]\+/ /g')
+            local languages_list=$(echo "$languages_normalized" | cut -d',' -f1-5 | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+            local lang_count=$(echo "$languages_normalized" | awk -F',' '{print NF}')
+            if [ "$lang_count" -gt 5 ]; then
+                readme+="- Implemented in ${languages_list}, and more\n"
+            else
+                readme+="- Implemented in ${languages_list}\n"
+            fi
         fi
         readme+="- Extensive test suite with multiple test scenarios\n\n"
     fi
@@ -945,7 +1487,58 @@ generate_readme() {
     readme+="\`\`\`\n\n"
 
     # Usage (with AI-generated examples if enabled)
-    if [ "$AI_ENABLED" = "true" ] || [ "$AI_ENABLED" = "1" ]; then
+    if [ -n "${CURSOR_MANUAL_USAGE:-}" ] || [ -n "${CURSOR_MANUAL_EXPLANATION:-}" ]; then
+        # Use Cursor IDE manually generated usage content
+        log_info "Using Cursor IDE manually generated usage content from environment variables..."
+        local usage_example="${CURSOR_MANUAL_USAGE:-}"
+        local explanation="${CURSOR_MANUAL_EXPLANATION:-}"
+        local use_cases="${CURSOR_MANUAL_USE_CASES:-}"
+        
+        # Format usage section if we have content
+        if [ -n "$usage_example" ] || [ -n "$explanation" ]; then
+            readme+="## Usage\n\n"
+            
+            # Only add usage example if it has actual content (not just empty or whitespace)
+            if [ -n "$usage_example" ] && [ -n "$(echo -e "$usage_example" | tr -d '[:space:]')" ]; then
+                readme+="### Basic Example\n\n"
+                # Use Python for cocotb, SystemVerilog for verification projects, or detected language
+                local code_lang="${language}"
+                if [ "$repo" = "cocotb" ] || echo "$repo" | grep -qi "cocotb"; then
+                    code_lang="python"
+                elif echo "$topics" | grep -qi "systemverilog\|verilog\|uvm"; then
+                    code_lang="systemverilog"
+                elif [ -z "$code_lang" ] || [ "$code_lang" = "null" ]; then
+                    code_lang="bash"  # Default fallback
+                fi
+                readme+="\`\`\`${code_lang}\n"
+                readme+="${usage_example}\n"
+                readme+="\`\`\`\n\n"
+            fi
+            
+            if [ -n "$explanation" ]; then
+                readme+="${explanation}\n\n"
+            fi
+            
+            if [ -n "$use_cases" ]; then
+                readme+="### Common Use Cases\n\n"
+                # Use process substitution to avoid subshell issue
+                while IFS= read -r use_case; do
+                    if [ -n "$use_case" ]; then
+                        if [[ ! "$use_case" =~ ^- ]]; then
+                            use_case="- ${use_case}"
+                        fi
+                        readme+="${use_case}\n"
+                    fi
+                done < <(printf '%s\n' "$use_cases")
+                readme+="\n"
+            fi
+        fi
+        
+        # Log parsed results for debugging
+        if [ -n "$usage_example" ]; then
+            log_info "Cursor usage example extracted: $(echo "$usage_example" | head -n 1 | cut -c1-60)..."
+        fi
+    elif [ "$AI_ENABLED" = "true" ] || [ "$AI_ENABLED" = "1" ]; then
         # Collect example file info for AI
         local example_info=""
         if [ "$has_examples" = true ] && [ ${#example_dirs[@]} -gt 0 ]; then
@@ -953,12 +1546,108 @@ generate_readme() {
         fi
         
         log_info "Generating usage examples with AI..."
-        local ai_usage
-        ai_usage=$(ai_generate_usage "$owner" "$repo" "$language" "$example_info" 2>/dev/null || echo "")
+        local ai_usage_raw
+        # Capture only stdout (AI response), discard stderr (log messages)
+        ai_usage_raw=$(ai_generate_usage "$owner" "$repo" "$language" "$example_info" 2>/dev/null || echo "")
         
-        if [ -n "$ai_usage" ]; then
-            readme+="## Usage\n\n"
-            readme+="${ai_usage}\n\n"
+        # Debug: Log AI usage response (first 200 chars) - only if it's actual content
+        if [ -n "$ai_usage_raw" ] && [ "$ai_usage_raw" != "" ]; then
+            # Check if it's not just log messages
+            if ! echo "$ai_usage_raw" | grep -qE "^\[INFO\]|^\[WARNING\]|^\[ERROR\]"; then
+                log_info "AI usage response received: $(echo "$ai_usage_raw" | head -c 200)..."
+            else
+                log_warning "AI usage response appears to be log messages, not actual content"
+                ai_usage_raw=""  # Clear it so we skip usage section
+            fi
+        else
+            log_warning "AI usage returned empty response - skipping usage section"
+        fi
+        
+        if [ -n "$ai_usage_raw" ] && [ "$ai_usage_raw" != "" ]; then
+            # Parse structured AI response
+            local parsed_usage=$(parse_ai_usage_response "$ai_usage_raw")
+            
+            # Extract USAGE_EXAMPLE (may span multiple lines)
+            # The parse function outputs "USAGE_EXAMPLE:<code>\nEXPLANATION:..."
+            # where <code> may contain newlines. We need to extract everything between
+            # USAGE_EXAMPLE: and the next section marker (EXPLANATION: or USE_CASE:)
+            local usage_example=""
+            local in_usage=false
+            while IFS= read -r line; do
+                if echo "$line" | grep -q "^EXPLANATION:\|^USE_CASE:"; then
+                    break  # Found next section, stop
+                elif echo "$line" | grep -q "^USAGE_EXAMPLE:"; then
+                    # Remove the prefix and get the rest of the line (if any)
+                    local content=$(echo "$line" | sed 's/^USAGE_EXAMPLE://' | sed 's/^[[:space:]]*//')
+                    if [ -n "$content" ] && [ -n "$(echo "$content" | tr -d '[:space:]')" ]; then
+                        usage_example="$content"
+                    fi
+                    in_usage=true
+                elif [ "$in_usage" = true ]; then
+                    # We're in the usage section, collect lines until we hit EXPLANATION: or USE_CASE:
+                    if [ -z "$usage_example" ]; then
+                        usage_example="$line"
+                    else
+                        usage_example="${usage_example}
+${line}"
+                    fi
+                fi
+            done < <(printf '%s\n' "$parsed_usage")
+            
+            # Clean up: just ensure we have valid content (leading/trailing blank lines won't hurt)
+            if [ -z "$usage_example" ] || [ -z "$(echo -e "$usage_example" | tr -d '[:space:]')" ]; then
+                usage_example=""
+            fi
+            
+            # Extract EXPLANATION (single line)
+            local explanation=$(echo "$parsed_usage" | grep "^EXPLANATION:" | sed 's/^EXPLANATION://' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//' | head -n1)
+            # Extract all USE_CASE lines
+            local use_cases=$(echo "$parsed_usage" | grep "^USE_CASE:" | sed 's/^USE_CASE://' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+            
+            # Format usage section if we have content
+            if [ -n "$usage_example" ] || [ -n "$explanation" ]; then
+                readme+="## Usage\n\n"
+                
+                # Only add usage example if it has actual content (not just empty or whitespace)
+                if [ -n "$usage_example" ] && [ -n "$(echo "$usage_example" | tr -d '[:space:]')" ]; then
+                    readme+="### Basic Example\n\n"
+                    # Use Python for cocotb, SystemVerilog for verification projects, or detected language
+                    local code_lang="${language}"
+                    if [ "$repo" = "cocotb" ] || echo "$repo" | grep -qi "cocotb"; then
+                        code_lang="python"
+                    elif echo "$topics" | grep -qi "systemverilog\|verilog\|uvm"; then
+                        code_lang="systemverilog"
+                    elif [ -z "$code_lang" ] || [ "$code_lang" = "null" ]; then
+                        code_lang="bash"  # Default fallback
+                    fi
+                    readme+="\`\`\`${code_lang}\n"
+                    readme+="${usage_example}\n"
+                    readme+="\`\`\`\n\n"
+                fi
+                
+                if [ -n "$explanation" ]; then
+                    readme+="${explanation}\n\n"
+                fi
+                
+                if [ -n "$use_cases" ]; then
+                    readme+="### Common Use Cases\n\n"
+                    # Use process substitution to avoid subshell issue
+                    while IFS= read -r use_case; do
+                        if [ -n "$use_case" ]; then
+                            if [[ ! "$use_case" =~ ^- ]]; then
+                                use_case="- ${use_case}"
+                            fi
+                            readme+="${use_case}\n"
+                        fi
+                    done < <(printf '%s\n' "$use_cases")
+                    readme+="\n"
+                fi
+            fi
+            
+            # Log parsed results for debugging
+            if [ -n "$usage_example" ]; then
+                log_info "AI usage example extracted: $(echo "$usage_example" | head -n 1 | cut -c1-60)..."
+            fi
         fi
     fi
 
@@ -1011,9 +1700,14 @@ generate_readme() {
         done
     fi
     
-    # Add other common directories (limit to 3 more)
+    # Add other common directories (limit to 3 more, exclude hidden dirs)
     local other_count=0
     for dir in "${top_dirs[@]}"; do
+        # Skip hidden directories (starting with .)
+        if [[ "$dir" == .* ]]; then
+            continue
+        fi
+        
         case "$dir" in
             src|source|lib|libs|rtl|design|tests|test|t|testsuite|testbench|tb|docs|doc|documentation|examples|example|samples|sample|demos|demo)
                 continue
@@ -1028,18 +1722,19 @@ generate_readme() {
     done
     
     # Output directory tree
-    local i=0
-    for dir_entry in "${dir_list[@]}"; do
-        if [ $i -eq $((${#dir_list[@]} - 1)) ]; then
-            # Last entry
-            readme+="${dir_entry/├──/└──}\n"
-        else
+    # If there are directories, all use ├── except the last one before README.md
+    # If there are no directories, just show README.md with └──
+    if [ ${#dir_list[@]} -gt 0 ]; then
+        # All directories use ├── (they're not the last item)
+        for dir_entry in "${dir_list[@]}"; do
             readme+="${dir_entry}\n"
-        fi
-        ((i++))
-    done
-    
-    readme+="└── README.md\n"
+        done
+        # README.md is the last item, so use └──
+        readme+="└── README.md\n"
+    else
+        # No directories, just README.md
+        readme+="└── README.md\n"
+    fi
     readme+="\`\`\`\n\n"
     
     readme+="Key directories:\n"
@@ -1122,11 +1817,33 @@ generate_readme() {
 
     # License
     readme+="## License\n\n"
-    readme+="This project is licensed under the ${license_name} License"
-    if [ "$has_license" = true ]; then
-        readme+=" - see the [LICENSE](LICENSE) file for details."
+    # Handle different license name cases
+    if [ "$license_name" = "Unknown" ] || [ "$license_name" = "null" ] || [ -z "$license_name" ]; then
+        if [ "$has_license" = true ]; then
+            readme+="This project is licensed - see the [LICENSE](LICENSE) file for details."
+        else
+            readme+="License information is not available."
+        fi
+    elif [ "$license_name" = "Other" ]; then
+        if [ "$has_license" = true ]; then
+            readme+="This project is licensed under a custom license - see the [LICENSE](LICENSE) file for details."
+        else
+            readme+="This project uses a custom license. Please check the repository for license details."
+        fi
+    elif echo "$license_name" | grep -qi "license"; then
+        readme+="This project is licensed under the ${license_name}"
+        if [ "$has_license" = true ]; then
+            readme+=" - see the [LICENSE](LICENSE) file for details."
+        else
+            readme+="."
+        fi
     else
-        readme+="."
+        readme+="This project is licensed under the ${license_name} License"
+        if [ "$has_license" = true ]; then
+            readme+=" - see the [LICENSE](LICENSE) file for details."
+        else
+            readme+="."
+        fi
     fi
     readme+="\n\n"
 

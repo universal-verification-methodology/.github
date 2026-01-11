@@ -39,16 +39,9 @@ print_success() {
     echo -e "${BLUE}[SUCCESS]${NC} $1" | tee -a "$LOG_FILE"
 }
 
-# Check if required arguments are provided
-if [ $# -lt 1 ]; then
-    REPOS_FILE="${DEFAULT_REPOS_FILE}"
-else
-    REPOS_FILE="$1"
-fi
-
-# GitHub token (can be provided via environment variable or command-line argument)
-# Default token is provided for convenience, but can be overridden
-GITHUB_TOKEN="${2:-${GITHUB_TOKEN:-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}}"
+# Note: Argument parsing and token handling are done in main() function
+# REPOS_FILE will be set in main() based on arguments
+REPOS_FILE="${DEFAULT_REPOS_FILE}"
 
 # Initialize log files
 echo "=== Fork operation started at $(date) ===" > "$LOG_FILE"
@@ -355,14 +348,119 @@ fork_single_repo() {
 
 # Main execution
 main() {
+    # Improved argument parsing: handle owner and repo as separate arguments
+    local actual_repos_file=""
+    local actual_token=""
+    local single_repo=""
+    
+    if [ $# -eq 0 ]; then
+        actual_repos_file="${DEFAULT_REPOS_FILE}"
+    elif [ $# -eq 1 ]; then
+        # Single argument: could be file, owner/repo, or token (unlikely)
+        if [ -f "$1" ]; then
+            actual_repos_file="$1"
+        elif [[ "$1" =~ ^[^/]+/[^/]+$ ]]; then
+            single_repo="$1"
+        else
+            print_error "Invalid argument: '$1'"
+            print_info "Expected: repository file, owner/repo format, or token"
+            exit 1
+        fi
+    elif [ $# -eq 2 ]; then
+        # Two arguments: could be:
+        # 1. file + token
+        # 2. owner repo (to be combined)
+        # 3. owner/repo + token
+        if [ -f "$1" ]; then
+            # First arg is a file, second is token
+            actual_repos_file="$1"
+            if [[ "$2" =~ ^gh[opu]_ ]]; then
+                actual_token="$2"
+            else
+                print_error "Second argument should be a GitHub token (starts with ghp_, gho_, or ghu_)"
+                exit 1
+            fi
+        elif [[ "$1" =~ ^[^/]+/[^/]+$ ]]; then
+            # First arg is owner/repo, second is token
+            single_repo="$1"
+            if [[ "$2" =~ ^gh[opu]_ ]]; then
+                actual_token="$2"
+            else
+                print_error "Second argument should be a GitHub token (starts with ghp_, gho_, or ghu_)"
+                exit 1
+            fi
+        elif [[ "$1" =~ ^[^/]+$ ]] && [[ "$2" =~ ^[^/]+$ ]]; then
+            # Two separate args that look like owner and repo
+            single_repo="$1/$2"
+            print_info "Combining arguments: $1/$2"
+        elif [[ "$2" =~ ^gh[opu]_ ]]; then
+            # First arg might be owner/repo without slash, second is token
+            # But this is ambiguous, so try combining
+            single_repo="$1"
+            actual_token="$2"
+        else
+            print_error "Cannot parse arguments: '$1' '$2'"
+            print_info "Expected: [repos_file|owner/repo] [token] or owner repo"
+            exit 1
+        fi
+    elif [ $# -eq 3 ]; then
+        # Three arguments: owner repo token
+        if [[ "$1" =~ ^[^/]+$ ]] && [[ "$2" =~ ^[^/]+$ ]] && [[ "$3" =~ ^gh[opu]_ ]]; then
+            single_repo="$1/$2"
+            actual_token="$3"
+            print_info "Combining arguments: $1/$2 (token provided)"
+        elif [ -f "$1" ] && [[ "$3" =~ ^gh[opu]_ ]]; then
+            # First is file, second might be ignored, third is token
+            actual_repos_file="$1"
+            actual_token="$3"
+            print_warn "Ignoring second argument '$2' (assuming file + token format)"
+        else
+            print_error "Cannot parse arguments: '$1' '$2' '$3'"
+            print_info "Expected: owner repo token (e.g., openhwgroup core-v-verif ghp_xxxxx)"
+            exit 1
+        fi
+    else
+        print_error "Too many arguments provided ($#). Maximum 3 arguments supported."
+        print_info "Usage: $0 [repos_file|owner/repo] [github_token]"
+        print_info "   or: $0 owner repo [github_token]"
+        exit 1
+    fi
+    
+    # Override token if provided as argument, otherwise use environment variable, or fallback to default
+    if [ -n "$actual_token" ]; then
+        GITHUB_TOKEN="$actual_token"
+    elif [ -z "${GITHUB_TOKEN:-}" ]; then
+        # Default token fallback
+        GITHUB_TOKEN="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"
+        print_info "Using default GitHub token"
+    fi
+    
     print_info "Starting fork operation..."
     print_info "Target organization: ${TARGET_ORG} (https://github.com/${TARGET_ORG})"
-    print_info "Repository file: ${REPOS_FILE}"
+    if [ -n "$actual_repos_file" ]; then
+        print_info "Repository file: ${actual_repos_file}"
+        REPOS_FILE="$actual_repos_file"
+    elif [ -n "$single_repo" ]; then
+        print_info "Single repository: ${single_repo}"
+    fi
     
     # Check if GitHub token is valid
     local token_check=$(github_api_request "GET" "${GITHUB_API_BASE}/user")
-    if ! echo "$token_check" | grep -qE '"login"|"name"'; then
+    
+    # Check for common error messages
+    if echo "$token_check" | grep -qiE '"message".*"Bad credentials"|"message".*"Requires authentication"'; then
+        print_error "Invalid GitHub token. Authentication failed."
+        print_error "Please check your token or get a new one from: https://github.com/settings/tokens"
+        exit 1
+    elif echo "$token_check" | grep -qiE '"message".*"Not Found"|"message".*"401"|"message".*"403"'; then
+        print_error "GitHub API authentication error. Token may be invalid or expired."
+        print_error "API Response: $(echo "$token_check" | grep -oE '"message"\s*:\s*"[^"]*"' | head -1 || echo 'Unknown error')"
+        exit 1
+    elif ! echo "$token_check" | grep -qE '"login"|"name"'; then
         print_error "Invalid GitHub token. Please check your token."
+        print_error "API Response: $token_check"
+        print_info "Token should start with ghp_, gho_, or ghu_"
+        print_info "Get a token from: https://github.com/settings/tokens"
         exit 1
     fi
     
@@ -394,26 +492,28 @@ main() {
     fi
     
     # Process repositories
-    if [ $# -ge 1 ] && [ -f "$REPOS_FILE" ]; then
+    if [ -n "$actual_repos_file" ] && [ -f "$actual_repos_file" ]; then
+        REPOS_FILE="$actual_repos_file"
         process_repositories
-    elif [ $# -ge 1 ] && [[ "$1" =~ ^[^/]+/[^/]+$ ]]; then
+    elif [ -n "$single_repo" ]; then
         # Single repository provided as argument
-        fork_single_repo "$1"
+        fork_single_repo "$single_repo"
     else
         print_error "Invalid arguments or repository file not found."
         print_info ""
         print_info "Usage: $0 [repos_file] [github_token]"
         print_info "   or: $0 <owner/repo> [github_token]"
+        print_info "   or: $0 <owner> <repo> [github_token]"
         print_info ""
-        if [ $# -ge 1 ] && [[ ! "$1" =~ / ]]; then
-            print_warn "You provided '$1' which is not in the format 'owner/repo'."
-            print_info "Examples of valid repository names:"
-            print_info "  - maximecb/uvm"
-            print_info "  - cocotb/cocotb"
-            print_info "  - openhwgroup/core-v-verif"
-            print_info ""
-            print_info "To find repositories with '$1' in the name, use the search script first:"
-            print_info "  ./scripts/search_repos.sh 'language:systemverilog $1'"
+        print_info "Examples:"
+        print_info "  $0 repos_to_fork.txt                          # Uses GITHUB_TOKEN env var"
+        print_info "  $0 openhwgroup/core-v-verif                   # Uses GITHUB_TOKEN env var"
+        print_info "  $0 openhwgroup core-v-verif                   # Uses GITHUB_TOKEN env var"
+        print_info "  $0 openhwgroup/core-v-verif ghp_xxxxx         # Token as 2nd arg"
+        print_info "  $0 openhwgroup core-v-verif ghp_xxxxx         # Token as 3rd arg"
+        print_info ""
+        if [ $# -ge 1 ]; then
+            print_warn "You provided: $*"
         fi
         exit 1
     fi
