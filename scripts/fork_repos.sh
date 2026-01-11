@@ -431,7 +431,7 @@ main() {
         GITHUB_TOKEN="$actual_token"
     elif [ -z "${GITHUB_TOKEN:-}" ]; then
         # Default token fallback
-        GITHUB_TOKEN="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"
+        GITHUB_TOKEN="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"
         print_info "Using default GitHub token"
     fi
     

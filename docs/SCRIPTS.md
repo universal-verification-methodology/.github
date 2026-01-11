@@ -22,6 +22,8 @@ These scripts are essential for the main workflow:
 - `search_repos.sh` - Search for GitHub repositories
 - `fork_repos.sh` - Fork repositories to organization
 - `push_readme.sh` - Push README files to GitHub
+- `sync_upstream.sh` - Sync upstream changes while preserving README.md
+- `sync_all_upstreams.sh` - Automatically sync all forked repositories in organization
 
 ### Required for Initial Setup
 These scripts are needed for first-time setup:
@@ -142,6 +144,86 @@ These scripts are for testing and debugging:
 
 ---
 
+### `sync_upstream.sh` ⭐ **REQUIRED**
+**Purpose**: Sync upstream changes from the original repository to the forked repository while preserving the custom README.md.
+
+**Features**:
+- Clones or updates the forked repository locally
+- Adds/updates upstream remote automatically
+- Fetches and merges upstream changes
+- Preserves custom README.md during merge
+- Automatically resolves conflicts (keeps fork's README.md, takes upstream's other changes)
+- Pushes synced changes back to the fork
+
+**Usage**:
+```bash
+# Single repository
+./scripts/sync_upstream.sh fork_owner fork_repo upstream_owner upstream_repo [github_token]
+./scripts/sync_upstream.sh fork_owner fork_repo upstream_owner/repo [github_token]
+```
+
+**Example**:
+```bash
+./scripts/sync_upstream.sh universal-verification-methodology core-v-verif openhwgroup core-v-verif
+./scripts/sync_upstream.sh universal-verification-methodology core-v-verif openhwgroup/core-v-verif
+```
+
+**How it works**:
+1. Clones the fork (or updates if already cloned) to `.sync_clones/`
+2. Adds the original repository as `upstream` remote
+3. Fetches latest changes from upstream
+4. Merges upstream changes into the fork
+5. If README.md conflicts, keeps the fork's version
+6. Resolves other conflicts by taking upstream's version
+7. Pushes the synced changes back to GitHub
+
+**Note**: This script uses git operations (not just API) and requires git to be installed.
+
+**Status**: ⭐ **CORE** - Required for maintaining forked repositories
+
+---
+
+### `sync_all_upstreams.sh` ⭐ **REQUIRED**
+**Purpose**: Automatically sync upstream changes for all forked repositories in an organization.
+
+**Features**:
+- Fetches all repositories from the specified organization
+- Automatically detects forked repositories
+- Gets upstream (parent) repository information for each fork
+- Calls `sync_upstream.sh` for each fork to sync with upstream
+- Preserves custom README.md for each repository during sync
+- Provides comprehensive logging and error handling
+- Tracks successful and failed syncs
+
+**Usage**:
+```bash
+# Sync all forked repos in organization
+./scripts/sync_all_upstreams.sh [organization] [github_token]
+```
+
+**Example**:
+```bash
+./scripts/sync_all_upstreams.sh universal-verification-methodology
+./scripts/sync_all_upstreams.sh universal-verification-methodology ghp_xxxxx
+```
+
+**How it works**:
+1. Fetches all repositories from the organization using GitHub API
+2. Filters for repositories that are forks (`fork: true`)
+3. Extracts upstream repository information from each fork's `parent` field
+4. For each fork, calls `sync_upstream.sh` to sync with its upstream
+5. Logs all operations to `sync_all_upstreams_log.txt`
+6. Tracks failed syncs in `failed_syncs.txt`
+
+**Output**: 
+- `sync_all_upstreams_log.txt` - Detailed log of all operations
+- `failed_syncs.txt` - List of failed syncs (if any)
+
+**Note**: This script requires `sync_upstream.sh` to be present in the same directory.
+
+**Status**: ⭐ **CORE** - Required for batch syncing of forked repositories
+
+---
 
 ### `generate_readme.sh` ⭐ **REQUIRED**
 **Purpose**: Main script for generating comprehensive README.md files for GitHub repositories using the GitHub API.
@@ -576,6 +658,15 @@ Requires `configure_cursor_ai.sh` or manual environment variable setup.
    ./scripts/push_readme.sh owner repo-name README.md
    ```
 
+5. **Sync with upstream** (when updates are needed):
+   ```bash
+   # Sync a single repository
+   ./scripts/sync_upstream.sh fork_owner fork_repo upstream_owner upstream_repo
+   
+   # OR sync all forked repositories in the organization automatically
+   ./scripts/sync_all_upstreams.sh universal-verification-methodology
+   ```
+
 ### Workflow with AI (Recommended)
 
 1. **Initial Setup** (one-time):
@@ -684,6 +775,8 @@ Requires `configure_cursor_ai.sh` or manual environment variable setup.
 | `search_repos.sh` | Search GitHub repos | ⭐ Yes |
 | `fork_repos.sh` | Fork repos | ⭐ Yes |
 | `push_readme.sh` | Push READMEs to GitHub | ⭐ Yes |
+| `sync_upstream.sh` | Sync upstream changes | ⭐ Yes |
+| `sync_all_upstreams.sh` | Sync all forked repos | ⭐ Yes |
 | `configure_cursor_ai.sh` | Setup AI config | 🔧 For AI |
 | `complete_setup.sh` | Complete setup | 🔧 Recommended |
 | `check_cursor_ide.sh` | Check Cursor status | 🔗 Useful |
@@ -694,9 +787,11 @@ Requires `configure_cursor_ai.sh` or manual environment variable setup.
 Large scripts (>10KB):
 - `generate_readme.sh` (~2000 lines) - Main README generator
 - `search_repos.sh` (~700 lines) - Repository search
+- `sync_upstream.sh` (~710 lines) - Upstream synchronization
 - `fork_repos.sh` (~530 lines) - Repository forking
-- `push_readme.sh` (~330 lines) - README pushing
 - `complete_setup.sh` (~407 lines) - Complete setup
+- `sync_all_upstreams.sh` (~330 lines) - Batch upstream synchronization
+- `push_readme.sh` (~330 lines) - README pushing
 - `configure_cursor_ai.sh` (~234 lines) - AI configuration
 
 Medium scripts (2-10KB):

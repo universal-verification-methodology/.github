@@ -97,7 +97,7 @@ done
 
 # If no token provided as argument, try environment variable, then use default
 if [ -z "$GITHUB_TOKEN" ]; then
-    GITHUB_TOKEN="${GITHUB_TOKEN:-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}"
+    GITHUB_TOKEN="${GITHUB_TOKEN:-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}"
 fi
 
 if [ "$FILTER_README_ONLY" = "true" ]; then

@@ -11,7 +11,7 @@
 set -euo pipefail
 
 # Default GitHub token (can be overridden with GITHUB_TOKEN env var)
-DEFAULT_TOKEN="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"
+DEFAULT_TOKEN="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"
 GITHUB_TOKEN="${GITHUB_TOKEN:-$DEFAULT_TOKEN}"
 GITHUB_API="https://api.github.com"
 

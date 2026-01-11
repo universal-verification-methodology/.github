@@ -1,0 +1,36 @@
+# Temporary directories created by sync scripts
+.sync_clones/
+
+# Log files from sync scripts
+sync_all_upstreams_log.txt
+failed_syncs.txt
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.backup
