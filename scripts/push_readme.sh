@@ -178,16 +178,43 @@ push_file_to_repo() {
 
     # Make API request
     local response
-    response=$(api_request "PUT" "repos/${owner}/${repo}/contents/${path}" "$payload")
+    local http_code
+    response=$(curl -s -w "\n%{http_code}" -X "PUT" \
+        -H "Accept: application/vnd.github.v3+json" \
+        -H "Authorization: token ${GITHUB_TOKEN}" \
+        -H "User-Agent: README-Pusher/1.0" \
+        -d "$payload" \
+        "${GITHUB_API}/repos/${owner}/${repo}/contents/${path}" 2>/dev/null || echo -e "\n000")
+    http_code=$(echo "$response" | tail -n1)
+    response=$(echo "$response" | sed '$d')
 
-    if echo "$response" | jq -e '.content' >/dev/null 2>&1; then
-        local commit_sha
-        commit_sha=$(echo "$response" | jq -r '.commit.sha // empty')
-        log_success "Successfully pushed ${path} (commit: ${commit_sha:0:7})"
-        return 0
+    if [ "$http_code" -ge 200 ] && [ "$http_code" -lt 300 ]; then
+        if echo "$response" | jq -e '.content' >/dev/null 2>&1; then
+            local commit_sha
+            commit_sha=$(echo "$response" | jq -r '.commit.sha // empty')
+            log_success "Successfully pushed ${path} (commit: ${commit_sha:0:7})"
+            return 0
+        else
+            log_error "Invalid response format from API"
+            echo "$response" | jq '.' 2>/dev/null || echo "$response"
+            return 1
+        fi
     else
-        log_error "Failed to push file"
-        echo "$response" | jq -r '.message // "Unknown error"' 2>/dev/null || echo "Unknown error"
+        log_error "Failed to push file (HTTP $http_code)"
+        if echo "$response" | jq -e '.' >/dev/null 2>&1; then
+            local error_message
+            error_message=$(echo "$response" | jq -r '.message // empty')
+            local error_documentation
+            error_documentation=$(echo "$response" | jq -r '.documentation_url // empty')
+            if [ -n "$error_message" ]; then
+                echo "$error_message"
+                [ -n "$error_documentation" ] && echo "Documentation: $error_documentation"
+            else
+                echo "$response" | jq '.'
+            fi
+        else
+            echo "Response: $response"
+        fi
         return 1
     fi
 }
@@ -305,6 +332,14 @@ main() {
     # Check if curl is installed
     if ! command -v curl &> /dev/null; then
         log_error "curl is required but not installed."
+        exit 1
+    fi
+
+    # Check if GITHUB_TOKEN is set
+    if [ -z "${GITHUB_TOKEN:-}" ]; then
+        log_error "GITHUB_TOKEN environment variable is not set."
+        log_info "Please set it with: export GITHUB_TOKEN=your_token"
+        log_info "You can create a token at: https://github.com/settings/tokens"
         exit 1
     fi
 
