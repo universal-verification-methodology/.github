@@ -13,9 +13,8 @@
 
 set -euo pipefail
 
-# Default GitHub token (can be overridden with GITHUB_TOKEN env var)
-DEFAULT_TOKEN="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"
-GITHUB_TOKEN="${GITHUB_TOKEN:-$DEFAULT_TOKEN}"
+# GitHub token must be provided via GITHUB_TOKEN environment variable or as an argument
+# Never hardcode tokens in scripts for security reasons
 GITHUB_API="https://api.github.com"
 CLONE_DIR=".sync_clones"
 PRESERVE_FILE="README.md"
@@ -700,6 +699,17 @@ main() {
     # Override token if provided
     if [ -n "$token" ]; then
         GITHUB_TOKEN="$token"
+    fi
+    
+    # Check if token is provided
+    if [ -z "${GITHUB_TOKEN:-}" ]; then
+        log_error "GitHub token is required!"
+        echo "Please set GITHUB_TOKEN environment variable:" >&2
+        echo "  export GITHUB_TOKEN=ghp_your_token_here" >&2
+        echo "Or provide it as the last argument to the script" >&2
+        echo "" >&2
+        echo "Get a token from: https://github.com/settings/tokens" >&2
+        exit 1
     fi
     
     sync_repository "$fork_owner" "$fork_repo" "$upstream_owner" "$upstream_repo"

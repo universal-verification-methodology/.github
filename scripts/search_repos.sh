@@ -95,10 +95,8 @@ for arg in "$@"; do
     fi
 done
 
-# If no token provided as argument, try environment variable, then use default
-if [ -z "$GITHUB_TOKEN" ]; then
-    GITHUB_TOKEN="${GITHUB_TOKEN:-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}"
-fi
+# Token is optional for search (public repos work without auth, but token increases rate limits)
+# If no token provided, scripts will work but with lower rate limits
 
 if [ "$FILTER_README_ONLY" = "true" ]; then
     print_info "Filtering enabled: Only repositories with README.md will be included"

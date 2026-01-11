@@ -19,8 +19,8 @@ set -euo pipefail
 
 # Configuration
 TARGET_ORG="${1:-universal-verification-methodology}"
-DEFAULT_TOKEN="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"
-GITHUB_TOKEN="${GITHUB_TOKEN:-$DEFAULT_TOKEN}"
+# GitHub token must be provided via GITHUB_TOKEN environment variable or as an argument
+# Never hardcode tokens in scripts for security reasons
 GITHUB_API="https://api.github.com"
 LOG_FILE="sync_all_upstreams_log.txt"
 FAILED_REPOS_FILE="failed_syncs.txt"
@@ -238,10 +238,17 @@ main() {
     
     # Override token if provided as argument
     if [ -n "${GITHUB_TOKEN:-}" ] && [[ "$GITHUB_TOKEN" =~ ^gh[opu]_ ]]; then
-        # Token provided
+        # Token provided via environment variable or argument
         :
-    else
-        GITHUB_TOKEN="${GITHUB_TOKEN:-$DEFAULT_TOKEN}"
+    elif [ -z "${GITHUB_TOKEN:-}" ]; then
+        log_error "GitHub token is required!"
+        log_info "Please set GITHUB_TOKEN environment variable:"
+        log_info "  export GITHUB_TOKEN=ghp_your_token_here"
+        log_info "Or provide it as an argument:"
+        log_info "  $0 universal-verification-methodology ghp_your_token_here"
+        log_info ""
+        log_info "Get a token from: https://github.com/settings/tokens"
+        exit 1
     fi
     
     log_info "Starting sync operation for all forked repositories..."

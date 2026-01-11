@@ -429,10 +429,17 @@ main() {
     # Override token if provided as argument, otherwise use environment variable, or fallback to default
     if [ -n "$actual_token" ]; then
         GITHUB_TOKEN="$actual_token"
-    elif [ -z "${GITHUB_TOKEN:-}" ]; then
-        # Default token fallback
-        GITHUB_TOKEN="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"
-        print_info "Using default GitHub token"
+    fi
+    
+    # Check if token is provided
+    if [ -z "${GITHUB_TOKEN:-}" ]; then
+        print_error "GitHub token is required!"
+        print_info "Please set GITHUB_TOKEN environment variable:"
+        print_info "  export GITHUB_TOKEN=ghp_your_token_here"
+        print_info "Or provide it as an argument to the script"
+        print_info ""
+        print_info "Get a token from: https://github.com/settings/tokens"
+        exit 1
     fi
     
     print_info "Starting fork operation..."

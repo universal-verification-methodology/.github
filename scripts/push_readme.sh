@@ -10,9 +10,8 @@
 
 set -euo pipefail
 
-# Default GitHub token (can be overridden with GITHUB_TOKEN env var)
-DEFAULT_TOKEN="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"
-GITHUB_TOKEN="${GITHUB_TOKEN:-$DEFAULT_TOKEN}"
+# GitHub token must be provided via GITHUB_TOKEN environment variable
+# Never hardcode tokens in scripts for security reasons
 GITHUB_API="https://api.github.com"
 
 # Colors for output
