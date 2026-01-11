@@ -137,6 +137,57 @@ create_and_import_repo() {
     fi
 }
 
+# Function to delete a repository
+delete_repository() {
+    local repo_name="$1"
+    local url="${GITHUB_API_BASE}/repos/${repo_name}"
+    
+    print_info "Deleting repository ${repo_name}..."
+    local response=$(github_api_request "DELETE" "$url")
+    
+    # DELETE requests return 204 No Content on success
+    # We check if the repo no longer exists
+    sleep 2
+    local check_response=$(github_api_request "GET" "$url")
+    if ! echo "$check_response" | grep -q '"name"'; then
+        print_success "Successfully deleted repository ${repo_name}"
+        return 0
+    fi
+    
+    local error_msg=$(echo "$check_response" | grep -oE '"message"\s*:\s*"[^"]*"' | sed -E 's/"message"\s*:\s*"([^"]*)"/\1/' | head -1)
+    if [ -z "$error_msg" ]; then
+        error_msg=$(echo "$check_response" | grep -o '"message":"[^"]*"' | cut -d'"' -f4 | head -1)
+    fi
+    print_error "Failed to delete repository ${repo_name}: ${error_msg:-Unknown error}"
+    return 1
+}
+
+# Function to check if a repository is a fork of a specific source
+is_fork_of() {
+    local repo_name="$1"
+    local source_repo="$2"
+    local url="${GITHUB_API_BASE}/repos/${repo_name}"
+    
+    local response=$(github_api_request "GET" "$url")
+    
+    # Check if it's a fork
+    if ! echo "$response" | grep -q '"fork":\s*true'; then
+        return 1  # Not a fork
+    fi
+    
+    # Check if the parent matches the source
+    local parent=$(echo "$response" | grep -oE '"parent"\s*:\s*{[^}]*"full_name"\s*:\s*"[^"]*"' | grep -oE '"full_name"\s*:\s*"[^"]*"' | sed -E 's/"full_name"\s*:\s*"([^"]*)"/\1/' | head -1)
+    if [ -z "$parent" ]; then
+        parent=$(echo "$response" | grep -o '"parent"[^}]*"full_name":"[^"]*"' | grep -o '"full_name":"[^"]*"' | cut -d'"' -f4 | head -1)
+    fi
+    
+    if [ "$parent" = "$source_repo" ]; then
+        return 0  # Is a fork of the source
+    else
+        return 1  # Is a fork but not of the source
+    fi
+}
+
 # Function to rename a repository
 rename_repository() {
     local current_name="$1"
@@ -177,20 +228,37 @@ fork_repository() {
     
     # Check if simple name already exists
     if repo_exists_in_org "$repo_name"; then
-        print_warn "Repository ${org_repo} already exists. Using renamed format: ${owner}-${repo_name}"
-        target_name="${owner}-${repo_name}"
-        local renamed_repo="${TARGET_ORG}/${target_name}"
-        
-        # Check if the renamed version also exists
-        if repo_exists_in_org "$target_name"; then
-            print_warn "Repository ${renamed_repo} also exists. Skipping..."
+        # Check if the existing repo is already a fork of the source
+        if is_fork_of "$org_repo" "$full_repo_name"; then
+            print_info "Repository ${org_repo} already exists and is a fork of ${full_repo_name}. Skipping..."
             return 0
         fi
         
-        # Since GitHub fork API doesn't support custom names, we need to create repo and import
-        print_info "Creating repository ${renamed_repo} and importing from ${full_repo_name}..."
-        create_and_import_repo "$full_repo_name" "$target_name" "$owner"
-        return $?
+        print_warn "Repository ${org_repo} already exists but is not a fork of ${full_repo_name}."
+        print_warn "GitHub's Fork API doesn't support custom names, so we cannot create a true fork with a different name."
+        
+        # Check if there's an incorrectly imported repo with the renamed format
+        target_name="${owner}-${repo_name}"
+        local renamed_repo="${TARGET_ORG}/${target_name}"
+        
+        if repo_exists_in_org "$target_name"; then
+            # Check if it's an import (not a fork) - if so, we should try to delete it and create a true fork
+            if ! is_fork_of "$renamed_repo" "$full_repo_name"; then
+                print_warn "Repository ${renamed_repo} exists but is not a true fork (likely an import)."
+                print_warn "Cannot create a true fork with custom name due to GitHub API limitations."
+                print_warn "To create a true fork, the repository must use the original name: ${repo_name}"
+                return 1
+            else
+                print_info "Repository ${renamed_repo} already exists and is a fork of ${full_repo_name}."
+                return 0
+            fi
+        fi
+        
+        # Since GitHub fork API doesn't support custom names, we cannot create a true fork
+        print_error "Cannot create a true fork: name ${repo_name} is already taken and not a fork of ${full_repo_name}."
+        print_error "GitHub's Fork API requires the fork to use the same name as the source repository."
+        echo "${full_repo_name}|Name conflict: ${repo_name} already exists and is not a fork of ${full_repo_name}" >> "$FAILED_REPOS_FILE"
+        return 1
     fi
     
     print_info "Forking ${full_repo_name} to ${TARGET_ORG}..."

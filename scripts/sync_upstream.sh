@@ -574,13 +574,30 @@ sync_repository() {
     # Prepare repository first (needed for git-based branch detection)
     local repo_dir
     local original_dir
+    local prepare_output
+    local prepare_exit
     original_dir=$(pwd)
-    # Capture only the last line (the directory path) to avoid git output contamination
-    repo_dir=$(prepare_repo "$fork_owner" "$fork_repo" 2>&1 | tail -1)
+    
+    # Capture output and handle errors gracefully (avoid pipefail issue)
+    set +e
+    prepare_output=$(prepare_repo "$fork_owner" "$fork_repo" 2>&1)
+    prepare_exit=$?
+    set -e
+    
+    if [ $prepare_exit -ne 0 ]; then
+        log_error "Failed to prepare repository ${fork_owner}/${fork_repo}"
+        # Show the actual error message from prepare_repo
+        echo "$prepare_output" | grep -E "\[ERROR\]|\[WARNING\]" >&2 || echo "$prepare_output" >&2
+        return 1
+    fi
+    
+    # Extract the directory path (last line of output)
+    repo_dir=$(echo "$prepare_output" | tail -1)
     
     # Verify we're in the correct repository directory
     if [ ! -d "$repo_dir" ]; then
         log_error "Repository directory does not exist: $repo_dir"
+        log_error "prepare_repo output: $prepare_output"
         return 1
     fi
     
