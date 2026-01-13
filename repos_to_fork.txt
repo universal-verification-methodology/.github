@@ -2,14 +2,11 @@ full_name|description|stars|forks|default_branch|has_readme|language|size|update
 cocotb/cocotb|cocotb: Python-based chip (RTL) verification|2211|596|master|true|Python|10.37MB|2026-01-09|2013-06-12|N/A|false|N/A
 openhwgroup/core-v-verif|Functional verification project for the CORE-V family of RISC-V cores.|636|260|master|true|Assembly|114.77MB|2026-01-09|2019-11-29|N/A|false|N/A
 raysalemi/uvmprimer|Contains the code examples from The UVM Primer Book sorted by chapters.|592|228|master|true|SystemVerilog|5.90MB|2026-01-08|2013-11-27|N/A|false|N/A
-ringtailsoftware/uvm32|Minimalist|589|25|main|true|C|5.46MB|2026-01-09|2025-12-06|N/A|false|N/A
-maximecb/uvm|Fun|578|21|main|true|Rust|1.89MB|2025-12-25|2022-06-11|N/A|false|N/A
 pyuvm/pyuvm|The UVM written in Python|491|95|master|true|Python|3.85MB|2026-01-04|2021-01-30|N/A|false|N/A
 rggen/rggen|Code generation tool for control and status registers|439|55|master|true|Ruby|633KB|2026-01-07|2019-04-10|N/A|false|N/A
 taichi-ishitani/tvip-axi|AMBA AXI VIP|438|122|master|true|SystemVerilog|157KB|2026-01-07|2018-09-22|N/A|false|N/A
 chipsalliance/Surelog|SystemVerilog 2017 Pre-processor|434|78|master|true|C++|875.68MB|2026-01-09|2019-10-30|N/A|false|N/A
 troyguo/awesome-dv|Awesome ASIC design verification|340|78|master|true|N/A|19KB|2026-01-05|2020-03-02|N/A|false|N/A
-whosmatt/uvmod|Web-based firmware patcher for various Quansheng radios|332|65|main|true|CSS|40.23MB|2026-01-07|2023-07-29|N/A|true|N/A
 VerificationExcellence/UVMReference|Reference examples and short projects using UVM Methodology|287|157|master|true|SystemVerilog|24KB|2026-01-08|2014-07-18|N/A|false|N/A
 tymonx/logic|CMake|284|61|master|true|SystemVerilog|840KB|2026-01-06|2017-10-29|N/A|false|N/A
 funningboy/uvm_axi|uvm AXI BFM(bus functional model)|264|116|master|true|Verilog|141KB|2025-12-11|2013-06-21|N/A|false|N/A
@@ -21,7 +18,6 @@ cluelogic/uvm-tutorial-for-candy-lovers|Source code repo for UVM Tutorial for Ca
 taichi-ishitani/tnoc|Network on Chip Implementation written in SytemVerilog|196|52|master|true|SystemVerilog|416KB|2025-12-19|2017-12-12|N/A|false|N/A
 courageheart/AMBA_APB_SRAM|AMBA v.3 APB v.1 Specification Complaint Slave SRAM Core design and testbench. The testbench is developed using System Verilog and UVM and can be used as standalone Verification IP (VIP). |190|70|master|true|SystemVerilog|503KB|2026-01-04|2019-05-21|N/A|false|N/A
 SystemRDL/PeakRDL|Control and status register code generator toolchain|165|35|main|true|Python|188KB|2026-01-08|2020-04-05|N/A|false|N/A
-zzr-idam/UVM-Net|U-shaped Vision Mamba for Single Image Dehazing|163|6|main|true|Python|5.13MB|2026-01-01|2024-02-07|N/A|false|N/A
 kumarrishav14/AXI|VIP for AXI Protocol|163|41|main|true|SystemVerilog|82KB|2026-01-06|2020-12-29|N/A|false|N/A
 GodelMachine/AHB2|AMBA AHB 2.0 VIP in SystemVerilog UVM|160|67|master|true|SystemVerilog|24KB|2026-01-06|2016-06-26|N/A|false|N/A
 andres-mancera/ethernet_10ge_mac_SV_UVM_tb|SystemVerilog-based UVM testbench for an Ethernet 10GE MAC core|154|65|master|true|Verilog|107KB|2025-12-31|2016-04-19|N/A|false|N/A
@@ -38,7 +34,6 @@ Daniel-GGB/My-Digital-IC-Library|我的数字IC厂库：Verilog HDL; System Vrei
 Siddhi-95/AHB-to-APB-Bridge-Verification|Maven Silicon project - AHB-to-APB Bridge Verification using UVM Methodology.|103|23|main|true|SystemVerilog|89KB|2025-12-26|2022-03-01|N/A|false|N/A
 seabeam/yuu_ahb|UVM AHB VIP|90|22|master|true|SystemVerilog|527KB|2025-12-26|2019-10-15|N/A|false|N/A
 dovstamler/uvm_agents|UVM agents|85|38|master|true|SystemVerilog|350KB|2025-12-26|2014-05-22|N/A|false|N/A
-DebashisGanguly/gpgpu-sim_UVMSmart|N/A|80|46|master|true|C++|353.40MB|2025-11-24|2018-10-01|N/A|false|N/A
 zhajio1988/YASA|:snail:Yet Another Simulation Architecture|78|41|master|true|Python|232KB|2025-12-23|2019-03-04|N/A|false|N/A
 Practical-UVM-Step-By-Step/Practical-UVM-IEEE-Edition|This is the repository for the IEEE version of the book|77|45|master|true|Verilog|21.48MB|2025-12-16|2018-06-16|N/A|false|N/A
 amiq-consulting/svaunit|SVAUnit is an UVM compliant package that simplify the creation of stimuli/checkers for validating SystemVerilog Assertions (SVA)|75|22|master|true|SystemVerilog|7.29MB|2026-01-06|2015-04-29|N/A|false|N/A
@@ -46,7 +41,6 @@ zhajio1988/Open_RegModel|:hatched_chick:Use ORDT and systemRDL tools to generate
 Shehab-Naga/ddr5_phy|DDR5 PHY Graduation project (Verification Team) under supervision of Si-Vision|73|30|main|true|SystemVerilog|13.27MB|2025-12-29|2022-06-30|N/A|false|N/A
 dadongshangu/async_FIFO|This asynchrounous FIFO deisgn and UVM verificaiton is one case study of me.  The design is based on Cliff Cumming's paper and the UVM is coded by me(Xianghzi Meng)|65|18|master|true|SystemVerilog|182KB|2026-01-06|2020-09-05|N/A|false|N/A
 Scout24/restapi-php-sdk|SDK für PHP-Entwickler um die Arbeit mit der API von ImmobilienScout24 zu vereinfachen. Über die API erhält man Ergebnislisten|64|45|master|true|PHP|712KB|2025-09-01|2011-11-14|N/A|false|N/A
-InvisibleUp/uvmac|µvMac - cleaned up fork of the Macintosh emulator Mini vMac|64|4|master|true|C|1.32MB|2025-12-29|2020-02-19|N/A|true|N/A
 accellera/uvm|N/A|60|30|master|true|SystemVerilog|21.86MB|2026-01-09|2016-05-11|N/A|false|N/A
 SystemRDL/PeakRDL-uvm|Generate UVM register model from compiled SystemRDL input|60|34|main|true|Python|74KB|2025-11-25|2019-08-23|N/A|false|N/A
 akzare/Async_FIFO_Verification|Presents a verification use case for a typical Asynchronous FIFO based on Systemverilog and UVM.|59|14|master|true|SystemVerilog|22KB|2026-01-06|2017-11-13|N/A|false|N/A
@@ -59,20 +53,16 @@ Anjali-287/SPI-Interface|UVM Testbench to verify serial transmission of data bet
 darthsider/UART|UART design in SV and verification using UVM and SV|52|18|master|false|SystemVerilog|50KB|2025-12-28|2018-12-21|N/A|false|N/A
 brentwang-lab/uvm_tb_gen|This is for uvm_tb_gen|51|15|main|false|SystemVerilog|68.74MB|2025-12-21|2024-09-29|N/A|false|N/A
 hjking/uvm_gen|UVM Generator|50|23|master|true|SystemVerilog|47KB|2026-01-09|2013-10-31|N/A|false|N/A
-postmanlabs/uvm|Universal Virtual Machine for Node and Browser|49|25|develop|true|JavaScript|2.41MB|2026-01-08|2016-11-27|N/A|false|N/A
 howard789/uvm_example|This is a uvm example. The video is available at https://www.bilibili.com/video/BV1yq4y177f6/|49|13|main|true|SystemVerilog|2.86MB|2025-11-07|2021-09-22|N/A|false|N/A
 Lampro-Mellon/apb-uart-uvm-env|N/A|48|18|main|true|SystemVerilog|11.53MB|2026-01-06|2020-11-11|N/A|false|N/A
 JoseIuri/UVM-APB_RAL|This repository contains an example of the use of UVM Register Abstraction Layer in a verification of a simple APB DUT.|48|23|master|true|SystemVerilog|97KB|2025-12-16|2019-10-22|N/A|false|N/A
 mitshine/UVM-and-System-Verilog-Manual|UVM and System Verilog Manuals|47|15|master|true|N/A|11.07MB|2026-01-04|2019-02-11|N/A|false|N/A
 nelsoncsc/easyUVM|A simple UVM example with DPI |45|17|master|true|SystemVerilog|8KB|2025-10-28|2016-09-09|N/A|false|N/A
-Pittini/iobroker-Fensterauswertung|Zählt geöffnete Fenster pro Raum und gesamt. Kann einmalig oder zyklisch an offene Fenster erinnern. Erzeugt Lüftungswarnung uvm.|44|15|master|true|JavaScript|3.22MB|2025-10-11|2020-02-02|N/A|false|N/A
 Ghonimo/Pre_Silicon-AHB-to_APB-Verification|Comprehensive verification suite for the AHB2APB Bridge design|44|7|main|true|SystemVerilog|13.77MB|2026-01-06|2023-08-03|N/A|false|N/A
 kaushalmodi/custom_uvm_report_server|Customized UVM Report Server|42|10|master|false|SystemVerilog|434KB|2025-12-16|2015-07-06|N/A|false|N/A
 systemc/uvmc|Connecting SystemC with SystemVerilog|41|18|master|true|C++|918KB|2025-05-19|2012-03-25|N/A|false|N/A
 siyueyinghua/UVMInPracticesByZhangQiang|《UVM实战》书本源代码和UVM 1.1d源码及Doc|41|13|master|true|HTML|2.89MB|2025-07-23|2021-03-07|N/A|false|N/A
 Noman-10xe/AXI-DMA-Verification|Tranining Completion Project : : Verification of AXI Direct Memory Access (DMA) using UVM|41|2|main|true|VHDL|92.10MB|2026-01-08|2024-12-19|N/A|false|N/A
-seabeam/yuu_register_productor|UVM register utility generation by inputting xls table|39|22|master|true|JavaScript|307KB|2025-09-25|2019-02-15|N/A|false|N/A
-tallendev/uvm-eval|This serves as a repository for reproducibility of the SC21 paper \"In-Depth Analyses of Unified Virtual Memory System for GPU Accelerated Computing|38|7|master|true|C|163.91MB|2026-01-07|2021-04-09|N/A|false|N/A
 nahidrn/axi_vip_master|Sample UVM code for axi ram dut|38|9|main|true|SystemVerilog|19KB|2026-01-06|2021-11-24|N/A|false|N/A
 darwinbeing/EasierUVM|DOULOS Easier UVM Code Generator|38|17|master|false|Perl|60KB|2026-01-06|2017-05-06|N/A|false|N/A
 avashist003/UVM_Verification|Advance UVM testbench with DPI integration|38|14|master|true|SystemVerilog|25KB|2025-12-26|2019-05-19|N/A|false|N/A
@@ -994,53 +984,3 @@ ADIVENKATRAMINENI/UVM|Journey of UVM|1|0|main|true|SystemVerilog|40.77MB|2025-12
 31shal/uvm-config-db-usage-in-UVM|N/A|1|0|main|false|SystemVerilog|25KB|2022-07-13|2022-03-30|N/A|false|N/A
 21Bruce/uvm-notes|Notes on the internals of OpenBSD's UVM implementation|1|0|main|true|N/A|56KB|2023-11-13|2023-10-18|N/A|false|N/A
 21Bruce/UVMTd|System Daemons for testing UVM on OpenBSD|1|0|main|true|C|35KB|2023-10-13|2023-10-10|N/A|false|N/A
-openhwgroup/core-v-mcu-uvm|CORE-V MCU UVM Environment and Test Bench|0
-null|10969|0
-mitchelfalcon/tareaestructuras|UVM Tarea Logica de Programacion|0
-master|false|0
-main|false|0
-main|false|0
-main|false|0
-gh-pages|false|0
-false|N/A|0
-false|N/A|0
-false|N/A|0
-false|N/A|0
-false|N/A|0
-eunomia-bpf/gpu_ext|eBPF for GPU UVM offloading and scheduling in Linux kernel|0
-educup/uvm|Unity Version Manager CLI implemented with Python and Typer|0
-UVM Tarea Logica de Programacion|1|0
-TypeScript|89|0
-Template repository for ROS 2 development|41|0
-Template designed to get new developers with libbpf development. |14|0
-Robotic-Decision-Making-Lab/auv_controllers|Control algorithms for autonomous underwater vehicles (AUVs) and underwater vehicle manipulator systems (UVMS) implemented using ros2_control.|0
-Python template with CI/CD ready for production|5|0
-Makefile|562|0
-Dockerfile|20927|0
-DTC Digital Design Project Template|25|0
-C|18307|0
-73|1|0
-5|6|0
-4|8|0
-3|gh-pages|0
-36|1|0
-331KB|2025-11-16|0
-321KB|2025-12-08|0
-295KB|2024-12-04|0
-26|master|0
-2025-12-11|2025-11-20|0
-2025-11-16|2025-11-16|0
-2025-11-15|N/A|0
-2025-07-25|2020-12-21|0
-2025-06-04|2024-02-08|0
-2024-04-28|2022-02-09|0
-2024-01-08|N/A|0
-2023-03-23|N/A|0
-2020-12-04|N/A|0
-2020-07-07|N/A|0
-1|main|0
-1|main|0
-1|2|0
-16KB|2025-12-16|0
-1637KB|2026-01-09|0
-0|main|0

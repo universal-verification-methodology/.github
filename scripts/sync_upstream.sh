@@ -230,21 +230,29 @@ detect_upstream_branch() {
     
     # Try to get default branch from git symbolic-ref
     branch=$(git symbolic-ref "refs/remotes/${remote}/HEAD" 2>/dev/null | sed "s@^refs/remotes/${remote}/@@")
-    if [ -n "$branch" ]; then
+    if [ -n "$branch" ] && [ "$branch" != "HEAD" ]; then
         echo "$branch"
         return 0
     fi
     
     # Fallback: try common branch names (check which exists)
-    # Check master first for older repos, then main for newer ones
-    for b in master main; do
+    # Check common branch names in order of preference
+    for b in master main production develop dev trunk; do
         if git show-ref --verify --quiet "refs/remotes/${remote}/${b}" 2>/dev/null; then
             echo "$b"
             return 0
         fi
     done
     
-    # Last resort
+    # Last resort: list all available branches and pick the first one
+    # (excluding HEAD)
+    branch=$(git branch -r 2>/dev/null | grep "^  ${remote}/" | grep -v "HEAD" | sed "s|^  ${remote}/||" | head -1 | tr -d ' \n')
+    if [ -n "$branch" ]; then
+        echo "$branch"
+        return 0
+    fi
+    
+    # Absolute last resort
     echo "main"
 }
 
@@ -271,6 +279,17 @@ setup_upstream() {
     git remote add upstream "$upstream_url"
     git fetch upstream >/dev/null 2>&1
     
+    # Try to get default branch from GitHub API first (more reliable)
+    local api_branch
+    api_branch=$(get_default_branch "$upstream_owner" "$upstream_repo" 2>/dev/null || echo "")
+    
+    # Verify the API branch actually exists in the remote (if API returned a valid branch)
+    if [ -n "$api_branch" ] && [ "$api_branch" != "null" ] && git show-ref --verify --quiet "refs/remotes/upstream/${api_branch}" 2>/dev/null; then
+        echo "$api_branch"
+        return 0
+    fi
+    
+    # If API failed or the branch doesn't exist, fall back to git detection
     # Detect and return the actual default branch (only output branch name to stdout)
     detect_upstream_branch "upstream"
 }
