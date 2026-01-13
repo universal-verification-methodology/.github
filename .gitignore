@@ -34,3 +34,6 @@ Thumbs.db
 *.temp
 *.bak
 *.backup
+
+# Scripts with secrets
+run.sh
