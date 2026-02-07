@@ -1,12 +1,7 @@
 # Universal Verification Methodology Community
 
-<div align="center">
-
-[![GitHub Repositories](https://img.shields.io/github/repos/universal-verification-methodology?style=for-the-badge&logo=github&label=Repositories&color=0366d6&logoColor=white)](https://github.com/universal-verification-methodology?tab=repositories)
 [![GitHub Followers](https://img.shields.io/github/followers/universal-verification-methodology?style=for-the-badge&logo=github&label=Followers&color=28a745&logoColor=white)](https://github.com/universal-verification-methodology)
 [![GitHub Stars](https://img.shields.io/github/stars/universal-verification-methodology?style=for-the-badge&logo=github&label=Total%20Stars&color=fbbf24&logoColor=white)](https://github.com/universal-verification-methodology)
-
-</div>
 
 
 Welcome to the **Universal Verification Methodology (UVM) Community**! 🎯
