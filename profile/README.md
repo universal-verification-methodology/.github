@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Universal Verification Methodology Community
 
 <div align="center">
@@ -213,4 +212,3 @@ This community aligns with:
 **Join us in building the future of hardware verification!** 🚀
 
 *Together, we can create a comprehensive, accessible, and collaborative ecosystem for Universal Verification Methodology.*
->>>>>>> refs/remotes/origin/main
